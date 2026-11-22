@@ -1,0 +1,69 @@
+{
+    "datasets": [
+        {
+            "dataset": "synthetic_boiling_point_data",
+            "examples": [
+                {
+                    "input": "correlation analysis of boiling point error with relative humidity (seed=42)",
+                    "output": "pearson_r: 0.9482, p: 0.0000; spearman_r: 0.9504, p: 0.0000",
+                    "predict_our_method": "0.9482",
+                    "predict_baseline": "0.9504"
+                },
+                {
+                    "input": "correlation analysis of boiling point error with relative humidity (seed=142)",
+                    "output": "pearson_r: 0.9460, p: 0.0000; spearman_r: 0.9498, p: 0.0000",
+                    "predict_our_method": "0.9460",
+                    "predict_baseline": "0.9498"
+                },
+                {
+                    "input": "correlation analysis of boiling point error with relative humidity (seed=242)",
+                    "output": "pearson_r: 0.9430, p: 0.0000; spearman_r: 0.9468, p: 0.0000",
+                    "predict_our_method": "0.9430",
+                    "predict_baseline": "0.9468"
+                },
+                {
+                    "input": "correlation analysis of boiling point error with relative humidity (seed=342)",
+                    "output": "pearson_r: 0.9408, p: 0.0000; spearman_r: 0.9435, p: 0.0000",
+                    "predict_our_method": "0.9408",
+                    "predict_baseline": "0.9435"
+                },
+                {
+                    "input": "correlation analysis of boiling point error with relative humidity (seed=442)",
+                    "output": "pearson_r: 0.9437, p: 0.0000; spearman_r: 0.9473, p: 0.0000",
+                    "predict_our_method": "0.9437",
+                    "predict_baseline": "0.9473"
+                },
+                {
+                    "input": "correlation analysis of boiling point error with relative humidity (seed=542)",
+                    "output": "pearson_r: 0.9445, p: 0.0000; spearman_r: 0.9492, p: 0.0000",
+                    "predict_our_method": "0.9445",
+                    "predict_baseline": "0.9492"
+                },
+                {
+                    "input": "correlation analysis of boiling point error with relative humidity (seed=642)",
+                    "output": "pearson_r: 0.9418, p: 0.0000; spearman_r: 0.9472, p: 0.0000",
+                    "predict_our_method": "0.9418",
+                    "predict_baseline": "0.9472"
+                },
+                {
+                    "input": "correlation analysis of boiling point error with relative humidity (seed=742)",
+                    "output": "pearson_r: 0.9486, p: 0.0000; spearman_r: 0.9533, p: 0.0000",
+                    "predict_our_method": "0.9486",
+                    "predict_baseline": "0.9533"
+                },
+                {
+                    "input": "correlation analysis of boiling point error with relative humidity (seed=842)",
+                    "output": "pearson_r: 0.9450, p: 0.0000; spearman_r: 0.9486, p: 0.0000",
+                    "predict_our_method": "0.9450",
+                    "predict_baseline": "0.9486"
+                },
+                {
+                    "input": "correlation analysis of boiling point error with relative humidity (seed=942)",
+                    "output": "pearson_r: 0.9432, p: 0.0000; spearman_r: 0.9482, p: 0.0000",
+                    "predict_our_method": "0.9432",
+                    "predict_baseline": "0.9482"
+                }
+            ]
+        }
+    ]
+}

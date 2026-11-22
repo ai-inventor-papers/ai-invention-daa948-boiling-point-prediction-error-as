@@ -1,0 +1,27 @@
+{
+    "datasets": [
+        {
+            "dataset": "synthetic_boiling_point_data",
+            "examples": [
+                {
+                    "input": "correlation analysis of boiling point error with relative humidity (seed=42)",
+                    "output": "pearson_r: 0.9482, p: 0.0000; spearman_r: 0.9504, p: 0.0000",
+                    "predict_our_method": "0.9482",
+                    "predict_baseline": "0.9504"
+                },
+                {
+                    "input": "correlation analysis of boiling point error with relative humidity (seed=142)",
+                    "output": "pearson_r: 0.9460, p: 0.0000; spearman_r: 0.9498, p: 0.0000",
+                    "predict_our_method": "0.9460",
+                    "predict_baseline": "0.9498"
+                },
+                {
+                    "input": "correlation analysis of boiling point error with relative humidity (seed=242)",
+                    "output": "pearson_r: 0.9430, p: 0.0000; spearman_r: 0.9468, p: 0.0000",
+                    "predict_our_method": "0.9430",
+                    "predict_baseline": "0.9468"
+                }
+            ]
+        }
+    ]
+}
