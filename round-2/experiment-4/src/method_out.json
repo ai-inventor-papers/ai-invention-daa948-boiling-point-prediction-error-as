@@ -1,0 +1,323 @@
+{
+  "metadata": {
+    "method_name": "barometric_formula_antoine",
+    "description": "Boiling point prediction using ISA barometric formula + Antoine equation with lapse rate sensitivity analysis",
+    "parameters": {
+      "baseline_lapse_rate_k_m": 0.0065,
+      "optimal_lapse_rate_k_m": 0.0067,
+      "lapse_rate_sweep_range": [
+        0.005,
+        0.008
+      ],
+      "lapse_rate_sweep_points": 31
+    }
+  },
+  "datasets": [
+    {
+      "dataset": "boiling_point_lapse_rate_sensitivity",
+      "examples": [
+        {
+          "input": "baseline_validation",
+          "output": "rmse=0.078978",
+          "metadata_lapse_rate_k_m": 0.0065,
+          "metadata_rmse_c": 0.07897800883543721,
+          "metadata_dataset": "published_data",
+          "metadata_num_points": 26,
+          "predict_baseline_rmse": "0.078978",
+          "predict_optimal_rmse": "0.039070",
+          "predict_optimal_lapse_rate": "0.0067"
+        },
+        {
+          "input": "lapse_rate=0.0050",
+          "output": "rmse=0.683167",
+          "metadata_lapse_rate_k_m": 0.005,
+          "metadata_rmse_c": 0.6831671358371848,
+          "predict_baseline_rmse": "0.078978",
+          "predict_optimal_rmse": "0.039070",
+          "predict_optimal_lapse_rate": "0.0067"
+        },
+        {
+          "input": "lapse_rate=0.0051",
+          "output": "rmse=0.643953",
+          "metadata_lapse_rate_k_m": 0.0051,
+          "metadata_rmse_c": 0.6439530634169521,
+          "predict_baseline_rmse": "0.078978",
+          "predict_optimal_rmse": "0.039070",
+          "predict_optimal_lapse_rate": "0.0067"
+        },
+        {
+          "input": "lapse_rate=0.0052",
+          "output": "rmse=0.604538",
+          "metadata_lapse_rate_k_m": 0.0052,
+          "metadata_rmse_c": 0.6045384828630298,
+          "predict_baseline_rmse": "0.078978",
+          "predict_optimal_rmse": "0.039070",
+          "predict_optimal_lapse_rate": "0.0067"
+        },
+        {
+          "input": "lapse_rate=0.0053",
+          "output": "rmse=0.564923",
+          "metadata_lapse_rate_k_m": 0.0053,
+          "metadata_rmse_c": 0.5649231025650492,
+          "predict_baseline_rmse": "0.078978",
+          "predict_optimal_rmse": "0.039070",
+          "predict_optimal_lapse_rate": "0.0067"
+        },
+        {
+          "input": "lapse_rate=0.0054",
+          "output": "rmse=0.525107",
+          "metadata_lapse_rate_k_m": 0.0054,
+          "metadata_rmse_c": 0.525107145033637,
+          "predict_baseline_rmse": "0.078978",
+          "predict_optimal_rmse": "0.039070",
+          "predict_optimal_lapse_rate": "0.0067"
+        },
+        {
+          "input": "lapse_rate=0.0055",
+          "output": "rmse=0.485092",
+          "metadata_lapse_rate_k_m": 0.0055,
+          "metadata_rmse_c": 0.4850915780777807,
+          "predict_baseline_rmse": "0.078978",
+          "predict_optimal_rmse": "0.039070",
+          "predict_optimal_lapse_rate": "0.0067"
+        },
+        {
+          "input": "lapse_rate=0.0056",
+          "output": "rmse=0.444878",
+          "metadata_lapse_rate_k_m": 0.0056,
+          "metadata_rmse_c": 0.44487847543341263,
+          "predict_baseline_rmse": "0.078978",
+          "predict_optimal_rmse": "0.039070",
+          "predict_optimal_lapse_rate": "0.0067"
+        },
+        {
+          "input": "lapse_rate=0.0057",
+          "output": "rmse=0.404472",
+          "metadata_lapse_rate_k_m": 0.0057,
+          "metadata_rmse_c": 0.4044715997068347,
+          "predict_baseline_rmse": "0.078978",
+          "predict_optimal_rmse": "0.039070",
+          "predict_optimal_lapse_rate": "0.0067"
+        },
+        {
+          "input": "lapse_rate=0.0058",
+          "output": "rmse=0.363877",
+          "metadata_lapse_rate_k_m": 0.0058000000000000005,
+          "metadata_rmse_c": 0.36387738511232637,
+          "predict_baseline_rmse": "0.078978",
+          "predict_optimal_rmse": "0.039070",
+          "predict_optimal_lapse_rate": "0.0067"
+        },
+        {
+          "input": "lapse_rate=0.0059",
+          "output": "rmse=0.323107",
+          "metadata_lapse_rate_k_m": 0.0059,
+          "metadata_rmse_c": 0.3231066796838906,
+          "predict_baseline_rmse": "0.078978",
+          "predict_optimal_rmse": "0.039070",
+          "predict_optimal_lapse_rate": "0.0067"
+        },
+        {
+          "input": "lapse_rate=0.0060",
+          "output": "rmse=0.282178",
+          "metadata_lapse_rate_k_m": 0.006,
+          "metadata_rmse_c": 0.28217802926605484,
+          "predict_baseline_rmse": "0.078978",
+          "predict_optimal_rmse": "0.039070",
+          "predict_optimal_lapse_rate": "0.0067"
+        },
+        {
+          "input": "lapse_rate=0.0061",
+          "output": "rmse=0.241124",
+          "metadata_lapse_rate_k_m": 0.0061,
+          "metadata_rmse_c": 0.24112435934982324,
+          "predict_baseline_rmse": "0.078978",
+          "predict_optimal_rmse": "0.039070",
+          "predict_optimal_lapse_rate": "0.0067"
+        },
+        {
+          "input": "lapse_rate=0.0062",
+          "output": "rmse=0.200008",
+          "metadata_lapse_rate_k_m": 0.006200000000000001,
+          "metadata_rmse_c": 0.20000796926979558,
+          "predict_baseline_rmse": "0.078978",
+          "predict_optimal_rmse": "0.039070",
+          "predict_optimal_lapse_rate": "0.0067"
+        },
+        {
+          "input": "lapse_rate=0.0063",
+          "output": "rmse=0.158959",
+          "metadata_lapse_rate_k_m": 0.0063,
+          "metadata_rmse_c": 0.15895885566664816,
+          "predict_baseline_rmse": "0.078978",
+          "predict_optimal_rmse": "0.039070",
+          "predict_optimal_lapse_rate": "0.0067"
+        },
+        {
+          "input": "lapse_rate=0.0064",
+          "output": "rmse=0.118292",
+          "metadata_lapse_rate_k_m": 0.0064,
+          "metadata_rmse_c": 0.11829213272461088,
+          "predict_baseline_rmse": "0.078978",
+          "predict_optimal_rmse": "0.039070",
+          "predict_optimal_lapse_rate": "0.0067"
+        },
+        {
+          "input": "lapse_rate=0.0065",
+          "output": "rmse=0.078978",
+          "metadata_lapse_rate_k_m": 0.006500000000000001,
+          "metadata_rmse_c": 0.07897800883544061,
+          "predict_baseline_rmse": "0.078978",
+          "predict_optimal_rmse": "0.039070",
+          "predict_optimal_lapse_rate": "0.0067"
+        },
+        {
+          "input": "lapse_rate=0.0066",
+          "output": "rmse=0.045404",
+          "metadata_lapse_rate_k_m": 0.0066,
+          "metadata_rmse_c": 0.04540446242634695,
+          "predict_baseline_rmse": "0.078978",
+          "predict_optimal_rmse": "0.039070",
+          "predict_optimal_lapse_rate": "0.0067"
+        },
+        {
+          "input": "lapse_rate=0.0067",
+          "output": "rmse=0.039070",
+          "metadata_lapse_rate_k_m": 0.0067,
+          "metadata_rmse_c": 0.03907019512816559,
+          "predict_baseline_rmse": "0.078978",
+          "predict_optimal_rmse": "0.039070",
+          "predict_optimal_lapse_rate": "0.0067"
+        },
+        {
+          "input": "lapse_rate=0.0068",
+          "output": "rmse=0.068519",
+          "metadata_lapse_rate_k_m": 0.0068000000000000005,
+          "metadata_rmse_c": 0.06851868486939457,
+          "predict_baseline_rmse": "0.078978",
+          "predict_optimal_rmse": "0.039070",
+          "predict_optimal_lapse_rate": "0.0067"
+        },
+        {
+          "input": "lapse_rate=0.0069",
+          "output": "rmse=0.107844",
+          "metadata_lapse_rate_k_m": 0.0069,
+          "metadata_rmse_c": 0.10784400692994045,
+          "predict_baseline_rmse": "0.078978",
+          "predict_optimal_rmse": "0.039070",
+          "predict_optimal_lapse_rate": "0.0067"
+        },
+        {
+          "input": "lapse_rate=0.0070",
+          "output": "rmse=0.149660",
+          "metadata_lapse_rate_k_m": 0.007,
+          "metadata_rmse_c": 0.1496598764757293,
+          "predict_baseline_rmse": "0.078978",
+          "predict_optimal_rmse": "0.039070",
+          "predict_optimal_lapse_rate": "0.0067"
+        },
+        {
+          "input": "lapse_rate=0.0071",
+          "output": "rmse=0.192521",
+          "metadata_lapse_rate_k_m": 0.0071,
+          "metadata_rmse_c": 0.19252114653339394,
+          "predict_baseline_rmse": "0.078978",
+          "predict_optimal_rmse": "0.039070",
+          "predict_optimal_lapse_rate": "0.0067"
+        },
+        {
+          "input": "lapse_rate=0.0072",
+          "output": "rmse=0.236002",
+          "metadata_lapse_rate_k_m": 0.0072,
+          "metadata_rmse_c": 0.2360019752671114,
+          "predict_baseline_rmse": "0.078978",
+          "predict_optimal_rmse": "0.039070",
+          "predict_optimal_lapse_rate": "0.0067"
+        },
+        {
+          "input": "lapse_rate=0.0073",
+          "output": "rmse=0.279937",
+          "metadata_lapse_rate_k_m": 0.0073,
+          "metadata_rmse_c": 0.27993699821047324,
+          "predict_baseline_rmse": "0.078978",
+          "predict_optimal_rmse": "0.039070",
+          "predict_optimal_lapse_rate": "0.0067"
+        },
+        {
+          "input": "lapse_rate=0.0074",
+          "output": "rmse=0.324250",
+          "metadata_lapse_rate_k_m": 0.0074,
+          "metadata_rmse_c": 0.3242501819349883,
+          "predict_baseline_rmse": "0.078978",
+          "predict_optimal_rmse": "0.039070",
+          "predict_optimal_lapse_rate": "0.0067"
+        },
+        {
+          "input": "lapse_rate=0.0075",
+          "output": "rmse=0.368903",
+          "metadata_lapse_rate_k_m": 0.0075,
+          "metadata_rmse_c": 0.36890262943353236,
+          "predict_baseline_rmse": "0.078978",
+          "predict_optimal_rmse": "0.039070",
+          "predict_optimal_lapse_rate": "0.0067"
+        },
+        {
+          "input": "lapse_rate=0.0076",
+          "output": "rmse=0.413873",
+          "metadata_lapse_rate_k_m": 0.007600000000000001,
+          "metadata_rmse_c": 0.4138730973741552,
+          "predict_baseline_rmse": "0.078978",
+          "predict_optimal_rmse": "0.039070",
+          "predict_optimal_lapse_rate": "0.0067"
+        },
+        {
+          "input": "lapse_rate=0.0077",
+          "output": "rmse=0.459150",
+          "metadata_lapse_rate_k_m": 0.0077,
+          "metadata_rmse_c": 0.4591496082179143,
+          "predict_baseline_rmse": "0.078978",
+          "predict_optimal_rmse": "0.039070",
+          "predict_optimal_lapse_rate": "0.0067"
+        },
+        {
+          "input": "lapse_rate=0.0078",
+          "output": "rmse=0.504725",
+          "metadata_lapse_rate_k_m": 0.0078,
+          "metadata_rmse_c": 0.5047254350525604,
+          "predict_baseline_rmse": "0.078978",
+          "predict_optimal_rmse": "0.039070",
+          "predict_optimal_lapse_rate": "0.0067"
+        },
+        {
+          "input": "lapse_rate=0.0079",
+          "output": "rmse=0.550597",
+          "metadata_lapse_rate_k_m": 0.0079,
+          "metadata_rmse_c": 0.5505970155158724,
+          "predict_baseline_rmse": "0.078978",
+          "predict_optimal_rmse": "0.039070",
+          "predict_optimal_lapse_rate": "0.0067"
+        },
+        {
+          "input": "lapse_rate=0.0080",
+          "output": "rmse=0.596763",
+          "metadata_lapse_rate_k_m": 0.008,
+          "metadata_rmse_c": 0.5967627949650606,
+          "predict_baseline_rmse": "0.078978",
+          "predict_optimal_rmse": "0.039070",
+          "predict_optimal_lapse_rate": "0.0067"
+        },
+        {
+          "input": "isa_cross_validation",
+          "output": "rmse=0.067056",
+          "metadata_lapse_rate_k_m": 0.0065,
+          "metadata_rmse_c": 0.06705591708649128,
+          "metadata_dataset": "isa_tables",
+          "metadata_num_points": 18,
+          "predict_baseline_rmse": "0.078978",
+          "predict_optimal_rmse": "0.039070",
+          "predict_optimal_lapse_rate": "0.0067"
+        }
+      ]
+    }
+  ]
+}

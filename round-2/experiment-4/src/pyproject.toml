@@ -1,0 +1,27 @@
+[project]
+name = "boiling_point_sensitivity_analysis"
+version = "1.0.0"
+description = "Boiling point prediction accuracy and lapse rate sensitivity analysis"
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+    "contourpy==1.4.0",
+    "cycler==0.12.1",
+    "fonttools==4.68.0",
+    "kiwisolver==1.5.1",
+    "loguru==0.8.0",
+    "matplotlib==3.11.2",
+    "numpy==2.5.5",
+    "packaging==26.3",
+    "pandas==3.1.1",
+    "pillow==13.0.0",
+    "pyparsing==3.3.3",
+    "python-dateutil==4.0.0",
+    "scipy==1.18.1",
+    "tzdata==2026.6",
+    "jsonschema==4.26.0",
+]
+
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
