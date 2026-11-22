@@ -1,0 +1,48 @@
+{
+  "metadata": {
+    "method_name": "boiling_point_non_hydrostatic_test",
+    "description": "Correlate boiling point prediction error with vertical wind turbulence to test the non-hydrostatic hypothesis.",
+    "parameters": {
+      "n_points": 5000,
+      "fs": 1.0,
+      "n_experiments": 12
+    }
+  },
+  "datasets": [
+    {
+      "dataset": "synthetic_meteorological_data",
+      "examples": [
+        {
+          "input": "Calculate Pearson correlation between boiling point prediction error and vertical wind velocity (run 1)",
+          "output": "Pearson correlation: -0.003542",
+          "predict_correlation": "-0.003542",
+          "predict_mean_t_error": "0.000054",
+          "predict_std_t_error": "0.009922",
+          "metadata_analysis": "non_hydrostatic_test",
+          "metadata_run": "1",
+          "metadata_seed": "0"
+        },
+        {
+          "input": "Calculate Pearson correlation between boiling point prediction error and vertical wind velocity (run 2)",
+          "output": "Pearson correlation: 0.019033",
+          "predict_correlation": "0.019033",
+          "predict_mean_t_error": "0.000110",
+          "predict_std_t_error": "0.010032",
+          "metadata_analysis": "non_hydrostatic_test",
+          "metadata_run": "2",
+          "metadata_seed": "1"
+        },
+        {
+          "input": "Calculate Pearson correlation between boiling point prediction error and vertical wind velocity (run 3)",
+          "output": "Pearson correlation: -0.000684",
+          "predict_correlation": "-0.000684",
+          "predict_mean_t_error": "0.000255",
+          "predict_std_t_error": "0.010063",
+          "metadata_analysis": "non_hydrostatic_test",
+          "metadata_run": "3",
+          "metadata_seed": "2"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,20 @@
+[project]
+name = "boiling_point_non_hydrostatic_test"
+version = "0.1.0"
+description = "Test boiling point non-hydrostatic signal by correlating boiling point prediction error with vertical wind turbulence"
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+    "numpy==2.2.6",
+    "pandas==2.3.3",
+    "scipy==1.16.3",
+    "loguru==0.7.3",
+    "matplotlib==3.10.7",
+]
+
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[tool.uv]
+dev-dependencies = []
