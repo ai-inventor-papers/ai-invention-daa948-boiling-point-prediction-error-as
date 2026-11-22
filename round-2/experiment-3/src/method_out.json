@@ -1,0 +1,3559 @@
+{
+  "experiment": "empirical_boiling_point_validation",
+  "constants": {
+    "P0_hPa": 1013.25,
+    "T0_K": 288.15,
+    "g_m_s2": 9.80665,
+    "M_kg_per_mol": 0.0289644,
+    "R_J_per_mol_K": 8.31447,
+    "L_K_per_m": 0.0065,
+    "ISA_exponent": 5.255781292873008,
+    "Antoine_A": 8.07131,
+    "Antoine_B": 1730.63,
+    "Antoine_C": 233.426
+  },
+  "reference_point_tests": [
+    {
+      "altitude_m": 0,
+      "expected_bp_c": 100.0,
+      "calculated_bp_c": 100.0,
+      "error_c": 0.0
+    },
+    {
+      "altitude_m": 1000,
+      "expected_bp_c": 96.7,
+      "calculated_bp_c": 96.68,
+      "error_c": 0.02
+    },
+    {
+      "altitude_m": 2000,
+      "expected_bp_c": 93.5,
+      "calculated_bp_c": 93.36,
+      "error_c": 0.14
+    },
+    {
+      "altitude_m": 3000,
+      "expected_bp_c": 90.4,
+      "calculated_bp_c": 90.03,
+      "error_c": 0.37
+    },
+    {
+      "altitude_m": 5000,
+      "expected_bp_c": 84.4,
+      "calculated_bp_c": 83.33,
+      "error_c": 1.07
+    }
+  ],
+  "monotonic_decrease_verified": true,
+  "validation_engineeringtoolbox": {
+    "n_points": 125,
+    "ISA_Antoine": {
+      "model": "ISA+Antoine",
+      "lapse_rate": 0.0065,
+      "metrics": {
+        "rmse": 0.6571754003763156,
+        "bias": 0.23485118553040035,
+        "mae": 0.4571774522475551,
+        "max_error": 1.8512105740984737,
+        "n_samples": 125
+      },
+      "details": [
+        {
+          "altitude_m": -305,
+          "observed_bp_c": 101.1,
+          "predicted_bp_c": 101.00522189130066,
+          "error_c": 0.09477810869933023
+        },
+        {
+          "altitude_m": -229,
+          "observed_bp_c": 100.8,
+          "predicted_bp_c": 100.75403021784439,
+          "error_c": 0.045969782155609096
+        },
+        {
+          "altitude_m": -152,
+          "observed_bp_c": 100.5,
+          "predicted_bp_c": 100.49948161375426,
+          "error_c": 0.0005183862457442956
+        },
+        {
+          "altitude_m": -76,
+          "observed_bp_c": 100.3,
+          "predicted_bp_c": 100.24818734531999,
+          "error_c": 0.051812654680006176
+        },
+        {
+          "altitude_m": 0,
+          "observed_bp_c": 100.0,
+          "predicted_bp_c": 99.9968415382395,
+          "error_c": 0.0031584617605062704
+        },
+        {
+          "altitude_m": 76,
+          "observed_bp_c": 99.7,
+          "predicted_bp_c": 99.74544380780623,
+          "error_c": -0.04544380780622248
+        },
+        {
+          "altitude_m": 152,
+          "observed_bp_c": 99.5,
+          "predicted_bp_c": 99.49399376773533,
+          "error_c": 0.006006232264667233
+        },
+        {
+          "altitude_m": 229,
+          "observed_bp_c": 99.2,
+          "predicted_bp_c": 99.23918143060985,
+          "error_c": -0.039181430609843915
+        },
+        {
+          "altitude_m": 305,
+          "observed_bp_c": 98.9,
+          "predicted_bp_c": 98.98762490492749,
+          "error_c": -0.08762490492748043
+        },
+        {
+          "altitude_m": 381,
+          "observed_bp_c": 98.6,
+          "predicted_bp_c": 98.73601489602225,
+          "error_c": -0.13601489602226025
+        },
+        {
+          "altitude_m": 457,
+          "observed_bp_c": 98.4,
+          "predicted_bp_c": 98.48435101117036,
+          "error_c": -0.08435101117035515
+        },
+        {
+          "altitude_m": 533,
+          "observed_bp_c": 98.1,
+          "predicted_bp_c": 98.23263285601706,
+          "error_c": -0.13263285601706798
+        },
+        {
+          "altitude_m": 610,
+          "observed_bp_c": 97.8,
+          "predicted_bp_c": 97.97754686812834,
+          "error_c": -0.17754686812834564
+        },
+        {
+          "altitude_m": 686,
+          "observed_bp_c": 97.6,
+          "predicted_bp_c": 97.72571825554797,
+          "error_c": -0.1257182555479801
+        },
+        {
+          "altitude_m": 762,
+          "observed_bp_c": 97.3,
+          "predicted_bp_c": 97.47383417444479,
+          "error_c": -0.1738341744447922
+        },
+        {
+          "altitude_m": 838,
+          "observed_bp_c": 97.1,
+          "predicted_bp_c": 97.2218942238107,
+          "error_c": -0.12189422381069903
+        },
+        {
+          "altitude_m": 914,
+          "observed_bp_c": 96.8,
+          "predicted_bp_c": 96.96989800095247,
+          "error_c": -0.16989800095247176
+        },
+        {
+          "altitude_m": 991,
+          "observed_bp_c": 96.5,
+          "predicted_bp_c": 96.71452823636776,
+          "error_c": -0.2145282363677552
+        },
+        {
+          "altitude_m": 1067,
+          "observed_bp_c": 96.3,
+          "predicted_bp_c": 96.46241750038126,
+          "error_c": -0.16241750038126668
+        },
+        {
+          "altitude_m": 1143,
+          "observed_bp_c": 96.0,
+          "predicted_bp_c": 96.21024926848918,
+          "error_c": -0.21024926848917858
+        },
+        {
+          "altitude_m": 1219,
+          "observed_bp_c": 95.7,
+          "predicted_bp_c": 95.95802313112148,
+          "error_c": -0.258023131121476
+        },
+        {
+          "altitude_m": 1295,
+          "observed_bp_c": 95.5,
+          "predicted_bp_c": 95.70573867696612,
+          "error_c": -0.2057386769661207
+        },
+        {
+          "altitude_m": 1372,
+          "observed_bp_c": 95.2,
+          "predicted_bp_c": 95.45007479458621,
+          "error_c": -0.2500747945862116
+        },
+        {
+          "altitude_m": 1448,
+          "observed_bp_c": 94.9,
+          "predicted_bp_c": 95.1976716848996,
+          "error_c": -0.2976716848995977
+        },
+        {
+          "altitude_m": 1524,
+          "observed_bp_c": 94.7,
+          "predicted_bp_c": 94.94520900842576,
+          "error_c": -0.24520900842576054
+        },
+        {
+          "altitude_m": 1600,
+          "observed_bp_c": 94.4,
+          "predicted_bp_c": 94.69268634674307,
+          "error_c": -0.2926863467430678
+        },
+        {
+          "altitude_m": 1676,
+          "observed_bp_c": 94.2,
+          "predicted_bp_c": 94.44010327962872,
+          "error_c": -0.24010327962871258
+        },
+        {
+          "altitude_m": 1753,
+          "observed_bp_c": 93.9,
+          "predicted_bp_c": 94.18413471593544,
+          "error_c": -0.28413471593543704
+        },
+        {
+          "altitude_m": 1829,
+          "observed_bp_c": 93.6,
+          "predicted_bp_c": 93.93142876125097,
+          "error_c": -0.33142876125097587
+        },
+        {
+          "altitude_m": 1905,
+          "observed_bp_c": 93.4,
+          "predicted_bp_c": 93.67866112392278,
+          "error_c": -0.27866112392277387
+        },
+        {
+          "altitude_m": 1981,
+          "observed_bp_c": 93.1,
+          "predicted_bp_c": 93.4258313763761,
+          "error_c": -0.32583137637610093
+        },
+        {
+          "altitude_m": 2057,
+          "observed_bp_c": 92.9,
+          "predicted_bp_c": 93.17293908917293,
+          "error_c": -0.2729390891729224
+        },
+        {
+          "altitude_m": 2134,
+          "observed_bp_c": 92.6,
+          "predicted_bp_c": 92.9166550506701,
+          "error_c": -0.31665505067010713
+        },
+        {
+          "altitude_m": 2210,
+          "observed_bp_c": 92.4,
+          "predicted_bp_c": 92.66363555116311,
+          "error_c": -0.2636355511631052
+        },
+        {
+          "altitude_m": 2286,
+          "observed_bp_c": 92.1,
+          "predicted_bp_c": 92.4105522066427,
+          "error_c": -0.3105522066427113
+        },
+        {
+          "altitude_m": 2362,
+          "observed_bp_c": 91.8,
+          "predicted_bp_c": 92.15740458006587,
+          "error_c": -0.35740458006587517
+        },
+        {
+          "altitude_m": 2438,
+          "observed_bp_c": 91.6,
+          "predicted_bp_c": 91.90419223246244,
+          "error_c": -0.30419223246244087
+        },
+        {
+          "altitude_m": 2515,
+          "observed_bp_c": 91.3,
+          "predicted_bp_c": 91.64758168779514,
+          "error_c": -0.34758168779514165
+        },
+        {
+          "altitude_m": 2591,
+          "observed_bp_c": 91.1,
+          "predicted_bp_c": 91.39423770726967,
+          "error_c": -0.2942377072696729
+        },
+        {
+          "altitude_m": 2667,
+          "observed_bp_c": 90.8,
+          "predicted_bp_c": 91.14082767124302,
+          "error_c": -0.3408276712430194
+        },
+        {
+          "altitude_m": 2743,
+          "observed_bp_c": 90.6,
+          "predicted_bp_c": 90.88735113287612,
+          "error_c": -0.28735113287612535
+        },
+        {
+          "altitude_m": 2819,
+          "observed_bp_c": 90.3,
+          "predicted_bp_c": 90.6338076433351,
+          "error_c": -0.33380764333510626
+        },
+        {
+          "altitude_m": 2896,
+          "observed_bp_c": 90.1,
+          "predicted_bp_c": 90.37685931507013,
+          "error_c": -0.2768593150701406
+        },
+        {
+          "altitude_m": 2972,
+          "observed_bp_c": 89.8,
+          "predicted_bp_c": 90.1231796727767,
+          "error_c": -0.32317967277670334
+        },
+        {
+          "altitude_m": 3048,
+          "observed_bp_c": 89.6,
+          "predicted_bp_c": 89.86943171470256,
+          "error_c": -0.2694317147025629
+        },
+        {
+          "altitude_m": 3124,
+          "observed_bp_c": 89.3,
+          "predicted_bp_c": 89.61561498386953,
+          "error_c": -0.315614983869537
+        },
+        {
+          "altitude_m": 3200,
+          "observed_bp_c": 89.1,
+          "predicted_bp_c": 89.3617290212348,
+          "error_c": -0.2617290212347996
+        },
+        {
+          "altitude_m": 3277,
+          "observed_bp_c": 88.8,
+          "predicted_bp_c": 89.10443137728396,
+          "error_c": -0.3044313772839615
+        },
+        {
+          "altitude_m": 3353,
+          "observed_bp_c": 88.6,
+          "predicted_bp_c": 88.85040463938208,
+          "error_c": -0.2504046393820829
+        },
+        {
+          "altitude_m": 3429,
+          "observed_bp_c": 88.3,
+          "predicted_bp_c": 88.59630727388026,
+          "error_c": -0.29630727388025946
+        },
+        {
+          "altitude_m": 3505,
+          "observed_bp_c": 88.1,
+          "predicted_bp_c": 88.34213881330408,
+          "error_c": -0.2421388133040807
+        },
+        {
+          "altitude_m": 3581,
+          "observed_bp_c": 87.8,
+          "predicted_bp_c": 88.08789878804066,
+          "error_c": -0.28789878804066404
+        },
+        {
+          "altitude_m": 3658,
+          "observed_bp_c": 87.6,
+          "predicted_bp_c": 87.8302400327089,
+          "error_c": -0.23024003270890603
+        },
+        {
+          "altitude_m": 3734,
+          "observed_bp_c": 87.3,
+          "predicted_bp_c": 87.57585450335358,
+          "error_c": -0.2758545033535853
+        },
+        {
+          "altitude_m": 3810,
+          "observed_bp_c": 87.1,
+          "predicted_bp_c": 87.32139598121557,
+          "error_c": -0.22139598121557924
+        },
+        {
+          "altitude_m": 3886,
+          "observed_bp_c": 86.8,
+          "predicted_bp_c": 87.06686398795017,
+          "error_c": -0.26686398795017396
+        },
+        {
+          "altitude_m": 3962,
+          "observed_bp_c": 86.6,
+          "predicted_bp_c": 86.812258042998,
+          "error_c": -0.21225804299800188
+        },
+        {
+          "altitude_m": 4037,
+          "observed_bp_c": 86.4,
+          "predicted_bp_c": 86.56092920653418,
+          "error_c": -0.16092920653417764
+        },
+        {
+          "altitude_m": 4115,
+          "observed_bp_c": 86.1,
+          "predicted_bp_c": 86.29946981966953,
+          "error_c": -0.19946981966953103
+        },
+        {
+          "altitude_m": 4191,
+          "observed_bp_c": 85.9,
+          "predicted_bp_c": 86.04463811846898,
+          "error_c": -0.14463811846897556
+        },
+        {
+          "altitude_m": 4267,
+          "observed_bp_c": 85.6,
+          "predicted_bp_c": 85.78973051442807,
+          "error_c": -0.18973051442807787
+        },
+        {
+          "altitude_m": 4343,
+          "observed_bp_c": 85.4,
+          "predicted_bp_c": 85.53474651564744,
+          "error_c": -0.13474651564743567
+        },
+        {
+          "altitude_m": 4420,
+          "observed_bp_c": 85.1,
+          "predicted_bp_c": 85.27632904888202,
+          "error_c": -0.1763290488820246
+        },
+        {
+          "altitude_m": 4496,
+          "observed_bp_c": 84.9,
+          "predicted_bp_c": 85.0211897541136,
+          "error_c": -0.12118975411360111
+        },
+        {
+          "altitude_m": 4572,
+          "observed_bp_c": 84.7,
+          "predicted_bp_c": 84.76597256839642,
+          "error_c": -0.0659725683964183
+        },
+        {
+          "altitude_m": 4648,
+          "observed_bp_c": 84.4,
+          "predicted_bp_c": 84.51067699045706,
+          "error_c": -0.11067699045705126
+        },
+        {
+          "altitude_m": 4724,
+          "observed_bp_c": 84.2,
+          "predicted_bp_c": 84.25530251664412,
+          "error_c": -0.05530251664411878
+        },
+        {
+          "altitude_m": 4801,
+          "observed_bp_c": 83.9,
+          "predicted_bp_c": 83.99648687417812,
+          "error_c": -0.09648687417811175
+        },
+        {
+          "altitude_m": 4877,
+          "observed_bp_c": 83.7,
+          "predicted_bp_c": 83.74095203321428,
+          "error_c": -0.04095203321428187
+        },
+        {
+          "altitude_m": 4953,
+          "observed_bp_c": 83.5,
+          "predicted_bp_c": 83.48533676424472,
+          "error_c": 0.014663235755278947
+        },
+        {
+          "altitude_m": 5029,
+          "observed_bp_c": 83.2,
+          "predicted_bp_c": 83.22964055390116,
+          "error_c": -0.02964055390116016
+        },
+        {
+          "altitude_m": 5105,
+          "observed_bp_c": 83.0,
+          "predicted_bp_c": 82.97386288635022,
+          "error_c": 0.02613711364978144
+        },
+        {
+          "altitude_m": 5182,
+          "observed_bp_c": 82.7,
+          "predicted_bp_c": 82.71463612028799,
+          "error_c": -0.014636120287988774
+        },
+        {
+          "altitude_m": 5258,
+          "observed_bp_c": 82.5,
+          "predicted_bp_c": 82.45869289190892,
+          "error_c": 0.041307108091075406
+        },
+        {
+          "altitude_m": 5334,
+          "observed_bp_c": 82.3,
+          "predicted_bp_c": 82.20266663694645,
+          "error_c": 0.09733336305355067
+        },
+        {
+          "altitude_m": 5410,
+          "observed_bp_c": 82.0,
+          "predicted_bp_c": 81.94655682949116,
+          "error_c": 0.053443170508842286
+        },
+        {
+          "altitude_m": 5486,
+          "observed_bp_c": 81.8,
+          "predicted_bp_c": 81.69036294107696,
+          "error_c": 0.10963705892304176
+        },
+        {
+          "altitude_m": 5563,
+          "observed_bp_c": 81.6,
+          "predicted_bp_c": 81.43071178876374,
+          "error_c": 0.1692882112362497
+        },
+        {
+          "altitude_m": 5639,
+          "observed_bp_c": 81.3,
+          "predicted_bp_c": 81.17434701880558,
+          "error_c": 0.12565298119442048
+        },
+        {
+          "altitude_m": 5715,
+          "observed_bp_c": 81.1,
+          "predicted_bp_c": 80.91789655988697,
+          "error_c": 0.18210344011302482
+        },
+        {
+          "altitude_m": 5791,
+          "observed_bp_c": 80.9,
+          "predicted_bp_c": 80.66135987309025,
+          "error_c": 0.23864012690975756
+        },
+        {
+          "altitude_m": 5867,
+          "observed_bp_c": 80.6,
+          "predicted_bp_c": 80.40473641684514,
+          "error_c": 0.19526358315485481
+        },
+        {
+          "altitude_m": 5944,
+          "observed_bp_c": 80.4,
+          "predicted_bp_c": 80.14464728918676,
+          "error_c": 0.2553527108132414
+        },
+        {
+          "altitude_m": 6020,
+          "observed_bp_c": 80.2,
+          "predicted_bp_c": 79.88784749890704,
+          "error_c": 0.3121525010929673
+        },
+        {
+          "altitude_m": 6096,
+          "observed_bp_c": 79.9,
+          "predicted_bp_c": 79.630959291105,
+          "error_c": 0.2690407088950053
+        },
+        {
+          "altitude_m": 6172,
+          "observed_bp_c": 79.7,
+          "predicted_bp_c": 79.37398211336574,
+          "error_c": 0.32601788663426134
+        },
+        {
+          "altitude_m": 6248,
+          "observed_bp_c": 79.5,
+          "predicted_bp_c": 79.11691541052153,
+          "error_c": 0.38308458947847157
+        },
+        {
+          "altitude_m": 6325,
+          "observed_bp_c": 79.3,
+          "predicted_bp_c": 78.85637437975663,
+          "error_c": 0.4436256202433668
+        },
+        {
+          "altitude_m": 6401,
+          "observed_bp_c": 79.0,
+          "predicted_bp_c": 78.59912575365252,
+          "error_c": 0.4008742463474846
+        },
+        {
+          "altitude_m": 6477,
+          "observed_bp_c": 78.8,
+          "predicted_bp_c": 78.34178591278169,
+          "error_c": 0.4582140872183089
+        },
+        {
+          "altitude_m": 6553,
+          "observed_bp_c": 78.6,
+          "predicted_bp_c": 78.08435429071943,
+          "error_c": 0.5156457092805624
+        },
+        {
+          "altitude_m": 6629,
+          "observed_bp_c": 78.3,
+          "predicted_bp_c": 77.82683031818323,
+          "error_c": 0.47316968181677055
+        },
+        {
+          "altitude_m": 6706,
+          "observed_bp_c": 78.1,
+          "predicted_bp_c": 77.56582310507554,
+          "error_c": 0.5341768949244567
+        },
+        {
+          "altitude_m": 6782,
+          "observed_bp_c": 77.9,
+          "predicted_bp_c": 77.30811147812403,
+          "error_c": 0.5918885218759726
+        },
+        {
+          "altitude_m": 6858,
+          "observed_bp_c": 77.7,
+          "predicted_bp_c": 77.05030576786112,
+          "error_c": 0.6496942321388843
+        },
+        {
+          "altitude_m": 6934,
+          "observed_bp_c": 77.4,
+          "predicted_bp_c": 76.79240539331545,
+          "error_c": 0.6075946066845574
+        },
+        {
+          "altitude_m": 7010,
+          "observed_bp_c": 77.2,
+          "predicted_bp_c": 76.53440977054743,
+          "error_c": 0.665590229452576
+        },
+        {
+          "altitude_m": 7087,
+          "observed_bp_c": 77.0,
+          "predicted_bp_c": 76.2729217309651,
+          "error_c": 0.7270782690349051
+        },
+        {
+          "altitude_m": 7163,
+          "observed_bp_c": 76.8,
+          "predicted_bp_c": 76.01473257525049,
+          "error_c": 0.785267424749506
+        },
+        {
+          "altitude_m": 7239,
+          "observed_bp_c": 76.5,
+          "predicted_bp_c": 75.75644639363583,
+          "error_c": 0.7435536063641734
+        },
+        {
+          "altitude_m": 7315,
+          "observed_bp_c": 76.3,
+          "predicted_bp_c": 75.49806259003981,
+          "error_c": 0.801937409960189
+        },
+        {
+          "altitude_m": 7391,
+          "observed_bp_c": 76.1,
+          "predicted_bp_c": 75.23958056529762,
+          "error_c": 0.8604194347023792
+        },
+        {
+          "altitude_m": 7468,
+          "observed_bp_c": 75.9,
+          "predicted_bp_c": 74.97759667614241,
+          "error_c": 0.9224033238575942
+        },
+        {
+          "altitude_m": 7544,
+          "observed_bp_c": 75.6,
+          "predicted_bp_c": 74.71891508683558,
+          "error_c": 0.8810849131644147
+        },
+        {
+          "altitude_m": 7620,
+          "observed_bp_c": 75.4,
+          "predicted_bp_c": 74.46013345211804,
+          "error_c": 0.9398665478819623
+        },
+        {
+          "altitude_m": 7696,
+          "observed_bp_c": 75.2,
+          "predicted_bp_c": 74.20125116020824,
+          "error_c": 0.9987488397917588
+        },
+        {
+          "altitude_m": 7772,
+          "observed_bp_c": 75.0,
+          "predicted_bp_c": 73.94226759611945,
+          "error_c": 1.05773240388055
+        },
+        {
+          "altitude_m": 7849,
+          "observed_bp_c": 74.8,
+          "predicted_bp_c": 73.67977244056897,
+          "error_c": 1.1202275594310294
+        },
+        {
+          "altitude_m": 7925,
+          "observed_bp_c": 74.5,
+          "predicted_bp_c": 73.42058312121935,
+          "error_c": 1.0794168787806484
+        },
+        {
+          "altitude_m": 8001,
+          "observed_bp_c": 74.3,
+          "predicted_bp_c": 73.16129065700716,
+          "error_c": 1.1387093429928399
+        },
+        {
+          "altitude_m": 8077,
+          "observed_bp_c": 74.1,
+          "predicted_bp_c": 72.9018944198304,
+          "error_c": 1.198105580169596
+        },
+        {
+          "altitude_m": 8153,
+          "observed_bp_c": 73.9,
+          "predicted_bp_c": 72.64239377825425,
+          "error_c": 1.2576062217457604
+        },
+        {
+          "altitude_m": 8230,
+          "observed_bp_c": 73.7,
+          "predicted_bp_c": 72.379371530274,
+          "error_c": 1.3206284697260031
+        },
+        {
+          "altitude_m": 8306,
+          "observed_bp_c": 73.5,
+          "predicted_bp_c": 72.11965877737367,
+          "error_c": 1.3803412226263276
+        },
+        {
+          "altitude_m": 8382,
+          "observed_bp_c": 73.2,
+          "predicted_bp_c": 71.85983969704762,
+          "error_c": 1.340160302952384
+        },
+        {
+          "altitude_m": 8458,
+          "observed_bp_c": 73.0,
+          "predicted_bp_c": 71.59991364422189,
+          "error_c": 1.4000863557781145
+        },
+        {
+          "altitude_m": 8534,
+          "observed_bp_c": 72.8,
+          "predicted_bp_c": 71.33987997035638,
+          "error_c": 1.460120029643619
+        },
+        {
+          "altitude_m": 8611,
+          "observed_bp_c": 72.6,
+          "predicted_bp_c": 71.0763143784389,
+          "error_c": 1.5236856215610999
+        },
+        {
+          "altitude_m": 8687,
+          "observed_bp_c": 72.4,
+          "predicted_bp_c": 70.81606206521377,
+          "error_c": 1.5839379347862348
+        },
+        {
+          "altitude_m": 8763,
+          "observed_bp_c": 72.2,
+          "predicted_bp_c": 70.55570015555855,
+          "error_c": 1.6442998444414485
+        },
+        {
+          "altitude_m": 8839,
+          "observed_bp_c": 72.0,
+          "predicted_bp_c": 70.29522798674338,
+          "error_c": 1.7047720132566155
+        },
+        {
+          "altitude_m": 8916,
+          "observed_bp_c": 71.7,
+          "predicted_bp_c": 70.0312154251385,
+          "error_c": 1.6687845748615047
+        },
+        {
+          "altitude_m": 8992,
+          "observed_bp_c": 71.5,
+          "predicted_bp_c": 69.7705192625142,
+          "error_c": 1.729480737485801
+        },
+        {
+          "altitude_m": 9068,
+          "observed_bp_c": 71.3,
+          "predicted_bp_c": 69.50971082189534,
+          "error_c": 1.7902891781046577
+        },
+        {
+          "altitude_m": 9144,
+          "observed_bp_c": 71.1,
+          "predicted_bp_c": 69.24878942590152,
+          "error_c": 1.8512105740984737
+        }
+      ]
+    },
+    "Baseline": {
+      "model": "Baseline",
+      "lapse_rate": 0.0065,
+      "metrics": {
+        "rmse": 0.839985768798841,
+        "bias": -0.7496586967218387,
+        "mae": 0.7527821288802848,
+        "max_error": 1.203284523359443,
+        "n_samples": 125
+      },
+      "details": [
+        {
+          "altitude_m": -305,
+          "observed_bp_c": 101.1,
+          "predicted_bp_c": 101.00869731978418,
+          "error_c": 0.09130268021581855
+        },
+        {
+          "altitude_m": -229,
+          "observed_bp_c": 100.8,
+          "predicted_bp_c": 100.75598869684018,
+          "error_c": 0.04401130315982016
+        },
+        {
+          "altitude_m": -152,
+          "observed_bp_c": 100.5,
+          "predicted_bp_c": 100.50034414123837,
+          "error_c": -0.0003441412383722309
+        },
+        {
+          "altitude_m": -76,
+          "observed_bp_c": 100.3,
+          "predicted_bp_c": 100.24840289804376,
+          "error_c": 0.051597101956232905
+        },
+        {
+          "altitude_m": 0,
+          "observed_bp_c": 100.0,
+          "predicted_bp_c": 99.9968415382395,
+          "error_c": 0.0031584617605062704
+        },
+        {
+          "altitude_m": 76,
+          "observed_bp_c": 99.7,
+          "predicted_bp_c": 99.74565920327615,
+          "error_c": -0.04565920327614492
+        },
+        {
+          "altitude_m": 152,
+          "observed_bp_c": 99.5,
+          "predicted_bp_c": 99.4948550371895,
+          "error_c": 0.005144962810504694
+        },
+        {
+          "altitude_m": 229,
+          "observed_bp_c": 99.2,
+          "predicted_bp_c": 99.24113560764403,
+          "error_c": -0.0411356076440228
+        },
+        {
+          "altitude_m": 305,
+          "observed_bp_c": 98.9,
+          "predicted_bp_c": 98.99109016953298,
+          "error_c": -0.09109016953297555
+        },
+        {
+          "altitude_m": 381,
+          "observed_bp_c": 98.6,
+          "predicted_bp_c": 98.74142033667562,
+          "error_c": -0.1414203366756226
+        },
+        {
+          "altitude_m": 457,
+          "observed_bp_c": 98.4,
+          "predicted_bp_c": 98.49212526338505,
+          "error_c": -0.0921252633850429
+        },
+        {
+          "altitude_m": 533,
+          "observed_bp_c": 98.1,
+          "predicted_bp_c": 98.24320410651143,
+          "error_c": -0.14320410651143334
+        },
+        {
+          "altitude_m": 610,
+          "observed_bp_c": 97.8,
+          "predicted_bp_c": 97.99138813893398,
+          "error_c": -0.19138813893398776
+        },
+        {
+          "altitude_m": 686,
+          "observed_bp_c": 97.6,
+          "predicted_bp_c": 97.74321718783341,
+          "error_c": -0.14321718783341453
+        },
+        {
+          "altitude_m": 762,
+          "observed_bp_c": 97.3,
+          "predicted_bp_c": 97.49541762784827,
+          "error_c": -0.195417627848272
+        },
+        {
+          "altitude_m": 838,
+          "observed_bp_c": 97.1,
+          "predicted_bp_c": 97.24798862591433,
+          "error_c": -0.14798862591433704
+        },
+        {
+          "altitude_m": 914,
+          "observed_bp_c": 96.8,
+          "predicted_bp_c": 97.00092935145693,
+          "error_c": -0.20092935145693502
+        },
+        {
+          "altitude_m": 991,
+          "observed_bp_c": 96.5,
+          "predicted_bp_c": 96.75099550560185,
+          "error_c": -0.2509955056018498
+        },
+        {
+          "altitude_m": 1067,
+          "observed_bp_c": 96.3,
+          "predicted_bp_c": 96.5046780418698,
+          "error_c": -0.20467804186979777
+        },
+        {
+          "altitude_m": 1143,
+          "observed_bp_c": 96.0,
+          "predicted_bp_c": 96.25872781792111,
+          "error_c": -0.25872781792111255
+        },
+        {
+          "altitude_m": 1219,
+          "observed_bp_c": 95.7,
+          "predicted_bp_c": 96.01314401307957,
+          "error_c": -0.3131440130795653
+        },
+        {
+          "altitude_m": 1295,
+          "observed_bp_c": 95.5,
+          "predicted_bp_c": 95.76792580911228,
+          "error_c": -0.2679258091122847
+        },
+        {
+          "altitude_m": 1372,
+          "observed_bp_c": 95.2,
+          "predicted_bp_c": 95.5198530625479,
+          "error_c": -0.31985306254789236
+        },
+        {
+          "altitude_m": 1448,
+          "observed_bp_c": 94.9,
+          "predicted_bp_c": 95.2753683990502,
+          "error_c": -0.3753683990501884
+        },
+        {
+          "altitude_m": 1524,
+          "observed_bp_c": 94.7,
+          "predicted_bp_c": 95.0312468856443,
+          "error_c": -0.3312468856442905
+        },
+        {
+          "altitude_m": 1600,
+          "observed_bp_c": 94.4,
+          "predicted_bp_c": 94.78748771381254,
+          "error_c": -0.3874877138125328
+        },
+        {
+          "altitude_m": 1676,
+          "observed_bp_c": 94.2,
+          "predicted_bp_c": 94.5440900774355,
+          "error_c": -0.3440900774354958
+        },
+        {
+          "altitude_m": 1753,
+          "observed_bp_c": 93.9,
+          "predicted_bp_c": 94.29785771964953,
+          "error_c": -0.3978577196495223
+        },
+        {
+          "altitude_m": 1829,
+          "observed_bp_c": 93.6,
+          "predicted_bp_c": 94.05518547596807,
+          "error_c": -0.45518547596807934
+        },
+        {
+          "altitude_m": 1905,
+          "observed_bp_c": 93.4,
+          "predicted_bp_c": 93.81287235318752,
+          "error_c": -0.4128723531875096
+        },
+        {
+          "altitude_m": 1981,
+          "observed_bp_c": 93.1,
+          "predicted_bp_c": 93.57091755472442,
+          "error_c": -0.47091755472442287
+        },
+        {
+          "altitude_m": 2057,
+          "observed_bp_c": 92.9,
+          "predicted_bp_c": 93.3293202863494,
+          "error_c": -0.42932028634939456
+        },
+        {
+          "altitude_m": 2134,
+          "observed_bp_c": 92.6,
+          "predicted_bp_c": 93.08490791298539,
+          "error_c": -0.48490791298539193
+        },
+        {
+          "altitude_m": 2210,
+          "observed_bp_c": 92.4,
+          "predicted_bp_c": 92.84402800975477,
+          "error_c": -0.44402800975476
+        },
+        {
+          "altitude_m": 2286,
+          "observed_bp_c": 92.1,
+          "predicted_bp_c": 92.60350325762022,
+          "error_c": -0.5035032576202241
+        },
+        {
+          "altitude_m": 2362,
+          "observed_bp_c": 91.8,
+          "predicted_bp_c": 92.363332871713,
+          "error_c": -0.5633328717130013
+        },
+        {
+          "altitude_m": 2438,
+          "observed_bp_c": 91.6,
+          "predicted_bp_c": 92.12351606947556,
+          "error_c": -0.5235160694755621
+        },
+        {
+          "altitude_m": 2515,
+          "observed_bp_c": 91.3,
+          "predicted_bp_c": 91.8809035766962,
+          "error_c": -0.5809035766962012
+        },
+        {
+          "altitude_m": 2591,
+          "observed_bp_c": 91.1,
+          "predicted_bp_c": 91.64179623006544,
+          "error_c": -0.5417962300654438
+        },
+        {
+          "altitude_m": 2667,
+          "observed_bp_c": 90.8,
+          "predicted_bp_c": 91.4030401230217,
+          "error_c": -0.6030401230216995
+        },
+        {
+          "altitude_m": 2743,
+          "observed_bp_c": 90.6,
+          "predicted_bp_c": 91.16463448219667,
+          "error_c": -0.5646344821966807
+        },
+        {
+          "altitude_m": 2819,
+          "observed_bp_c": 90.3,
+          "predicted_bp_c": 90.9265785364907,
+          "error_c": -0.6265785364906975
+        },
+        {
+          "altitude_m": 2896,
+          "observed_bp_c": 90.1,
+          "predicted_bp_c": 90.68574611546592,
+          "error_c": -0.5857461154659234
+        },
+        {
+          "altitude_m": 2972,
+          "observed_bp_c": 89.8,
+          "predicted_bp_c": 90.44839183168182,
+          "error_c": -0.6483918316818205
+        },
+        {
+          "altitude_m": 3048,
+          "observed_bp_c": 89.6,
+          "predicted_bp_c": 90.21138493320541,
+          "error_c": -0.6113849332054144
+        },
+        {
+          "altitude_m": 3124,
+          "observed_bp_c": 89.3,
+          "predicted_bp_c": 89.97472465795892,
+          "error_c": -0.6747246579589188
+        },
+        {
+          "altitude_m": 3200,
+          "observed_bp_c": 89.1,
+          "predicted_bp_c": 89.73841024609175,
+          "error_c": -0.6384102460917518
+        },
+        {
+          "altitude_m": 3277,
+          "observed_bp_c": 88.8,
+          "predicted_bp_c": 89.49933837760699,
+          "error_c": -0.6993383776069919
+        },
+        {
+          "altitude_m": 3353,
+          "observed_bp_c": 88.6,
+          "predicted_bp_c": 89.26371794771632,
+          "error_c": -0.6637179477163215
+        },
+        {
+          "altitude_m": 3429,
+          "observed_bp_c": 88.3,
+          "predicted_bp_c": 89.02844110504094,
+          "error_c": -0.7284411050409432
+        },
+        {
+          "altitude_m": 3505,
+          "observed_bp_c": 88.1,
+          "predicted_bp_c": 88.79350709858818,
+          "error_c": -0.693507098588185
+        },
+        {
+          "altitude_m": 3581,
+          "observed_bp_c": 87.8,
+          "predicted_bp_c": 88.55891517955234,
+          "error_c": -0.7589151795523463
+        },
+        {
+          "altitude_m": 3658,
+          "observed_bp_c": 87.6,
+          "predicted_bp_c": 88.32158462873508,
+          "error_c": -0.7215846287350871
+        },
+        {
+          "altitude_m": 3734,
+          "observed_bp_c": 87.3,
+          "predicted_bp_c": 88.08767912340221,
+          "error_c": -0.7876791234022136
+        },
+        {
+          "altitude_m": 3810,
+          "observed_bp_c": 87.1,
+          "predicted_bp_c": 87.85411346235918,
+          "error_c": -0.7541134623591859
+        },
+        {
+          "altitude_m": 3886,
+          "observed_bp_c": 86.8,
+          "predicted_bp_c": 87.62088690549751,
+          "error_c": -0.8208869054975168
+        },
+        {
+          "altitude_m": 3962,
+          "observed_bp_c": 86.6,
+          "predicted_bp_c": 87.38799871485622,
+          "error_c": -0.7879987148562293
+        },
+        {
+          "altitude_m": 4037,
+          "observed_bp_c": 86.4,
+          "predicted_bp_c": 87.15850584153804,
+          "error_c": -0.7585058415380388
+        },
+        {
+          "altitude_m": 4115,
+          "observed_bp_c": 86.1,
+          "predicted_bp_c": 86.92018129045493,
+          "error_c": -0.8201812904549399
+        },
+        {
+          "altitude_m": 4191,
+          "observed_bp_c": 85.9,
+          "predicted_bp_c": 86.68830821042604,
+          "error_c": -0.7883082104260382
+        },
+        {
+          "altitude_m": 4267,
+          "observed_bp_c": 85.6,
+          "predicted_bp_c": 86.45677055650941,
+          "error_c": -0.8567705565094172
+        },
+        {
+          "altitude_m": 4343,
+          "observed_bp_c": 85.4,
+          "predicted_bp_c": 86.22556760139338,
+          "error_c": -0.8255676013933737
+        },
+        {
+          "altitude_m": 4420,
+          "observed_bp_c": 85.1,
+          "predicted_bp_c": 85.99166309297874,
+          "error_c": -0.8916630929787459
+        },
+        {
+          "altitude_m": 4496,
+          "observed_bp_c": 84.9,
+          "predicted_bp_c": 85.76113174198957,
+          "error_c": -0.861131741989567
+        },
+        {
+          "altitude_m": 4572,
+          "observed_bp_c": 84.7,
+          "predicted_bp_c": 85.53093291096889,
+          "error_c": -0.8309329109688832
+        },
+        {
+          "altitude_m": 4648,
+          "observed_bp_c": 84.4,
+          "predicted_bp_c": 85.30106588099176,
+          "error_c": -0.9010658809917516
+        },
+        {
+          "altitude_m": 4724,
+          "observed_bp_c": 84.2,
+          "predicted_bp_c": 85.07152993520413,
+          "error_c": -0.8715299352041228
+        },
+        {
+          "altitude_m": 4801,
+          "observed_bp_c": 83.9,
+          "predicted_bp_c": 84.83931069485931,
+          "error_c": -0.9393106948593015
+        },
+        {
+          "altitude_m": 4877,
+          "observed_bp_c": 83.7,
+          "predicted_bp_c": 84.61043910798111,
+          "error_c": -0.9104391079811052
+        },
+        {
+          "altitude_m": 4953,
+          "observed_bp_c": 83.5,
+          "predicted_bp_c": 84.38189645774406,
+          "error_c": -0.8818964577440624
+        },
+        {
+          "altitude_m": 5029,
+          "observed_bp_c": 83.2,
+          "predicted_bp_c": 84.15368203553066,
+          "error_c": -0.9536820355306617
+        },
+        {
+          "altitude_m": 5105,
+          "observed_bp_c": 83.0,
+          "predicted_bp_c": 83.92579513475738,
+          "error_c": -0.9257951347573794
+        },
+        {
+          "altitude_m": 5182,
+          "observed_bp_c": 82.7,
+          "predicted_bp_c": 83.69524301449434,
+          "error_c": -0.9952430144943349
+        },
+        {
+          "altitude_m": 5258,
+          "observed_bp_c": 82.5,
+          "predicted_bp_c": 83.46801333125399,
+          "error_c": -0.9680133312539851
+        },
+        {
+          "altitude_m": 5334,
+          "observed_bp_c": 82.3,
+          "predicted_bp_c": 83.24110905262955,
+          "error_c": -0.9411090526295567
+        },
+        {
+          "altitude_m": 5410,
+          "observed_bp_c": 82.0,
+          "predicted_bp_c": 83.01452948012707,
+          "error_c": -1.0145294801270666
+        },
+        {
+          "altitude_m": 5486,
+          "observed_bp_c": 81.8,
+          "predicted_bp_c": 82.78827391724991,
+          "error_c": -0.9882739172499129
+        },
+        {
+          "altitude_m": 5563,
+          "observed_bp_c": 81.6,
+          "predicted_bp_c": 82.55937102871991,
+          "error_c": -0.9593710287199144
+        },
+        {
+          "altitude_m": 5639,
+          "observed_bp_c": 81.3,
+          "predicted_bp_c": 82.33376564398657,
+          "error_c": -1.0337656439865697
+        },
+        {
+          "altitude_m": 5715,
+          "observed_bp_c": 81.1,
+          "predicted_bp_c": 82.10848218223128,
+          "error_c": -1.0084821822312904
+        },
+        {
+          "altitude_m": 5791,
+          "observed_bp_c": 80.9,
+          "predicted_bp_c": 81.88351995490325,
+          "error_c": -0.9835199549032438
+        },
+        {
+          "altitude_m": 5867,
+          "observed_bp_c": 80.6,
+          "predicted_bp_c": 81.65887827541388,
+          "error_c": -1.058878275413889
+        },
+        {
+          "altitude_m": 5944,
+          "observed_bp_c": 80.4,
+          "predicted_bp_c": 81.43160698528055,
+          "error_c": -1.031606985280547
+        },
+        {
+          "altitude_m": 6020,
+          "observed_bp_c": 80.2,
+          "predicted_bp_c": 81.20760854471871,
+          "error_c": -1.0076085447187069
+        },
+        {
+          "altitude_m": 6096,
+          "observed_bp_c": 79.9,
+          "predicted_bp_c": 80.98392859498921,
+          "error_c": -1.083928594989203
+        },
+        {
+          "altitude_m": 6172,
+          "observed_bp_c": 79.7,
+          "predicted_bp_c": 80.76056645730807,
+          "error_c": -1.0605664573080702
+        },
+        {
+          "altitude_m": 6248,
+          "observed_bp_c": 79.5,
+          "predicted_bp_c": 80.53752145481911,
+          "error_c": -1.0375214548191138
+        },
+        {
+          "altitude_m": 6325,
+          "observed_bp_c": 79.3,
+          "predicted_bp_c": 80.31186438023025,
+          "error_c": -1.01186438023025
+        },
+        {
+          "altitude_m": 6401,
+          "observed_bp_c": 79.0,
+          "predicted_bp_c": 80.08945577585001,
+          "error_c": -1.0894557758500127
+        },
+        {
+          "altitude_m": 6477,
+          "observed_bp_c": 78.8,
+          "predicted_bp_c": 79.86736227877196,
+          "error_c": -1.0673622787719665
+        },
+        {
+          "altitude_m": 6553,
+          "observed_bp_c": 78.6,
+          "predicted_bp_c": 79.64558321980667,
+          "error_c": -1.045583219806673
+        },
+        {
+          "altitude_m": 6629,
+          "observed_bp_c": 78.3,
+          "predicted_bp_c": 79.42411793165815,
+          "error_c": -1.124117931658148
+        },
+        {
+          "altitude_m": 6706,
+          "observed_bp_c": 78.1,
+          "predicted_bp_c": 79.20005793581413,
+          "error_c": -1.1000579358141351
+        },
+        {
+          "altitude_m": 6782,
+          "observed_bp_c": 77.9,
+          "predicted_bp_c": 78.97922230161538,
+          "error_c": -1.0792223016153741
+        },
+        {
+          "altitude_m": 6858,
+          "observed_bp_c": 77.7,
+          "predicted_bp_c": 78.75869843894657,
+          "error_c": -1.0586984389465641
+        },
+        {
+          "altitude_m": 6934,
+          "observed_bp_c": 77.4,
+          "predicted_bp_c": 78.53848568804386,
+          "error_c": -1.1384856880438576
+        },
+        {
+          "altitude_m": 7010,
+          "observed_bp_c": 77.2,
+          "predicted_bp_c": 78.31858339100353,
+          "error_c": -1.1185833910035257
+        },
+        {
+          "altitude_m": 7087,
+          "observed_bp_c": 77.0,
+          "predicted_bp_c": 78.09610357881877,
+          "error_c": -1.09610357881877
+        },
+        {
+          "altitude_m": 7163,
+          "observed_bp_c": 76.8,
+          "predicted_bp_c": 77.87682428652738,
+          "error_c": -1.0768242865273834
+        },
+        {
+          "altitude_m": 7239,
+          "observed_bp_c": 76.5,
+          "predicted_bp_c": 77.65785347691218,
+          "error_c": -1.1578534769121802
+        },
+        {
+          "altitude_m": 7315,
+          "observed_bp_c": 76.3,
+          "predicted_bp_c": 77.4391904994693,
+          "error_c": -1.1391904994693078
+        },
+        {
+          "altitude_m": 7391,
+          "observed_bp_c": 76.1,
+          "predicted_bp_c": 77.22083470552269,
+          "error_c": -1.1208347055226966
+        },
+        {
+          "altitude_m": 7468,
+          "observed_bp_c": 75.9,
+          "predicted_bp_c": 76.99991841937913,
+          "error_c": -1.0999184193791223
+        },
+        {
+          "altitude_m": 7544,
+          "observed_bp_c": 75.6,
+          "predicted_bp_c": 76.78217907427364,
+          "error_c": -1.1821790742736482
+        },
+        {
+          "altitude_m": 7620,
+          "observed_bp_c": 75.4,
+          "predicted_bp_c": 76.5647449690868,
+          "error_c": -1.1647449690867973
+        },
+        {
+          "altitude_m": 7696,
+          "observed_bp_c": 75.2,
+          "predicted_bp_c": 76.34761546241305,
+          "error_c": -1.147615462413043
+        },
+        {
+          "altitude_m": 7772,
+          "observed_bp_c": 75.0,
+          "predicted_bp_c": 76.1307899146426,
+          "error_c": -1.1307899146426053
+        },
+        {
+          "altitude_m": 7849,
+          "observed_bp_c": 74.8,
+          "predicted_bp_c": 75.9114207302319,
+          "error_c": -1.1114207302318988
+        },
+        {
+          "altitude_m": 7925,
+          "observed_bp_c": 74.5,
+          "predicted_bp_c": 75.69520516705722,
+          "error_c": -1.1952051670572246
+        },
+        {
+          "altitude_m": 8001,
+          "observed_bp_c": 74.3,
+          "predicted_bp_c": 75.47929164633518,
+          "error_c": -1.1792916463351872
+        },
+        {
+          "altitude_m": 8077,
+          "observed_bp_c": 74.1,
+          "predicted_bp_c": 75.26367953559992,
+          "error_c": -1.1636795355999254
+        },
+        {
+          "altitude_m": 8153,
+          "observed_bp_c": 73.9,
+          "predicted_bp_c": 75.04836820415028,
+          "error_c": -1.1483682041502732
+        },
+        {
+          "altitude_m": 8230,
+          "observed_bp_c": 73.7,
+          "predicted_bp_c": 74.8305299264037,
+          "error_c": -1.130529926403696
+        },
+        {
+          "altitude_m": 8306,
+          "observed_bp_c": 73.5,
+          "predicted_bp_c": 74.61582220537048,
+          "error_c": -1.1158222053704776
+        },
+        {
+          "altitude_m": 8382,
+          "observed_bp_c": 73.2,
+          "predicted_bp_c": 74.4014133738275,
+          "error_c": -1.2014133738274921
+        },
+        {
+          "altitude_m": 8458,
+          "observed_bp_c": 73.0,
+          "predicted_bp_c": 74.18730280809336,
+          "error_c": -1.1873028080933636
+        },
+        {
+          "altitude_m": 8534,
+          "observed_bp_c": 72.8,
+          "predicted_bp_c": 73.97348988622082,
+          "error_c": -1.1734898862208212
+        },
+        {
+          "altitude_m": 8611,
+          "observed_bp_c": 72.6,
+          "predicted_bp_c": 73.7571665453234,
+          "error_c": -1.1571665453234061
+        },
+        {
+          "altitude_m": 8687,
+          "observed_bp_c": 72.4,
+          "predicted_bp_c": 73.54395094819097,
+          "error_c": -1.1439509481909624
+        },
+        {
+          "altitude_m": 8763,
+          "observed_bp_c": 72.2,
+          "predicted_bp_c": 73.33103113131813,
+          "error_c": -1.1310311313181245
+        },
+        {
+          "altitude_m": 8839,
+          "observed_bp_c": 72.0,
+          "predicted_bp_c": 73.11840647965624,
+          "error_c": -1.1184064796562438
+        },
+        {
+          "altitude_m": 8916,
+          "observed_bp_c": 71.7,
+          "predicted_bp_c": 72.90328452335945,
+          "error_c": -1.203284523359443
+        },
+        {
+          "altitude_m": 8992,
+          "observed_bp_c": 71.5,
+          "predicted_bp_c": 72.69125222734868,
+          "error_c": -1.1912522273486843
+        },
+        {
+          "altitude_m": 9068,
+          "observed_bp_c": 71.3,
+          "predicted_bp_c": 72.47951325358895,
+          "error_c": -1.1795132535889508
+        },
+        {
+          "altitude_m": 9144,
+          "observed_bp_c": 71.1,
+          "predicted_bp_c": 72.26806699383468,
+          "error_c": -1.1680669938346853
+        }
+      ]
+    }
+  },
+  "validation_deleze": {
+    "n_points": 130,
+    "ISA_Antoine": {
+      "model": "ISA+Antoine",
+      "lapse_rate": 0.0065,
+      "metrics": {
+        "rmse": 0.8913571800099692,
+        "bias": -0.7479157267425036,
+        "mae": 0.7490143297175439,
+        "max_error": 1.554897061785212,
+        "n_samples": 130
+      },
+      "details": [
+        {
+          "altitude_m": -500,
+          "observed_bp_c": 101.7,
+          "predicted_bp_c": 101.64949724036086,
+          "error_c": 0.0505027596391443
+        },
+        {
+          "altitude_m": -500,
+          "observed_bp_c": 101.3,
+          "predicted_bp_c": 101.64949724036086,
+          "error_c": -0.3494972403608614
+        },
+        {
+          "altitude_m": -500,
+          "observed_bp_c": 101.0,
+          "predicted_bp_c": 101.64949724036086,
+          "error_c": -0.6494972403608585
+        },
+        {
+          "altitude_m": -500,
+          "observed_bp_c": 100.7,
+          "predicted_bp_c": 101.64949724036086,
+          "error_c": -0.9494972403608557
+        },
+        {
+          "altitude_m": -500,
+          "observed_bp_c": 100.3,
+          "predicted_bp_c": 101.64949724036086,
+          "error_c": -1.3494972403608614
+        },
+        {
+          "altitude_m": 0,
+          "observed_bp_c": 100.0,
+          "predicted_bp_c": 99.9968415382395,
+          "error_c": 0.0031584617605062704
+        },
+        {
+          "altitude_m": 0,
+          "observed_bp_c": 99.7,
+          "predicted_bp_c": 99.9968415382395,
+          "error_c": -0.2968415382394909
+        },
+        {
+          "altitude_m": 0,
+          "observed_bp_c": 99.3,
+          "predicted_bp_c": 99.9968415382395,
+          "error_c": -0.6968415382394966
+        },
+        {
+          "altitude_m": 0,
+          "observed_bp_c": 99.0,
+          "predicted_bp_c": 99.9968415382395,
+          "error_c": -0.9968415382394937
+        },
+        {
+          "altitude_m": 0,
+          "observed_bp_c": 98.7,
+          "predicted_bp_c": 99.9968415382395,
+          "error_c": -1.2968415382394909
+        },
+        {
+          "altitude_m": 500,
+          "observed_bp_c": 98.3,
+          "predicted_bp_c": 98.34193822033933,
+          "error_c": -0.04193822033933259
+        },
+        {
+          "altitude_m": 500,
+          "observed_bp_c": 98.0,
+          "predicted_bp_c": 98.34193822033933,
+          "error_c": -0.34193822033932975
+        },
+        {
+          "altitude_m": 500,
+          "observed_bp_c": 97.7,
+          "predicted_bp_c": 98.34193822033933,
+          "error_c": -0.6419382203393269
+        },
+        {
+          "altitude_m": 500,
+          "observed_bp_c": 97.3,
+          "predicted_bp_c": 98.34193822033933,
+          "error_c": -1.0419382203393326
+        },
+        {
+          "altitude_m": 500,
+          "observed_bp_c": 97.0,
+          "predicted_bp_c": 98.34193822033933,
+          "error_c": -1.3419382203393297
+        },
+        {
+          "altitude_m": 1000,
+          "observed_bp_c": 96.7,
+          "predicted_bp_c": 96.68467600547922,
+          "error_c": 0.015323994520784368
+        },
+        {
+          "altitude_m": 1000,
+          "observed_bp_c": 96.3,
+          "predicted_bp_c": 96.68467600547922,
+          "error_c": -0.3846760054792213
+        },
+        {
+          "altitude_m": 1000,
+          "observed_bp_c": 96.0,
+          "predicted_bp_c": 96.68467600547922,
+          "error_c": -0.6846760054792185
+        },
+        {
+          "altitude_m": 1000,
+          "observed_bp_c": 95.7,
+          "predicted_bp_c": 96.68467600547922,
+          "error_c": -0.9846760054792156
+        },
+        {
+          "altitude_m": 1000,
+          "observed_bp_c": 95.3,
+          "predicted_bp_c": 96.68467600547922,
+          "error_c": -1.3846760054792213
+        },
+        {
+          "altitude_m": 1500,
+          "observed_bp_c": 95.0,
+          "predicted_bp_c": 95.02494052468893,
+          "error_c": -0.0249405246889296
+        },
+        {
+          "altitude_m": 1500,
+          "observed_bp_c": 94.7,
+          "predicted_bp_c": 95.02494052468893,
+          "error_c": -0.32494052468892676
+        },
+        {
+          "altitude_m": 1500,
+          "observed_bp_c": 94.3,
+          "predicted_bp_c": 95.02494052468893,
+          "error_c": -0.7249405246889324
+        },
+        {
+          "altitude_m": 1500,
+          "observed_bp_c": 94.0,
+          "predicted_bp_c": 95.02494052468893,
+          "error_c": -1.0249405246889296
+        },
+        {
+          "altitude_m": 1500,
+          "observed_bp_c": 93.7,
+          "predicted_bp_c": 95.02494052468893,
+          "error_c": -1.3249405246889268
+        },
+        {
+          "altitude_m": 2000,
+          "observed_bp_c": 93.3,
+          "predicted_bp_c": 93.36261418448419,
+          "error_c": -0.06261418448418965
+        },
+        {
+          "altitude_m": 2000,
+          "observed_bp_c": 93.0,
+          "predicted_bp_c": 93.36261418448419,
+          "error_c": -0.3626141844841868
+        },
+        {
+          "altitude_m": 2000,
+          "observed_bp_c": 92.7,
+          "predicted_bp_c": 93.36261418448419,
+          "error_c": -0.662614184484184
+        },
+        {
+          "altitude_m": 2000,
+          "observed_bp_c": 92.3,
+          "predicted_bp_c": 93.36261418448419,
+          "error_c": -1.0626141844841896
+        },
+        {
+          "altitude_m": 2000,
+          "observed_bp_c": 92.0,
+          "predicted_bp_c": 93.36261418448419,
+          "error_c": -1.3626141844841868
+        },
+        {
+          "altitude_m": 2500,
+          "observed_bp_c": 91.7,
+          "predicted_bp_c": 91.69757602254282,
+          "error_c": 0.0024239774571839234
+        },
+        {
+          "altitude_m": 2500,
+          "observed_bp_c": 91.3,
+          "predicted_bp_c": 91.69757602254282,
+          "error_c": -0.39757602254282176
+        },
+        {
+          "altitude_m": 2500,
+          "observed_bp_c": 91.0,
+          "predicted_bp_c": 91.69757602254282,
+          "error_c": -0.6975760225428189
+        },
+        {
+          "altitude_m": 2500,
+          "observed_bp_c": 90.7,
+          "predicted_bp_c": 91.69757602254282,
+          "error_c": -0.9975760225428161
+        },
+        {
+          "altitude_m": 2500,
+          "observed_bp_c": 90.3,
+          "predicted_bp_c": 91.69757602254282,
+          "error_c": -1.3975760225428218
+        },
+        {
+          "altitude_m": 3000,
+          "observed_bp_c": 90.0,
+          "predicted_bp_c": 90.0297015552631,
+          "error_c": -0.029701555263102364
+        },
+        {
+          "altitude_m": 3000,
+          "observed_bp_c": 89.7,
+          "predicted_bp_c": 90.0297015552631,
+          "error_c": -0.3297015552630995
+        },
+        {
+          "altitude_m": 3000,
+          "observed_bp_c": 89.3,
+          "predicted_bp_c": 90.0297015552631,
+          "error_c": -0.7297015552631052
+        },
+        {
+          "altitude_m": 3000,
+          "observed_bp_c": 89.0,
+          "predicted_bp_c": 90.0297015552631,
+          "error_c": -1.0297015552631024
+        },
+        {
+          "altitude_m": 3000,
+          "observed_bp_c": 88.6,
+          "predicted_bp_c": 90.0297015552631,
+          "error_c": -1.429701555263108
+        },
+        {
+          "altitude_m": 3500,
+          "observed_bp_c": 88.3,
+          "predicted_bp_c": 88.35886261664064,
+          "error_c": -0.05886261664063852
+        },
+        {
+          "altitude_m": 3500,
+          "observed_bp_c": 88.0,
+          "predicted_bp_c": 88.35886261664064,
+          "error_c": -0.3588626166406357
+        },
+        {
+          "altitude_m": 3500,
+          "observed_bp_c": 87.6,
+          "predicted_bp_c": 88.35886261664064,
+          "error_c": -0.7588626166406414
+        },
+        {
+          "altitude_m": 3500,
+          "observed_bp_c": 87.3,
+          "predicted_bp_c": 88.35886261664064,
+          "error_c": -1.0588626166406385
+        },
+        {
+          "altitude_m": 3500,
+          "observed_bp_c": 87.0,
+          "predicted_bp_c": 88.35886261664064,
+          "error_c": -1.3588626166406357
+        },
+        {
+          "altitude_m": 4000,
+          "observed_bp_c": 86.6,
+          "predicted_bp_c": 86.68492718785541,
+          "error_c": -0.08492718785541342
+        },
+        {
+          "altitude_m": 4000,
+          "observed_bp_c": 86.3,
+          "predicted_bp_c": 86.68492718785541,
+          "error_c": -0.3849271878554106
+        },
+        {
+          "altitude_m": 4000,
+          "observed_bp_c": 85.9,
+          "predicted_bp_c": 86.68492718785541,
+          "error_c": -0.784927187855402
+        },
+        {
+          "altitude_m": 4000,
+          "observed_bp_c": 85.6,
+          "predicted_bp_c": 86.68492718785541,
+          "error_c": -1.0849271878554134
+        },
+        {
+          "altitude_m": 4000,
+          "observed_bp_c": 85.3,
+          "predicted_bp_c": 86.68492718785541,
+          "error_c": -1.3849271878554106
+        },
+        {
+          "altitude_m": 4500,
+          "observed_bp_c": 84.9,
+          "predicted_bp_c": 85.00775921690934,
+          "error_c": -0.10775921690932933
+        },
+        {
+          "altitude_m": 4500,
+          "observed_bp_c": 84.6,
+          "predicted_bp_c": 85.00775921690934,
+          "error_c": -0.4077592169093407
+        },
+        {
+          "altitude_m": 4500,
+          "observed_bp_c": 84.3,
+          "predicted_bp_c": 85.00775921690934,
+          "error_c": -0.7077592169093379
+        },
+        {
+          "altitude_m": 4500,
+          "observed_bp_c": 83.9,
+          "predicted_bp_c": 85.00775921690934,
+          "error_c": -1.1077592169093293
+        },
+        {
+          "altitude_m": 4500,
+          "observed_bp_c": 83.6,
+          "predicted_bp_c": 85.00775921690934,
+          "error_c": -1.4077592169093407
+        },
+        {
+          "altitude_m": 5000,
+          "observed_bp_c": 83.3,
+          "predicted_bp_c": 83.32721842759861,
+          "error_c": -0.02721842759861204
+        },
+        {
+          "altitude_m": 5000,
+          "observed_bp_c": 82.9,
+          "predicted_bp_c": 83.32721842759861,
+          "error_c": -0.4272184275986035
+        },
+        {
+          "altitude_m": 5000,
+          "observed_bp_c": 82.6,
+          "predicted_bp_c": 83.32721842759861,
+          "error_c": -0.7272184275986149
+        },
+        {
+          "altitude_m": 5000,
+          "observed_bp_c": 82.2,
+          "predicted_bp_c": 83.32721842759861,
+          "error_c": -1.1272184275986064
+        },
+        {
+          "altitude_m": 5000,
+          "observed_bp_c": 81.9,
+          "predicted_bp_c": 83.32721842759861,
+          "error_c": -1.4272184275986035
+        },
+        {
+          "altitude_m": 5500,
+          "observed_bp_c": 81.6,
+          "predicted_bp_c": 81.6431601170438,
+          "error_c": -0.0431601170438114
+        },
+        {
+          "altitude_m": 5500,
+          "observed_bp_c": 81.2,
+          "predicted_bp_c": 81.6431601170438,
+          "error_c": -0.44316011704380287
+        },
+        {
+          "altitude_m": 5500,
+          "observed_bp_c": 80.9,
+          "predicted_bp_c": 81.6431601170438,
+          "error_c": -0.7431601170438
+        },
+        {
+          "altitude_m": 5500,
+          "observed_bp_c": 80.6,
+          "predicted_bp_c": 81.6431601170438,
+          "error_c": -1.0431601170438114
+        },
+        {
+          "altitude_m": 5500,
+          "observed_bp_c": 80.2,
+          "predicted_bp_c": 81.6431601170438,
+          "error_c": -1.4431601170438029
+        },
+        {
+          "altitude_m": 6000,
+          "observed_bp_c": 79.9,
+          "predicted_bp_c": 79.95543494093425,
+          "error_c": -0.055434940934247834
+        },
+        {
+          "altitude_m": 6000,
+          "observed_bp_c": 79.5,
+          "predicted_bp_c": 79.95543494093425,
+          "error_c": -0.4554349409342535
+        },
+        {
+          "altitude_m": 6000,
+          "observed_bp_c": 79.2,
+          "predicted_bp_c": 79.95543494093425,
+          "error_c": -0.7554349409342507
+        },
+        {
+          "altitude_m": 6000,
+          "observed_bp_c": 78.9,
+          "predicted_bp_c": 79.95543494093425,
+          "error_c": -1.0554349409342478
+        },
+        {
+          "altitude_m": 6000,
+          "observed_bp_c": 78.5,
+          "predicted_bp_c": 79.95543494093425,
+          "error_c": -1.4554349409342535
+        },
+        {
+          "altitude_m": 6500,
+          "observed_bp_c": 78.2,
+          "predicted_bp_c": 78.26388868556745,
+          "error_c": -0.06388868556744853
+        },
+        {
+          "altitude_m": 6500,
+          "observed_bp_c": 77.8,
+          "predicted_bp_c": 78.26388868556745,
+          "error_c": -0.4638886855674542
+        },
+        {
+          "altitude_m": 6500,
+          "observed_bp_c": 77.5,
+          "predicted_bp_c": 78.26388868556745,
+          "error_c": -0.7638886855674514
+        },
+        {
+          "altitude_m": 6500,
+          "observed_bp_c": 77.2,
+          "predicted_bp_c": 78.26388868556745,
+          "error_c": -1.0638886855674485
+        },
+        {
+          "altitude_m": 6500,
+          "observed_bp_c": 76.8,
+          "predicted_bp_c": 78.26388868556745,
+          "error_c": -1.4638886855674542
+        },
+        {
+          "altitude_m": 7000,
+          "observed_bp_c": 76.5,
+          "predicted_bp_c": 76.56836202568462,
+          "error_c": -0.06836202568462113
+        },
+        {
+          "altitude_m": 7000,
+          "observed_bp_c": 76.1,
+          "predicted_bp_c": 76.56836202568462,
+          "error_c": -0.4683620256846268
+        },
+        {
+          "altitude_m": 7000,
+          "observed_bp_c": 75.8,
+          "predicted_bp_c": 76.56836202568462,
+          "error_c": -0.768362025684624
+        },
+        {
+          "altitude_m": 7000,
+          "observed_bp_c": 75.5,
+          "predicted_bp_c": 76.56836202568462,
+          "error_c": -1.0683620256846211
+        },
+        {
+          "altitude_m": 7000,
+          "observed_bp_c": 75.1,
+          "predicted_bp_c": 76.56836202568462,
+          "error_c": -1.4683620256846268
+        },
+        {
+          "altitude_m": 7500,
+          "observed_bp_c": 74.8,
+          "predicted_bp_c": 74.86869026701066,
+          "error_c": -0.06869026701066616
+        },
+        {
+          "altitude_m": 7500,
+          "observed_bp_c": 74.4,
+          "predicted_bp_c": 74.86869026701066,
+          "error_c": -0.46869026701065764
+        },
+        {
+          "altitude_m": 7500,
+          "observed_bp_c": 74.1,
+          "predicted_bp_c": 74.86869026701066,
+          "error_c": -0.768690267010669
+        },
+        {
+          "altitude_m": 7500,
+          "observed_bp_c": 73.8,
+          "predicted_bp_c": 74.86869026701066,
+          "error_c": -1.0686902670106662
+        },
+        {
+          "altitude_m": 7500,
+          "observed_bp_c": 73.4,
+          "predicted_bp_c": 74.86869026701066,
+          "error_c": -1.4686902670106576
+        },
+        {
+          "altitude_m": 8000,
+          "observed_bp_c": 73.1,
+          "predicted_bp_c": 73.16470307231037,
+          "error_c": -0.06470307231037964
+        },
+        {
+          "altitude_m": 8000,
+          "observed_bp_c": 72.7,
+          "predicted_bp_c": 73.16470307231037,
+          "error_c": -0.4647030723103711
+        },
+        {
+          "altitude_m": 8000,
+          "observed_bp_c": 72.4,
+          "predicted_bp_c": 73.16470307231037,
+          "error_c": -0.7647030723103683
+        },
+        {
+          "altitude_m": 8000,
+          "observed_bp_c": 72.0,
+          "predicted_bp_c": 73.16470307231037,
+          "error_c": -1.164703072310374
+        },
+        {
+          "altitude_m": 8000,
+          "observed_bp_c": 71.7,
+          "predicted_bp_c": 73.16470307231037,
+          "error_c": -1.4647030723103711
+        },
+        {
+          "altitude_m": 8500,
+          "observed_bp_c": 71.4,
+          "predicted_bp_c": 71.4562241696579,
+          "error_c": -0.05622416965789512
+        },
+        {
+          "altitude_m": 8500,
+          "observed_bp_c": 71.0,
+          "predicted_bp_c": 71.4562241696579,
+          "error_c": -0.4562241696579008
+        },
+        {
+          "altitude_m": 8500,
+          "observed_bp_c": 70.7,
+          "predicted_bp_c": 71.4562241696579,
+          "error_c": -0.756224169657898
+        },
+        {
+          "altitude_m": 8500,
+          "observed_bp_c": 70.3,
+          "predicted_bp_c": 71.4562241696579,
+          "error_c": -1.1562241696579036
+        },
+        {
+          "altitude_m": 8500,
+          "observed_bp_c": 70.0,
+          "predicted_bp_c": 71.4562241696579,
+          "error_c": -1.4562241696579008
+        },
+        {
+          "altitude_m": 9000,
+          "observed_bp_c": 69.6,
+          "predicted_bp_c": 69.74307104150012,
+          "error_c": -0.1430710415001215
+        },
+        {
+          "altitude_m": 9000,
+          "observed_bp_c": 69.3,
+          "predicted_bp_c": 69.74307104150012,
+          "error_c": -0.44307104150011867
+        },
+        {
+          "altitude_m": 9000,
+          "observed_bp_c": 69.0,
+          "predicted_bp_c": 69.74307104150012,
+          "error_c": -0.7430710415001158
+        },
+        {
+          "altitude_m": 9000,
+          "observed_bp_c": 68.6,
+          "predicted_bp_c": 69.74307104150012,
+          "error_c": -1.1430710415001215
+        },
+        {
+          "altitude_m": 9000,
+          "observed_bp_c": 68.3,
+          "predicted_bp_c": 69.74307104150012,
+          "error_c": -1.4430710415001187
+        },
+        {
+          "altitude_m": 9500,
+          "observed_bp_c": 67.9,
+          "predicted_bp_c": 68.02505459295207,
+          "error_c": -0.12505459295206833
+        },
+        {
+          "altitude_m": 9500,
+          "observed_bp_c": 67.6,
+          "predicted_bp_c": 68.02505459295207,
+          "error_c": -0.4250545929520797
+        },
+        {
+          "altitude_m": 9500,
+          "observed_bp_c": 67.2,
+          "predicted_bp_c": 68.02505459295207,
+          "error_c": -0.8250545929520712
+        },
+        {
+          "altitude_m": 9500,
+          "observed_bp_c": 66.9,
+          "predicted_bp_c": 68.02505459295207,
+          "error_c": -1.1250545929520683
+        },
+        {
+          "altitude_m": 9500,
+          "observed_bp_c": 66.5,
+          "predicted_bp_c": 68.02505459295207,
+          "error_c": -1.525054592952074
+        },
+        {
+          "altitude_m": 10000,
+          "observed_bp_c": 66.2,
+          "predicted_bp_c": 66.30197879761806,
+          "error_c": -0.1019787976180595
+        },
+        {
+          "altitude_m": 10000,
+          "observed_bp_c": 65.8,
+          "predicted_bp_c": 66.30197879761806,
+          "error_c": -0.5019787976180652
+        },
+        {
+          "altitude_m": 10000,
+          "observed_bp_c": 65.5,
+          "predicted_bp_c": 66.30197879761806,
+          "error_c": -0.8019787976180623
+        },
+        {
+          "altitude_m": 10000,
+          "observed_bp_c": 65.2,
+          "predicted_bp_c": 66.30197879761806,
+          "error_c": -1.1019787976180595
+        },
+        {
+          "altitude_m": 10000,
+          "observed_bp_c": 64.8,
+          "predicted_bp_c": 66.30197879761806,
+          "error_c": -1.5019787976180652
+        },
+        {
+          "altitude_m": 10500,
+          "observed_bp_c": 64.5,
+          "predicted_bp_c": 64.57364031905996,
+          "error_c": -0.07364031905996171
+        },
+        {
+          "altitude_m": 10500,
+          "observed_bp_c": 64.1,
+          "predicted_bp_c": 64.57364031905996,
+          "error_c": -0.4736403190599674
+        },
+        {
+          "altitude_m": 10500,
+          "observed_bp_c": 63.8,
+          "predicted_bp_c": 64.57364031905996,
+          "error_c": -0.7736403190599646
+        },
+        {
+          "altitude_m": 10500,
+          "observed_bp_c": 63.4,
+          "predicted_bp_c": 64.57364031905996,
+          "error_c": -1.1736403190599631
+        },
+        {
+          "altitude_m": 10500,
+          "observed_bp_c": 63.1,
+          "predicted_bp_c": 64.57364031905996,
+          "error_c": -1.4736403190599603
+        },
+        {
+          "altitude_m": 11000,
+          "observed_bp_c": 62.7,
+          "predicted_bp_c": 62.83982810584911,
+          "error_c": -0.1398281058491051
+        },
+        {
+          "altitude_m": 11000,
+          "observed_bp_c": 62.4,
+          "predicted_bp_c": 62.83982810584911,
+          "error_c": -0.43982810584910936
+        },
+        {
+          "altitude_m": 11000,
+          "observed_bp_c": 62.0,
+          "predicted_bp_c": 62.83982810584911,
+          "error_c": -0.8398281058491079
+        },
+        {
+          "altitude_m": 11000,
+          "observed_bp_c": 61.7,
+          "predicted_bp_c": 62.83982810584911,
+          "error_c": -1.139828105849105
+        },
+        {
+          "altitude_m": 11000,
+          "observed_bp_c": 61.3,
+          "predicted_bp_c": 62.83982810584911,
+          "error_c": -1.5398281058491108
+        },
+        {
+          "altitude_m": 11500,
+          "observed_bp_c": 61.0,
+          "predicted_bp_c": 61.10032295792956,
+          "error_c": -0.10032295792956347
+        },
+        {
+          "altitude_m": 11500,
+          "observed_bp_c": 60.6,
+          "predicted_bp_c": 61.10032295792956,
+          "error_c": -0.500322957929562
+        },
+        {
+          "altitude_m": 11500,
+          "observed_bp_c": 60.3,
+          "predicted_bp_c": 61.10032295792956,
+          "error_c": -0.8003229579295663
+        },
+        {
+          "altitude_m": 11500,
+          "observed_bp_c": 59.9,
+          "predicted_bp_c": 61.10032295792956,
+          "error_c": -1.200322957929565
+        },
+        {
+          "altitude_m": 11500,
+          "observed_bp_c": 59.6,
+          "predicted_bp_c": 61.10032295792956,
+          "error_c": -1.500322957929562
+        },
+        {
+          "altitude_m": 12000,
+          "observed_bp_c": 59.2,
+          "predicted_bp_c": 59.35489706178521,
+          "error_c": -0.15489706178520635
+        },
+        {
+          "altitude_m": 12000,
+          "observed_bp_c": 58.9,
+          "predicted_bp_c": 59.35489706178521,
+          "error_c": -0.4548970617852106
+        },
+        {
+          "altitude_m": 12000,
+          "observed_bp_c": 58.5,
+          "predicted_bp_c": 59.35489706178521,
+          "error_c": -0.8548970617852092
+        },
+        {
+          "altitude_m": 12000,
+          "observed_bp_c": 58.2,
+          "predicted_bp_c": 59.35489706178521,
+          "error_c": -1.1548970617852063
+        },
+        {
+          "altitude_m": 12000,
+          "observed_bp_c": 57.8,
+          "predicted_bp_c": 59.35489706178521,
+          "error_c": -1.554897061785212
+        }
+      ]
+    },
+    "Baseline": {
+      "model": "Baseline",
+      "lapse_rate": 0.0065,
+      "metrics": {
+        "rmse": 3.000368449209908,
+        "bias": -2.450988388429001,
+        "mae": 2.451670115299919,
+        "max_error": 6.728663290933369,
+        "n_samples": 130
+      },
+      "details": [
+        {
+          "altitude_m": -500,
+          "observed_bp_c": 101.7,
+          "predicted_bp_c": 101.65884621515085,
+          "error_c": 0.04115378484915766
+        },
+        {
+          "altitude_m": -500,
+          "observed_bp_c": 101.3,
+          "predicted_bp_c": 101.65884621515085,
+          "error_c": -0.358846215150848
+        },
+        {
+          "altitude_m": -500,
+          "observed_bp_c": 101.0,
+          "predicted_bp_c": 101.65884621515085,
+          "error_c": -0.6588462151508452
+        },
+        {
+          "altitude_m": -500,
+          "observed_bp_c": 100.7,
+          "predicted_bp_c": 101.65884621515085,
+          "error_c": -0.9588462151508423
+        },
+        {
+          "altitude_m": -500,
+          "observed_bp_c": 100.3,
+          "predicted_bp_c": 101.65884621515085,
+          "error_c": -1.358846215150848
+        },
+        {
+          "altitude_m": 0,
+          "observed_bp_c": 100.0,
+          "predicted_bp_c": 99.9968415382395,
+          "error_c": 0.0031584617605062704
+        },
+        {
+          "altitude_m": 0,
+          "observed_bp_c": 99.7,
+          "predicted_bp_c": 99.9968415382395,
+          "error_c": -0.2968415382394909
+        },
+        {
+          "altitude_m": 0,
+          "observed_bp_c": 99.3,
+          "predicted_bp_c": 99.9968415382395,
+          "error_c": -0.6968415382394966
+        },
+        {
+          "altitude_m": 0,
+          "observed_bp_c": 99.0,
+          "predicted_bp_c": 99.9968415382395,
+          "error_c": -0.9968415382394937
+        },
+        {
+          "altitude_m": 0,
+          "observed_bp_c": 98.7,
+          "predicted_bp_c": 99.9968415382395,
+          "error_c": -1.2968415382394909
+        },
+        {
+          "altitude_m": 500,
+          "observed_bp_c": 98.3,
+          "predicted_bp_c": 98.35124241665108,
+          "error_c": -0.051242416651078315
+        },
+        {
+          "altitude_m": 500,
+          "observed_bp_c": 98.0,
+          "predicted_bp_c": 98.35124241665108,
+          "error_c": -0.3512424166510755
+        },
+        {
+          "altitude_m": 500,
+          "observed_bp_c": 97.7,
+          "predicted_bp_c": 98.35124241665108,
+          "error_c": -0.6512424166510726
+        },
+        {
+          "altitude_m": 500,
+          "observed_bp_c": 97.3,
+          "predicted_bp_c": 98.35124241665108,
+          "error_c": -1.0512424166510783
+        },
+        {
+          "altitude_m": 500,
+          "observed_bp_c": 97.0,
+          "predicted_bp_c": 98.35124241665108,
+          "error_c": -1.3512424166510755
+        },
+        {
+          "altitude_m": 1000,
+          "observed_bp_c": 96.7,
+          "predicted_bp_c": 96.72180713588062,
+          "error_c": -0.02180713588062133
+        },
+        {
+          "altitude_m": 1000,
+          "observed_bp_c": 96.3,
+          "predicted_bp_c": 96.72180713588062,
+          "error_c": -0.421807135880627
+        },
+        {
+          "altitude_m": 1000,
+          "observed_bp_c": 96.0,
+          "predicted_bp_c": 96.72180713588062,
+          "error_c": -0.7218071358806242
+        },
+        {
+          "altitude_m": 1000,
+          "observed_bp_c": 95.7,
+          "predicted_bp_c": 96.72180713588062,
+          "error_c": -1.0218071358806213
+        },
+        {
+          "altitude_m": 1000,
+          "observed_bp_c": 95.3,
+          "predicted_bp_c": 96.72180713588062,
+          "error_c": -1.421807135880627
+        },
+        {
+          "altitude_m": 1500,
+          "observed_bp_c": 95.0,
+          "predicted_bp_c": 95.10829870668107,
+          "error_c": -0.10829870668106878
+        },
+        {
+          "altitude_m": 1500,
+          "observed_bp_c": 94.7,
+          "predicted_bp_c": 95.10829870668107,
+          "error_c": -0.40829870668106594
+        },
+        {
+          "altitude_m": 1500,
+          "observed_bp_c": 94.3,
+          "predicted_bp_c": 95.10829870668107,
+          "error_c": -0.8082987066810716
+        },
+        {
+          "altitude_m": 1500,
+          "observed_bp_c": 94.0,
+          "predicted_bp_c": 95.10829870668107,
+          "error_c": -1.1082987066810688
+        },
+        {
+          "altitude_m": 1500,
+          "observed_bp_c": 93.7,
+          "predicted_bp_c": 95.10829870668107,
+          "error_c": -1.408298706681066
+        },
+        {
+          "altitude_m": 2000,
+          "observed_bp_c": 93.3,
+          "predicted_bp_c": 93.51048475015784,
+          "error_c": -0.21048475015784618
+        },
+        {
+          "altitude_m": 2000,
+          "observed_bp_c": 93.0,
+          "predicted_bp_c": 93.51048475015784,
+          "error_c": -0.5104847501578433
+        },
+        {
+          "altitude_m": 2000,
+          "observed_bp_c": 92.7,
+          "predicted_bp_c": 93.51048475015784,
+          "error_c": -0.8104847501578405
+        },
+        {
+          "altitude_m": 2000,
+          "observed_bp_c": 92.3,
+          "predicted_bp_c": 93.51048475015784,
+          "error_c": -1.2104847501578462
+        },
+        {
+          "altitude_m": 2000,
+          "observed_bp_c": 92.0,
+          "predicted_bp_c": 93.51048475015784,
+          "error_c": -1.5104847501578433
+        },
+        {
+          "altitude_m": 2500,
+          "observed_bp_c": 91.7,
+          "predicted_bp_c": 91.92813738620004,
+          "error_c": -0.2281373862000322
+        },
+        {
+          "altitude_m": 2500,
+          "observed_bp_c": 91.3,
+          "predicted_bp_c": 91.92813738620004,
+          "error_c": -0.6281373862000379
+        },
+        {
+          "altitude_m": 2500,
+          "observed_bp_c": 91.0,
+          "predicted_bp_c": 91.92813738620004,
+          "error_c": -0.928137386200035
+        },
+        {
+          "altitude_m": 2500,
+          "observed_bp_c": 90.7,
+          "predicted_bp_c": 91.92813738620004,
+          "error_c": -1.2281373862000322
+        },
+        {
+          "altitude_m": 2500,
+          "observed_bp_c": 90.3,
+          "predicted_bp_c": 91.92813738620004,
+          "error_c": -1.628137386200038
+        },
+        {
+          "altitude_m": 3000,
+          "observed_bp_c": 90.0,
+          "predicted_bp_c": 90.36103312513598,
+          "error_c": -0.3610331251359753
+        },
+        {
+          "altitude_m": 3000,
+          "observed_bp_c": 89.7,
+          "predicted_bp_c": 90.36103312513598,
+          "error_c": -0.6610331251359725
+        },
+        {
+          "altitude_m": 3000,
+          "observed_bp_c": 89.3,
+          "predicted_bp_c": 90.36103312513598,
+          "error_c": -1.0610331251359781
+        },
+        {
+          "altitude_m": 3000,
+          "observed_bp_c": 89.0,
+          "predicted_bp_c": 90.36103312513598,
+          "error_c": -1.3610331251359753
+        },
+        {
+          "altitude_m": 3000,
+          "observed_bp_c": 88.6,
+          "predicted_bp_c": 90.36103312513598,
+          "error_c": -1.761033125135981
+        },
+        {
+          "altitude_m": 3500,
+          "observed_bp_c": 88.3,
+          "predicted_bp_c": 88.80895276250493,
+          "error_c": -0.5089527625049328
+        },
+        {
+          "altitude_m": 3500,
+          "observed_bp_c": 88.0,
+          "predicted_bp_c": 88.80895276250493,
+          "error_c": -0.80895276250493
+        },
+        {
+          "altitude_m": 3500,
+          "observed_bp_c": 87.6,
+          "predicted_bp_c": 88.80895276250493,
+          "error_c": -1.2089527625049357
+        },
+        {
+          "altitude_m": 3500,
+          "observed_bp_c": 87.3,
+          "predicted_bp_c": 88.80895276250493,
+          "error_c": -1.5089527625049328
+        },
+        {
+          "altitude_m": 3500,
+          "observed_bp_c": 87.0,
+          "predicted_bp_c": 88.80895276250493,
+          "error_c": -1.80895276250493
+        },
+        {
+          "altitude_m": 4000,
+          "observed_bp_c": 86.6,
+          "predicted_bp_c": 87.2716812768407,
+          "error_c": -0.671681276840701
+        },
+        {
+          "altitude_m": 4000,
+          "observed_bp_c": 86.3,
+          "predicted_bp_c": 87.2716812768407,
+          "error_c": -0.9716812768406982
+        },
+        {
+          "altitude_m": 4000,
+          "observed_bp_c": 85.9,
+          "predicted_bp_c": 87.2716812768407,
+          "error_c": -1.3716812768406896
+        },
+        {
+          "altitude_m": 4000,
+          "observed_bp_c": 85.6,
+          "predicted_bp_c": 87.2716812768407,
+          "error_c": -1.671681276840701
+        },
+        {
+          "altitude_m": 4000,
+          "observed_bp_c": 85.3,
+          "predicted_bp_c": 87.2716812768407,
+          "error_c": -1.9716812768406982
+        },
+        {
+          "altitude_m": 4500,
+          "observed_bp_c": 84.9,
+          "predicted_bp_c": 85.74900773036728,
+          "error_c": -0.8490077303672763
+        },
+        {
+          "altitude_m": 4500,
+          "observed_bp_c": 84.6,
+          "predicted_bp_c": 85.74900773036728,
+          "error_c": -1.1490077303672876
+        },
+        {
+          "altitude_m": 4500,
+          "observed_bp_c": 84.3,
+          "predicted_bp_c": 85.74900773036728,
+          "error_c": -1.4490077303672848
+        },
+        {
+          "altitude_m": 4500,
+          "observed_bp_c": 83.9,
+          "predicted_bp_c": 85.74900773036728,
+          "error_c": -1.8490077303672763
+        },
+        {
+          "altitude_m": 4500,
+          "observed_bp_c": 83.6,
+          "predicted_bp_c": 85.74900773036728,
+          "error_c": -2.1490077303672876
+        },
+        {
+          "altitude_m": 5000,
+          "observed_bp_c": 83.3,
+          "predicted_bp_c": 84.24072517251034,
+          "error_c": -0.9407251725103407
+        },
+        {
+          "altitude_m": 5000,
+          "observed_bp_c": 82.9,
+          "predicted_bp_c": 84.24072517251034,
+          "error_c": -1.3407251725103322
+        },
+        {
+          "altitude_m": 5000,
+          "observed_bp_c": 82.6,
+          "predicted_bp_c": 84.24072517251034,
+          "error_c": -1.6407251725103436
+        },
+        {
+          "altitude_m": 5000,
+          "observed_bp_c": 82.2,
+          "predicted_bp_c": 84.24072517251034,
+          "error_c": -2.040725172510335
+        },
+        {
+          "altitude_m": 5000,
+          "observed_bp_c": 81.9,
+          "predicted_bp_c": 84.24072517251034,
+          "error_c": -2.340725172510332
+        },
+        {
+          "altitude_m": 5500,
+          "observed_bp_c": 81.6,
+          "predicted_bp_c": 82.74663054613126,
+          "error_c": -1.146630546131263
+        },
+        {
+          "altitude_m": 5500,
+          "observed_bp_c": 81.2,
+          "predicted_bp_c": 82.74663054613126,
+          "error_c": -1.5466305461312544
+        },
+        {
+          "altitude_m": 5500,
+          "observed_bp_c": 80.9,
+          "predicted_bp_c": 82.74663054613126,
+          "error_c": -1.8466305461312515
+        },
+        {
+          "altitude_m": 5500,
+          "observed_bp_c": 80.6,
+          "predicted_bp_c": 82.74663054613126,
+          "error_c": -2.146630546131263
+        },
+        {
+          "altitude_m": 5500,
+          "observed_bp_c": 80.2,
+          "predicted_bp_c": 82.74663054613126,
+          "error_c": -2.5466305461312544
+        },
+        {
+          "altitude_m": 6000,
+          "observed_bp_c": 79.9,
+          "predicted_bp_c": 81.26652459639467,
+          "error_c": -1.3665245963946688
+        },
+        {
+          "altitude_m": 6000,
+          "observed_bp_c": 79.5,
+          "predicted_bp_c": 81.26652459639467,
+          "error_c": -1.7665245963946745
+        },
+        {
+          "altitude_m": 6000,
+          "observed_bp_c": 79.2,
+          "predicted_bp_c": 81.26652459639467,
+          "error_c": -2.0665245963946717
+        },
+        {
+          "altitude_m": 6000,
+          "observed_bp_c": 78.9,
+          "predicted_bp_c": 81.26652459639467,
+          "error_c": -2.366524596394669
+        },
+        {
+          "altitude_m": 6000,
+          "observed_bp_c": 78.5,
+          "predicted_bp_c": 81.26652459639467,
+          "error_c": -2.7665245963946745
+        },
+        {
+          "altitude_m": 6500,
+          "observed_bp_c": 78.2,
+          "predicted_bp_c": 79.8002117821847,
+          "error_c": -1.6002117821847008
+        },
+        {
+          "altitude_m": 6500,
+          "observed_bp_c": 77.8,
+          "predicted_bp_c": 79.8002117821847,
+          "error_c": -2.0002117821847065
+        },
+        {
+          "altitude_m": 6500,
+          "observed_bp_c": 77.5,
+          "predicted_bp_c": 79.8002117821847,
+          "error_c": -2.3002117821847037
+        },
+        {
+          "altitude_m": 6500,
+          "observed_bp_c": 77.2,
+          "predicted_bp_c": 79.8002117821847,
+          "error_c": -2.600211782184701
+        },
+        {
+          "altitude_m": 6500,
+          "observed_bp_c": 76.8,
+          "predicted_bp_c": 79.8002117821847,
+          "error_c": -3.0002117821847065
+        },
+        {
+          "altitude_m": 7000,
+          "observed_bp_c": 76.5,
+          "predicted_bp_c": 78.34750018998534,
+          "error_c": -1.8475001899853396
+        },
+        {
+          "altitude_m": 7000,
+          "observed_bp_c": 76.1,
+          "predicted_bp_c": 78.34750018998534,
+          "error_c": -2.2475001899853453
+        },
+        {
+          "altitude_m": 7000,
+          "observed_bp_c": 75.8,
+          "predicted_bp_c": 78.34750018998534,
+          "error_c": -2.5475001899853424
+        },
+        {
+          "altitude_m": 7000,
+          "observed_bp_c": 75.5,
+          "predicted_bp_c": 78.34750018998534,
+          "error_c": -2.8475001899853396
+        },
+        {
+          "altitude_m": 7000,
+          "observed_bp_c": 75.1,
+          "predicted_bp_c": 78.34750018998534,
+          "error_c": -3.2475001899853453
+        },
+        {
+          "altitude_m": 7500,
+          "observed_bp_c": 74.8,
+          "predicted_bp_c": 76.90820145014663,
+          "error_c": -2.1082014501466375
+        },
+        {
+          "altitude_m": 7500,
+          "observed_bp_c": 74.4,
+          "predicted_bp_c": 76.90820145014663,
+          "error_c": -2.508201450146629
+        },
+        {
+          "altitude_m": 7500,
+          "observed_bp_c": 74.1,
+          "predicted_bp_c": 76.90820145014663,
+          "error_c": -2.8082014501466404
+        },
+        {
+          "altitude_m": 7500,
+          "observed_bp_c": 73.8,
+          "predicted_bp_c": 76.90820145014663,
+          "error_c": -3.1082014501466375
+        },
+        {
+          "altitude_m": 7500,
+          "observed_bp_c": 73.4,
+          "predicted_bp_c": 76.90820145014663,
+          "error_c": -3.508201450146629
+        },
+        {
+          "altitude_m": 8000,
+          "observed_bp_c": 73.1,
+          "predicted_bp_c": 75.4821306554594,
+          "error_c": -2.382130655459406
+        },
+        {
+          "altitude_m": 8000,
+          "observed_bp_c": 72.7,
+          "predicted_bp_c": 75.4821306554594,
+          "error_c": -2.7821306554593974
+        },
+        {
+          "altitude_m": 8000,
+          "observed_bp_c": 72.4,
+          "predicted_bp_c": 75.4821306554594,
+          "error_c": -3.0821306554593946
+        },
+        {
+          "altitude_m": 8000,
+          "observed_bp_c": 72.0,
+          "predicted_bp_c": 75.4821306554594,
+          "error_c": -3.4821306554594003
+        },
+        {
+          "altitude_m": 8000,
+          "observed_bp_c": 71.7,
+          "predicted_bp_c": 75.4821306554594,
+          "error_c": -3.7821306554593974
+        },
+        {
+          "altitude_m": 8500,
+          "observed_bp_c": 71.4,
+          "predicted_bp_c": 74.0691062819651,
+          "error_c": -2.6691062819650995
+        },
+        {
+          "altitude_m": 8500,
+          "observed_bp_c": 71.0,
+          "predicted_bp_c": 74.0691062819651,
+          "error_c": -3.069106281965105
+        },
+        {
+          "altitude_m": 8500,
+          "observed_bp_c": 70.7,
+          "predicted_bp_c": 74.0691062819651,
+          "error_c": -3.3691062819651023
+        },
+        {
+          "altitude_m": 8500,
+          "observed_bp_c": 70.3,
+          "predicted_bp_c": 74.0691062819651,
+          "error_c": -3.769106281965108
+        },
+        {
+          "altitude_m": 8500,
+          "observed_bp_c": 70.0,
+          "predicted_bp_c": 74.0691062819651,
+          "error_c": -4.069106281965105
+        },
+        {
+          "altitude_m": 9000,
+          "observed_bp_c": 69.6,
+          "predicted_bp_c": 72.66895011192867,
+          "error_c": -3.0689501119286717
+        },
+        {
+          "altitude_m": 9000,
+          "observed_bp_c": 69.3,
+          "predicted_bp_c": 72.66895011192867,
+          "error_c": -3.368950111928669
+        },
+        {
+          "altitude_m": 9000,
+          "observed_bp_c": 69.0,
+          "predicted_bp_c": 72.66895011192867,
+          "error_c": -3.668950111928666
+        },
+        {
+          "altitude_m": 9000,
+          "observed_bp_c": 68.6,
+          "predicted_bp_c": 72.66895011192867,
+          "error_c": -4.068950111928672
+        },
+        {
+          "altitude_m": 9000,
+          "observed_bp_c": 68.3,
+          "predicted_bp_c": 72.66895011192867,
+          "error_c": -4.368950111928669
+        },
+        {
+          "altitude_m": 9500,
+          "observed_bp_c": 67.9,
+          "predicted_bp_c": 71.28148715890649,
+          "error_c": -3.3814871589064808
+        },
+        {
+          "altitude_m": 9500,
+          "observed_bp_c": 67.6,
+          "predicted_bp_c": 71.28148715890649,
+          "error_c": -3.681487158906492
+        },
+        {
+          "altitude_m": 9500,
+          "observed_bp_c": 67.2,
+          "predicted_bp_c": 71.28148715890649,
+          "error_c": -4.081487158906484
+        },
+        {
+          "altitude_m": 9500,
+          "observed_bp_c": 66.9,
+          "predicted_bp_c": 71.28148715890649,
+          "error_c": -4.381487158906481
+        },
+        {
+          "altitude_m": 9500,
+          "observed_bp_c": 66.5,
+          "predicted_bp_c": 71.28148715890649,
+          "error_c": -4.7814871589064865
+        },
+        {
+          "altitude_m": 10000,
+          "observed_bp_c": 66.2,
+          "predicted_bp_c": 69.90654559484324,
+          "error_c": -3.7065455948432344
+        },
+        {
+          "altitude_m": 10000,
+          "observed_bp_c": 65.8,
+          "predicted_bp_c": 69.90654559484324,
+          "error_c": -4.10654559484324
+        },
+        {
+          "altitude_m": 10000,
+          "observed_bp_c": 65.5,
+          "predicted_bp_c": 69.90654559484324,
+          "error_c": -4.406545594843237
+        },
+        {
+          "altitude_m": 10000,
+          "observed_bp_c": 65.2,
+          "predicted_bp_c": 69.90654559484324,
+          "error_c": -4.706545594843234
+        },
+        {
+          "altitude_m": 10000,
+          "observed_bp_c": 64.8,
+          "predicted_bp_c": 69.90654559484324,
+          "error_c": -5.10654559484324
+        },
+        {
+          "altitude_m": 10500,
+          "observed_bp_c": 64.5,
+          "predicted_bp_c": 68.54395667913337,
+          "error_c": -4.043956679133373
+        },
+        {
+          "altitude_m": 10500,
+          "observed_bp_c": 64.1,
+          "predicted_bp_c": 68.54395667913337,
+          "error_c": -4.443956679133379
+        },
+        {
+          "altitude_m": 10500,
+          "observed_bp_c": 63.8,
+          "predicted_bp_c": 68.54395667913337,
+          "error_c": -4.743956679133376
+        },
+        {
+          "altitude_m": 10500,
+          "observed_bp_c": 63.4,
+          "predicted_bp_c": 68.54395667913337,
+          "error_c": -5.143956679133375
+        },
+        {
+          "altitude_m": 10500,
+          "observed_bp_c": 63.1,
+          "predicted_bp_c": 68.54395667913337,
+          "error_c": -5.443956679133372
+        },
+        {
+          "altitude_m": 11000,
+          "observed_bp_c": 62.7,
+          "predicted_bp_c": 67.19355468958634,
+          "error_c": -4.4935546895863325
+        },
+        {
+          "altitude_m": 11000,
+          "observed_bp_c": 62.4,
+          "predicted_bp_c": 67.19355468958634,
+          "error_c": -4.793554689586337
+        },
+        {
+          "altitude_m": 11000,
+          "observed_bp_c": 62.0,
+          "predicted_bp_c": 67.19355468958634,
+          "error_c": -5.193554689586335
+        },
+        {
+          "altitude_m": 11000,
+          "observed_bp_c": 61.7,
+          "predicted_bp_c": 67.19355468958634,
+          "error_c": -5.4935546895863325
+        },
+        {
+          "altitude_m": 11000,
+          "observed_bp_c": 61.3,
+          "predicted_bp_c": 67.19355468958634,
+          "error_c": -5.893554689586338
+        },
+        {
+          "altitude_m": 11500,
+          "observed_bp_c": 61.0,
+          "predicted_bp_c": 65.85517685523524,
+          "error_c": -4.855176855235243
+        },
+        {
+          "altitude_m": 11500,
+          "observed_bp_c": 60.6,
+          "predicted_bp_c": 65.85517685523524,
+          "error_c": -5.255176855235241
+        },
+        {
+          "altitude_m": 11500,
+          "observed_bp_c": 60.3,
+          "predicted_bp_c": 65.85517685523524,
+          "error_c": -5.555176855235246
+        },
+        {
+          "altitude_m": 11500,
+          "observed_bp_c": 59.9,
+          "predicted_bp_c": 65.85517685523524,
+          "error_c": -5.955176855235244
+        },
+        {
+          "altitude_m": 11500,
+          "observed_bp_c": 59.6,
+          "predicted_bp_c": 65.85517685523524,
+          "error_c": -6.255176855235241
+        },
+        {
+          "altitude_m": 12000,
+          "observed_bp_c": 59.2,
+          "predicted_bp_c": 64.52866329093337,
+          "error_c": -5.328663290933363
+        },
+        {
+          "altitude_m": 12000,
+          "observed_bp_c": 58.9,
+          "predicted_bp_c": 64.52866329093337,
+          "error_c": -5.628663290933368
+        },
+        {
+          "altitude_m": 12000,
+          "observed_bp_c": 58.5,
+          "predicted_bp_c": 64.52866329093337,
+          "error_c": -6.028663290933366
+        },
+        {
+          "altitude_m": 12000,
+          "observed_bp_c": 58.2,
+          "predicted_bp_c": 64.52866329093337,
+          "error_c": -6.328663290933363
+        },
+        {
+          "altitude_m": 12000,
+          "observed_bp_c": 57.8,
+          "predicted_bp_c": 64.52866329093337,
+          "error_c": -6.728663290933369
+        }
+      ]
+    }
+  },
+  "sensitivity_analysis": {
+    "lapse_rates_tested": 31,
+    "range_K_per_m": [
+      0.005,
+      0.008
+    ],
+    "results_engineeringtoolbox": [
+      {
+        "lapse_rate": 0.005,
+        "rmse": 0.397328795181884,
+        "bias": -0.011572078583883582,
+        "mae": 0.3215790664185275
+      },
+      {
+        "lapse_rate": 0.0051,
+        "rmse": 0.4106212159931889,
+        "bias": 0.004458850346953454,
+        "mae": 0.3279804507487216
+      },
+      {
+        "lapse_rate": 0.0052,
+        "rmse": 0.42470250492296846,
+        "bias": 0.02054496538939645,
+        "mae": 0.33493996723916064
+      },
+      {
+        "lapse_rate": 0.0053,
+        "rmse": 0.43951010214650305,
+        "bias": 0.0366866182503021,
+        "mae": 0.3419348192114004
+      },
+      {
+        "lapse_rate": 0.0054,
+        "rmse": 0.4549860731110928,
+        "bias": 0.05288416402458813,
+        "mae": 0.34989494209975797
+      },
+      {
+        "lapse_rate": 0.0055,
+        "rmse": 0.47107724463790585,
+        "bias": 0.06913796123966073,
+        "mae": 0.3579715388216297
+      },
+      {
+        "lapse_rate": 0.0056,
+        "rmse": 0.4877351543466724,
+        "bias": 0.08544837190050054,
+        "mae": 0.3662966133097963
+      },
+      {
+        "lapse_rate": 0.0057,
+        "rmse": 0.5049158720012061,
+        "bias": 0.10181576153553977,
+        "mae": 0.37538959971219277
+      },
+      {
+        "lapse_rate": 0.0058000000000000005,
+        "rmse": 0.5225797395039494,
+        "bias": 0.11824049924333656,
+        "mae": 0.3845249797785833
+      },
+      {
+        "lapse_rate": 0.0059,
+        "rmse": 0.5406910650709392,
+        "bias": 0.1347229577399861,
+        "mae": 0.3938650925078206
+      },
+      {
+        "lapse_rate": 0.006,
+        "rmse": 0.5592177974602196,
+        "bias": 0.15126351340740019,
+        "mae": 0.40386144611168345
+      },
+      {
+        "lapse_rate": 0.0061,
+        "rmse": 0.5781311982880737,
+        "bias": 0.1678625463423017,
+        "mae": 0.4139980705222855
+      },
+      {
+        "lapse_rate": 0.006200000000000001,
+        "rmse": 0.5974055243896479,
+        "bias": 0.18452044040621865,
+        "mae": 0.42418207054443324
+      },
+      {
+        "lapse_rate": 0.0063,
+        "rmse": 0.6170177276431892,
+        "bias": 0.2012375832761562,
+        "mae": 0.43481850320965154
+      },
+      {
+        "lapse_rate": 0.0064,
+        "rmse": 0.636947176400376,
+        "bias": 0.21801436649628056,
+        "mae": 0.445812330533934
+      },
+      {
+        "lapse_rate": 0.006500000000000001,
+        "rmse": 0.6571754003763172,
+        "bias": 0.23485118553040307,
+        "mae": 0.45717745224755696
+      },
+      {
+        "lapse_rate": 0.0066,
+        "rmse": 0.6776858593106472,
+        "bias": 0.2517484398154269,
+        "mae": 0.46862357622546974
+      },
+      {
+        "lapse_rate": 0.0067,
+        "rmse": 0.6984637347160619,
+        "bias": 0.26870653281573176,
+        "mae": 0.4803735748545513
+      },
+      {
+        "lapse_rate": 0.0068000000000000005,
+        "rmse": 0.719495743429045,
+        "bias": 0.2857258720784438,
+        "mae": 0.4924433244505177
+      },
+      {
+        "lapse_rate": 0.0069,
+        "rmse": 0.7407699713485628,
+        "bias": 0.3028068692897258,
+        "mae": 0.5047589598114451
+      },
+      {
+        "lapse_rate": 0.007,
+        "rmse": 0.7622757256056986,
+        "bias": 0.3199499403320814,
+        "mae": 0.5173298387733165
+      },
+      {
+        "lapse_rate": 0.0071,
+        "rmse": 0.7840034033865187,
+        "bias": 0.3371555053426022,
+        "mae": 0.5301364142817107
+      },
+      {
+        "lapse_rate": 0.0072,
+        "rmse": 0.8059443756866912,
+        "bias": 0.35442398877227593,
+        "mae": 0.54307098764151
+      },
+      {
+        "lapse_rate": 0.0073,
+        "rmse": 0.8280908843781244,
+        "bias": 0.37175581944641306,
+        "mae": 0.5562558851474306
+      },
+      {
+        "lapse_rate": 0.0074,
+        "rmse": 0.8504359510933721,
+        "bias": 0.38915143062604907,
+        "mae": 0.5696268448409979
+      },
+      {
+        "lapse_rate": 0.0075,
+        "rmse": 0.8729732965694728,
+        "bias": 0.4066112600705209,
+        "mae": 0.5831734476159623
+      },
+      {
+        "lapse_rate": 0.007600000000000001,
+        "rmse": 0.8956972692284375,
+        "bias": 0.4241357501011315,
+        "mae": 0.5969435001177678
+      },
+      {
+        "lapse_rate": 0.0077,
+        "rmse": 0.9186027819028411,
+        "bias": 0.441725347666027,
+        "mae": 0.6108259407737688
+      },
+      {
+        "lapse_rate": 0.0078,
+        "rmse": 0.9416852557372128,
+        "bias": 0.4593805044061477,
+        "mae": 0.6249009255465823
+      },
+      {
+        "lapse_rate": 0.0079,
+        "rmse": 0.9649405704085167,
+        "bias": 0.4771016767225027,
+        "mae": 0.6391217654759827
+      },
+      {
+        "lapse_rate": 0.008,
+        "rmse": 0.9883650199105481,
+        "bias": 0.4948893258445627,
+        "mae": 0.653543896921629
+      }
+    ],
+    "optimal_engineeringtoolbox": {
+      "optimal_lapse_rate": 0.005,
+      "min_rmse": 0.397328795181884,
+      "bias_at_optimal": -0.011572078583883582
+    },
+    "results_deleze": [
+      {
+        "lapse_rate": 0.005,
+        "rmse": 1.3655377611291937,
+        "bias": -1.1863782167924097,
+        "mae": 1.18727316438831
+      },
+      {
+        "lapse_rate": 0.0051,
+        "rmse": 1.3316762131931945,
+        "bias": -1.1581210562705577,
+        "mae": 1.1590270692405222
+      },
+      {
+        "lapse_rate": 0.0052,
+        "rmse": 1.2979508509232436,
+        "bias": -1.1297301519174268,
+        "mae": 1.1306472338921711
+      },
+      {
+        "lapse_rate": 0.0053,
+        "rmse": 1.2643905397695645,
+        "bias": -1.101204318634317,
+        "mae": 1.1021324732480222
+      },
+      {
+        "lapse_rate": 0.0054,
+        "rmse": 1.2310275795303642,
+        "bias": -1.0725423553249016,
+        "mae": 1.0734815862152227
+      },
+      {
+        "lapse_rate": 0.0055,
+        "rmse": 1.1978981441735561,
+        "bias": -1.0437430445999207,
+        "mae": 1.0446933554079805
+      },
+      {
+        "lapse_rate": 0.0056,
+        "rmse": 1.1650427775729526,
+        "bias": -1.0148051524746984,
+        "mae": 1.015766546845101
+      },
+      {
+        "lapse_rate": 0.0057,
+        "rmse": 1.132506950033008,
+        "bias": -0.9857274280597691,
+        "mae": 0.9866999096405974
+      },
+      {
+        "lapse_rate": 0.0058000000000000005,
+        "rmse": 1.1003416796338241,
+        "bias": -0.9565086032438369,
+        "mae": 0.9574921756866616
+      },
+      {
+        "lapse_rate": 0.0059,
+        "rmse": 1.0686042208083286,
+        "bias": -0.9271473923693039,
+        "mae": 0.9281420593291801
+      },
+      {
+        "lapse_rate": 0.006,
+        "rmse": 1.037358819813225,
+        "bias": -0.8976424918998323,
+        "mae": 0.8986482570353084
+      },
+      {
+        "lapse_rate": 0.0061,
+        "rmse": 1.006677532415685,
+        "bias": -0.8679925800799574,
+        "mae": 0.8690094470530773
+      },
+      {
+        "lapse_rate": 0.006200000000000001,
+        "rmse": 0.976641092601565,
+        "bias": -0.8381963165862045,
+        "mae": 0.8392242890625106
+      },
+      {
+        "lapse_rate": 0.0063,
+        "rmse": 0.9473398117143329,
+        "bias": -0.8082523421698987,
+        "mae": 0.8092914238184343
+      },
+      {
+        "lapse_rate": 0.0064,
+        "rmse": 0.9188744743703281,
+        "bias": -0.7781592782909238,
+        "mae": 0.7792094727842417
+      },
+      {
+        "lapse_rate": 0.006500000000000001,
+        "rmse": 0.8913571800099692,
+        "bias": -0.7479157267425036,
+        "mae": 0.7490143297175439
+      },
+      {
+        "lapse_rate": 0.0066,
+        "rmse": 0.864912056517458,
+        "bias": -0.7175202692666526,
+        "mae": 0.7186867101323897
+      },
+      {
+        "lapse_rate": 0.0067,
+        "rmse": 0.8396757450704101,
+        "bias": -0.6869714671598497,
+        "mae": 0.6927464937940123
+      },
+      {
+        "lapse_rate": 0.0068000000000000005,
+        "rmse": 0.8157975245490822,
+        "bias": -0.6562678608688959,
+        "mae": 0.6724631724065382
+      },
+      {
+        "lapse_rate": 0.0069,
+        "rmse": 0.7934389126884108,
+        "bias": -0.62540796957647,
+        "mae": 0.6533549164606635
+      },
+      {
+        "lapse_rate": 0.007,
+        "rmse": 0.7727725557833339,
+        "bias": -0.5943902907760524,
+        "mae": 0.6347066950592432
+      },
+      {
+        "lapse_rate": 0.0071,
+        "rmse": 0.7539802087506449,
+        "bias": -0.563213299836038,
+        "mae": 0.618307380393502
+      },
+      {
+        "lapse_rate": 0.0072,
+        "rmse": 0.7372496256669746,
+        "bias": -0.5318754495525184,
+        "mae": 0.6038820611333613
+      },
+      {
+        "lapse_rate": 0.0073,
+        "rmse": 0.7227702420583267,
+        "bias": -0.5003751696904732,
+        "mae": 0.5911272150672022
+      },
+      {
+        "lapse_rate": 0.0074,
+        "rmse": 0.7107276459516061,
+        "bias": -0.4687108665130666,
+        "mae": 0.5806524689477418
+      },
+      {
+        "lapse_rate": 0.0075,
+        "rmse": 0.7012970069844239,
+        "bias": -0.43688092229845843,
+        "mae": 0.5730658941210788
+      },
+      {
+        "lapse_rate": 0.007600000000000001,
+        "rmse": 0.6946358458386583,
+        "bias": -0.4048836948439203,
+        "mae": 0.5677565155331724
+      },
+      {
+        "lapse_rate": 0.0077,
+        "rmse": 0.6908767410612769,
+        "bias": -0.3727175169567585,
+        "mae": 0.5645363543320571
+      },
+      {
+        "lapse_rate": 0.0078,
+        "rmse": 0.6901207284750983,
+        "bias": -0.34038069593164777,
+        "mae": 0.5633020247532705
+      },
+      {
+        "lapse_rate": 0.0079,
+        "rmse": 0.6924321874314527,
+        "bias": -0.3078715130138807,
+        "mae": 0.5648680496865235
+      },
+      {
+        "lapse_rate": 0.008,
+        "rmse": 0.6978358872304927,
+        "bias": -0.2751882228481792,
+        "mae": 0.5688970521254456
+      }
+    ],
+    "optimal_deleze": {
+      "optimal_lapse_rate": 0.0078,
+      "min_rmse": 0.6901207284750983,
+      "bias_at_optimal": -0.34038069593164777
+    }
+  }
+}

@@ -1,0 +1,26 @@
+{
+  "type": "bar",
+  "title": "Model Comparison: RMSE and Bias by Dataset",
+  "xlabel": "Dataset",
+  "ylabel": "Error (°C)",
+  "aspect": "16:9",
+  "categories": ["EngineeringToolbox", "Deleze"],
+  "series": [
+    {
+      "label": "ISA+Antoine RMSE",
+      "values": [0.6572, 0.8914]
+    },
+    {
+      "label": "Baseline RMSE",
+      "values": [0.8400, 3.0004]
+    },
+    {
+      "label": "ISA+Antoine Bias",
+      "values": [0.2349, -0.7479]
+    },
+    {
+      "label": "Baseline Bias",
+      "values": [-0.7497, -2.4510]
+    }
+  ]
+}

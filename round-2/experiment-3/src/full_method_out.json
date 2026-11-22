@@ -1,0 +1,2384 @@
+{
+  "metadata": {
+    "method_name": "ISA+Antoine",
+    "description": "Empirical validation of ISA barometric formula + Antoine equation for boiling point prediction",
+    "constants": {
+      "P0_hPa": 1013.25,
+      "T0_K": 288.15,
+      "g_m_s2": 9.80665,
+      "M_kg_per_mol": 0.0289644,
+      "R_J_per_mol_K": 8.31447,
+      "L_K_per_m": 0.0065,
+      "ISA_exponent": 5.255781292873008,
+      "Antoine_A": 8.07131,
+      "Antoine_B": 1730.63,
+      "Antoine_C": 233.426
+    },
+    "reference_point_tests": [
+      {
+        "altitude_m": 0,
+        "expected_bp_c": 100.0,
+        "calculated_bp_c": 100.0,
+        "error_c": 0.0
+      },
+      {
+        "altitude_m": 1000,
+        "expected_bp_c": 96.7,
+        "calculated_bp_c": 96.68,
+        "error_c": 0.02
+      },
+      {
+        "altitude_m": 2000,
+        "expected_bp_c": 93.5,
+        "calculated_bp_c": 93.36,
+        "error_c": 0.14
+      },
+      {
+        "altitude_m": 3000,
+        "expected_bp_c": 90.4,
+        "calculated_bp_c": 90.03,
+        "error_c": 0.37
+      },
+      {
+        "altitude_m": 5000,
+        "expected_bp_c": 84.4,
+        "calculated_bp_c": 83.33,
+        "error_c": 1.07
+      }
+    ],
+    "monotonic_decrease_verified": true,
+    "baseline_comparison": {
+      "engineeringtoolbox": {
+        "ISA_Antoine_rmse": 0.6571754003763156,
+        "ISA_Antoine_bias": 0.23485118553040035,
+        "Baseline_rmse": 0.839985768798841,
+        "Baseline_bias": -0.7496586967218387
+      },
+      "deleze": {
+        "ISA_Antoine_rmse": 0.8913571800099692,
+        "ISA_Antoine_bias": -0.7479157267425036,
+        "Baseline_rmse": 3.000368449209908,
+        "Baseline_bias": -2.450988388429001
+      }
+    },
+    "sensitivity_analysis": {
+      "optimal_engineeringtoolbox": {
+        "optimal_lapse_rate": 0.005,
+        "min_rmse": 0.397328795181884,
+        "bias_at_optimal": -0.011572078583883582
+      },
+      "optimal_deleze": {
+        "optimal_lapse_rate": 0.0078,
+        "min_rmse": 0.6901207284750983,
+        "bias_at_optimal": -0.34038069593164777
+      }
+    }
+  },
+  "datasets": [
+    {
+      "dataset": "boiling_point_engineeringtoolbox",
+      "examples": [
+        {
+          "input": "Altitude: -305 m",
+          "output": "101.1 \u00b0C",
+          "predict_isa_antoine": "101.01 \u00b0C",
+          "predict_baseline": "101.01 \u00b0C",
+          "metadata_source": "engineeringtoolbox",
+          "metadata_altitude_m": -305,
+          "metadata_observed_bp_c": 101.1
+        },
+        {
+          "input": "Altitude: -229 m",
+          "output": "100.8 \u00b0C",
+          "predict_isa_antoine": "100.75 \u00b0C",
+          "predict_baseline": "100.76 \u00b0C",
+          "metadata_source": "engineeringtoolbox",
+          "metadata_altitude_m": -229,
+          "metadata_observed_bp_c": 100.8
+        },
+        {
+          "input": "Altitude: -152 m",
+          "output": "100.5 \u00b0C",
+          "predict_isa_antoine": "100.50 \u00b0C",
+          "predict_baseline": "100.50 \u00b0C",
+          "metadata_source": "engineeringtoolbox",
+          "metadata_altitude_m": -152,
+          "metadata_observed_bp_c": 100.5
+        },
+        {
+          "input": "Altitude: -76 m",
+          "output": "100.3 \u00b0C",
+          "predict_isa_antoine": "100.25 \u00b0C",
+          "predict_baseline": "100.25 \u00b0C",
+          "metadata_source": "engineeringtoolbox",
+          "metadata_altitude_m": -76,
+          "metadata_observed_bp_c": 100.3
+        },
+        {
+          "input": "Altitude: 0 m",
+          "output": "100.0 \u00b0C",
+          "predict_isa_antoine": "100.00 \u00b0C",
+          "predict_baseline": "100.00 \u00b0C",
+          "metadata_source": "engineeringtoolbox",
+          "metadata_altitude_m": 0,
+          "metadata_observed_bp_c": 100.0
+        },
+        {
+          "input": "Altitude: 76 m",
+          "output": "99.7 \u00b0C",
+          "predict_isa_antoine": "99.75 \u00b0C",
+          "predict_baseline": "99.75 \u00b0C",
+          "metadata_source": "engineeringtoolbox",
+          "metadata_altitude_m": 76,
+          "metadata_observed_bp_c": 99.7
+        },
+        {
+          "input": "Altitude: 152 m",
+          "output": "99.5 \u00b0C",
+          "predict_isa_antoine": "99.49 \u00b0C",
+          "predict_baseline": "99.49 \u00b0C",
+          "metadata_source": "engineeringtoolbox",
+          "metadata_altitude_m": 152,
+          "metadata_observed_bp_c": 99.5
+        },
+        {
+          "input": "Altitude: 229 m",
+          "output": "99.2 \u00b0C",
+          "predict_isa_antoine": "99.24 \u00b0C",
+          "predict_baseline": "99.24 \u00b0C",
+          "metadata_source": "engineeringtoolbox",
+          "metadata_altitude_m": 229,
+          "metadata_observed_bp_c": 99.2
+        },
+        {
+          "input": "Altitude: 305 m",
+          "output": "98.9 \u00b0C",
+          "predict_isa_antoine": "98.99 \u00b0C",
+          "predict_baseline": "98.99 \u00b0C",
+          "metadata_source": "engineeringtoolbox",
+          "metadata_altitude_m": 305,
+          "metadata_observed_bp_c": 98.9
+        },
+        {
+          "input": "Altitude: 381 m",
+          "output": "98.6 \u00b0C",
+          "predict_isa_antoine": "98.74 \u00b0C",
+          "predict_baseline": "98.74 \u00b0C",
+          "metadata_source": "engineeringtoolbox",
+          "metadata_altitude_m": 381,
+          "metadata_observed_bp_c": 98.6
+        },
+        {
+          "input": "Altitude: 457 m",
+          "output": "98.4 \u00b0C",
+          "predict_isa_antoine": "98.48 \u00b0C",
+          "predict_baseline": "98.49 \u00b0C",
+          "metadata_source": "engineeringtoolbox",
+          "metadata_altitude_m": 457,
+          "metadata_observed_bp_c": 98.4
+        },
+        {
+          "input": "Altitude: 533 m",
+          "output": "98.1 \u00b0C",
+          "predict_isa_antoine": "98.23 \u00b0C",
+          "predict_baseline": "98.24 \u00b0C",
+          "metadata_source": "engineeringtoolbox",
+          "metadata_altitude_m": 533,
+          "metadata_observed_bp_c": 98.1
+        },
+        {
+          "input": "Altitude: 610 m",
+          "output": "97.8 \u00b0C",
+          "predict_isa_antoine": "97.98 \u00b0C",
+          "predict_baseline": "97.99 \u00b0C",
+          "metadata_source": "engineeringtoolbox",
+          "metadata_altitude_m": 610,
+          "metadata_observed_bp_c": 97.8
+        },
+        {
+          "input": "Altitude: 686 m",
+          "output": "97.6 \u00b0C",
+          "predict_isa_antoine": "97.73 \u00b0C",
+          "predict_baseline": "97.74 \u00b0C",
+          "metadata_source": "engineeringtoolbox",
+          "metadata_altitude_m": 686,
+          "metadata_observed_bp_c": 97.6
+        },
+        {
+          "input": "Altitude: 762 m",
+          "output": "97.3 \u00b0C",
+          "predict_isa_antoine": "97.47 \u00b0C",
+          "predict_baseline": "97.50 \u00b0C",
+          "metadata_source": "engineeringtoolbox",
+          "metadata_altitude_m": 762,
+          "metadata_observed_bp_c": 97.3
+        },
+        {
+          "input": "Altitude: 838 m",
+          "output": "97.1 \u00b0C",
+          "predict_isa_antoine": "97.22 \u00b0C",
+          "predict_baseline": "97.25 \u00b0C",
+          "metadata_source": "engineeringtoolbox",
+          "metadata_altitude_m": 838,
+          "metadata_observed_bp_c": 97.1
+        },
+        {
+          "input": "Altitude: 914 m",
+          "output": "96.8 \u00b0C",
+          "predict_isa_antoine": "96.97 \u00b0C",
+          "predict_baseline": "97.00 \u00b0C",
+          "metadata_source": "engineeringtoolbox",
+          "metadata_altitude_m": 914,
+          "metadata_observed_bp_c": 96.8
+        },
+        {
+          "input": "Altitude: 991 m",
+          "output": "96.5 \u00b0C",
+          "predict_isa_antoine": "96.71 \u00b0C",
+          "predict_baseline": "96.75 \u00b0C",
+          "metadata_source": "engineeringtoolbox",
+          "metadata_altitude_m": 991,
+          "metadata_observed_bp_c": 96.5
+        },
+        {
+          "input": "Altitude: 1067 m",
+          "output": "96.3 \u00b0C",
+          "predict_isa_antoine": "96.46 \u00b0C",
+          "predict_baseline": "96.50 \u00b0C",
+          "metadata_source": "engineeringtoolbox",
+          "metadata_altitude_m": 1067,
+          "metadata_observed_bp_c": 96.3
+        },
+        {
+          "input": "Altitude: 1143 m",
+          "output": "96.0 \u00b0C",
+          "predict_isa_antoine": "96.21 \u00b0C",
+          "predict_baseline": "96.26 \u00b0C",
+          "metadata_source": "engineeringtoolbox",
+          "metadata_altitude_m": 1143,
+          "metadata_observed_bp_c": 96.0
+        },
+        {
+          "input": "Altitude: 1219 m",
+          "output": "95.7 \u00b0C",
+          "predict_isa_antoine": "95.96 \u00b0C",
+          "predict_baseline": "96.01 \u00b0C",
+          "metadata_source": "engineeringtoolbox",
+          "metadata_altitude_m": 1219,
+          "metadata_observed_bp_c": 95.7
+        },
+        {
+          "input": "Altitude: 1295 m",
+          "output": "95.5 \u00b0C",
+          "predict_isa_antoine": "95.71 \u00b0C",
+          "predict_baseline": "95.77 \u00b0C",
+          "metadata_source": "engineeringtoolbox",
+          "metadata_altitude_m": 1295,
+          "metadata_observed_bp_c": 95.5
+        },
+        {
+          "input": "Altitude: 1372 m",
+          "output": "95.2 \u00b0C",
+          "predict_isa_antoine": "95.45 \u00b0C",
+          "predict_baseline": "95.52 \u00b0C",
+          "metadata_source": "engineeringtoolbox",
+          "metadata_altitude_m": 1372,
+          "metadata_observed_bp_c": 95.2
+        },
+        {
+          "input": "Altitude: 1448 m",
+          "output": "94.9 \u00b0C",
+          "predict_isa_antoine": "95.20 \u00b0C",
+          "predict_baseline": "95.28 \u00b0C",
+          "metadata_source": "engineeringtoolbox",
+          "metadata_altitude_m": 1448,
+          "metadata_observed_bp_c": 94.9
+        },
+        {
+          "input": "Altitude: 1524 m",
+          "output": "94.7 \u00b0C",
+          "predict_isa_antoine": "94.95 \u00b0C",
+          "predict_baseline": "95.03 \u00b0C",
+          "metadata_source": "engineeringtoolbox",
+          "metadata_altitude_m": 1524,
+          "metadata_observed_bp_c": 94.7
+        },
+        {
+          "input": "Altitude: 1600 m",
+          "output": "94.4 \u00b0C",
+          "predict_isa_antoine": "94.69 \u00b0C",
+          "predict_baseline": "94.79 \u00b0C",
+          "metadata_source": "engineeringtoolbox",
+          "metadata_altitude_m": 1600,
+          "metadata_observed_bp_c": 94.4
+        },
+        {
+          "input": "Altitude: 1676 m",
+          "output": "94.2 \u00b0C",
+          "predict_isa_antoine": "94.44 \u00b0C",
+          "predict_baseline": "94.54 \u00b0C",
+          "metadata_source": "engineeringtoolbox",
+          "metadata_altitude_m": 1676,
+          "metadata_observed_bp_c": 94.2
+        },
+        {
+          "input": "Altitude: 1753 m",
+          "output": "93.9 \u00b0C",
+          "predict_isa_antoine": "94.18 \u00b0C",
+          "predict_baseline": "94.30 \u00b0C",
+          "metadata_source": "engineeringtoolbox",
+          "metadata_altitude_m": 1753,
+          "metadata_observed_bp_c": 93.9
+        },
+        {
+          "input": "Altitude: 1829 m",
+          "output": "93.6 \u00b0C",
+          "predict_isa_antoine": "93.93 \u00b0C",
+          "predict_baseline": "94.06 \u00b0C",
+          "metadata_source": "engineeringtoolbox",
+          "metadata_altitude_m": 1829,
+          "metadata_observed_bp_c": 93.6
+        },
+        {
+          "input": "Altitude: 1905 m",
+          "output": "93.4 \u00b0C",
+          "predict_isa_antoine": "93.68 \u00b0C",
+          "predict_baseline": "93.81 \u00b0C",
+          "metadata_source": "engineeringtoolbox",
+          "metadata_altitude_m": 1905,
+          "metadata_observed_bp_c": 93.4
+        },
+        {
+          "input": "Altitude: 1981 m",
+          "output": "93.1 \u00b0C",
+          "predict_isa_antoine": "93.43 \u00b0C",
+          "predict_baseline": "93.57 \u00b0C",
+          "metadata_source": "engineeringtoolbox",
+          "metadata_altitude_m": 1981,
+          "metadata_observed_bp_c": 93.1
+        },
+        {
+          "input": "Altitude: 2057 m",
+          "output": "92.9 \u00b0C",
+          "predict_isa_antoine": "93.17 \u00b0C",
+          "predict_baseline": "93.33 \u00b0C",
+          "metadata_source": "engineeringtoolbox",
+          "metadata_altitude_m": 2057,
+          "metadata_observed_bp_c": 92.9
+        },
+        {
+          "input": "Altitude: 2134 m",
+          "output": "92.6 \u00b0C",
+          "predict_isa_antoine": "92.92 \u00b0C",
+          "predict_baseline": "93.08 \u00b0C",
+          "metadata_source": "engineeringtoolbox",
+          "metadata_altitude_m": 2134,
+          "metadata_observed_bp_c": 92.6
+        },
+        {
+          "input": "Altitude: 2210 m",
+          "output": "92.4 \u00b0C",
+          "predict_isa_antoine": "92.66 \u00b0C",
+          "predict_baseline": "92.84 \u00b0C",
+          "metadata_source": "engineeringtoolbox",
+          "metadata_altitude_m": 2210,
+          "metadata_observed_bp_c": 92.4
+        },
+        {
+          "input": "Altitude: 2286 m",
+          "output": "92.1 \u00b0C",
+          "predict_isa_antoine": "92.41 \u00b0C",
+          "predict_baseline": "92.60 \u00b0C",
+          "metadata_source": "engineeringtoolbox",
+          "metadata_altitude_m": 2286,
+          "metadata_observed_bp_c": 92.1
+        },
+        {
+          "input": "Altitude: 2362 m",
+          "output": "91.8 \u00b0C",
+          "predict_isa_antoine": "92.16 \u00b0C",
+          "predict_baseline": "92.36 \u00b0C",
+          "metadata_source": "engineeringtoolbox",
+          "metadata_altitude_m": 2362,
+          "metadata_observed_bp_c": 91.8
+        },
+        {
+          "input": "Altitude: 2438 m",
+          "output": "91.6 \u00b0C",
+          "predict_isa_antoine": "91.90 \u00b0C",
+          "predict_baseline": "92.12 \u00b0C",
+          "metadata_source": "engineeringtoolbox",
+          "metadata_altitude_m": 2438,
+          "metadata_observed_bp_c": 91.6
+        },
+        {
+          "input": "Altitude: 2515 m",
+          "output": "91.3 \u00b0C",
+          "predict_isa_antoine": "91.65 \u00b0C",
+          "predict_baseline": "91.88 \u00b0C",
+          "metadata_source": "engineeringtoolbox",
+          "metadata_altitude_m": 2515,
+          "metadata_observed_bp_c": 91.3
+        },
+        {
+          "input": "Altitude: 2591 m",
+          "output": "91.1 \u00b0C",
+          "predict_isa_antoine": "91.39 \u00b0C",
+          "predict_baseline": "91.64 \u00b0C",
+          "metadata_source": "engineeringtoolbox",
+          "metadata_altitude_m": 2591,
+          "metadata_observed_bp_c": 91.1
+        },
+        {
+          "input": "Altitude: 2667 m",
+          "output": "90.8 \u00b0C",
+          "predict_isa_antoine": "91.14 \u00b0C",
+          "predict_baseline": "91.40 \u00b0C",
+          "metadata_source": "engineeringtoolbox",
+          "metadata_altitude_m": 2667,
+          "metadata_observed_bp_c": 90.8
+        },
+        {
+          "input": "Altitude: 2743 m",
+          "output": "90.6 \u00b0C",
+          "predict_isa_antoine": "90.89 \u00b0C",
+          "predict_baseline": "91.16 \u00b0C",
+          "metadata_source": "engineeringtoolbox",
+          "metadata_altitude_m": 2743,
+          "metadata_observed_bp_c": 90.6
+        },
+        {
+          "input": "Altitude: 2819 m",
+          "output": "90.3 \u00b0C",
+          "predict_isa_antoine": "90.63 \u00b0C",
+          "predict_baseline": "90.93 \u00b0C",
+          "metadata_source": "engineeringtoolbox",
+          "metadata_altitude_m": 2819,
+          "metadata_observed_bp_c": 90.3
+        },
+        {
+          "input": "Altitude: 2896 m",
+          "output": "90.1 \u00b0C",
+          "predict_isa_antoine": "90.38 \u00b0C",
+          "predict_baseline": "90.69 \u00b0C",
+          "metadata_source": "engineeringtoolbox",
+          "metadata_altitude_m": 2896,
+          "metadata_observed_bp_c": 90.1
+        },
+        {
+          "input": "Altitude: 2972 m",
+          "output": "89.8 \u00b0C",
+          "predict_isa_antoine": "90.12 \u00b0C",
+          "predict_baseline": "90.45 \u00b0C",
+          "metadata_source": "engineeringtoolbox",
+          "metadata_altitude_m": 2972,
+          "metadata_observed_bp_c": 89.8
+        },
+        {
+          "input": "Altitude: 3048 m",
+          "output": "89.6 \u00b0C",
+          "predict_isa_antoine": "89.87 \u00b0C",
+          "predict_baseline": "90.21 \u00b0C",
+          "metadata_source": "engineeringtoolbox",
+          "metadata_altitude_m": 3048,
+          "metadata_observed_bp_c": 89.6
+        },
+        {
+          "input": "Altitude: 3124 m",
+          "output": "89.3 \u00b0C",
+          "predict_isa_antoine": "89.62 \u00b0C",
+          "predict_baseline": "89.97 \u00b0C",
+          "metadata_source": "engineeringtoolbox",
+          "metadata_altitude_m": 3124,
+          "metadata_observed_bp_c": 89.3
+        },
+        {
+          "input": "Altitude: 3200 m",
+          "output": "89.1 \u00b0C",
+          "predict_isa_antoine": "89.36 \u00b0C",
+          "predict_baseline": "89.74 \u00b0C",
+          "metadata_source": "engineeringtoolbox",
+          "metadata_altitude_m": 3200,
+          "metadata_observed_bp_c": 89.1
+        },
+        {
+          "input": "Altitude: 3277 m",
+          "output": "88.8 \u00b0C",
+          "predict_isa_antoine": "89.10 \u00b0C",
+          "predict_baseline": "89.50 \u00b0C",
+          "metadata_source": "engineeringtoolbox",
+          "metadata_altitude_m": 3277,
+          "metadata_observed_bp_c": 88.8
+        },
+        {
+          "input": "Altitude: 3353 m",
+          "output": "88.6 \u00b0C",
+          "predict_isa_antoine": "88.85 \u00b0C",
+          "predict_baseline": "89.26 \u00b0C",
+          "metadata_source": "engineeringtoolbox",
+          "metadata_altitude_m": 3353,
+          "metadata_observed_bp_c": 88.6
+        },
+        {
+          "input": "Altitude: 3429 m",
+          "output": "88.3 \u00b0C",
+          "predict_isa_antoine": "88.60 \u00b0C",
+          "predict_baseline": "89.03 \u00b0C",
+          "metadata_source": "engineeringtoolbox",
+          "metadata_altitude_m": 3429,
+          "metadata_observed_bp_c": 88.3
+        },
+        {
+          "input": "Altitude: 3505 m",
+          "output": "88.1 \u00b0C",
+          "predict_isa_antoine": "88.34 \u00b0C",
+          "predict_baseline": "88.79 \u00b0C",
+          "metadata_source": "engineeringtoolbox",
+          "metadata_altitude_m": 3505,
+          "metadata_observed_bp_c": 88.1
+        },
+        {
+          "input": "Altitude: 3581 m",
+          "output": "87.8 \u00b0C",
+          "predict_isa_antoine": "88.09 \u00b0C",
+          "predict_baseline": "88.56 \u00b0C",
+          "metadata_source": "engineeringtoolbox",
+          "metadata_altitude_m": 3581,
+          "metadata_observed_bp_c": 87.8
+        },
+        {
+          "input": "Altitude: 3658 m",
+          "output": "87.6 \u00b0C",
+          "predict_isa_antoine": "87.83 \u00b0C",
+          "predict_baseline": "88.32 \u00b0C",
+          "metadata_source": "engineeringtoolbox",
+          "metadata_altitude_m": 3658,
+          "metadata_observed_bp_c": 87.6
+        },
+        {
+          "input": "Altitude: 3734 m",
+          "output": "87.3 \u00b0C",
+          "predict_isa_antoine": "87.58 \u00b0C",
+          "predict_baseline": "88.09 \u00b0C",
+          "metadata_source": "engineeringtoolbox",
+          "metadata_altitude_m": 3734,
+          "metadata_observed_bp_c": 87.3
+        },
+        {
+          "input": "Altitude: 3810 m",
+          "output": "87.1 \u00b0C",
+          "predict_isa_antoine": "87.32 \u00b0C",
+          "predict_baseline": "87.85 \u00b0C",
+          "metadata_source": "engineeringtoolbox",
+          "metadata_altitude_m": 3810,
+          "metadata_observed_bp_c": 87.1
+        },
+        {
+          "input": "Altitude: 3886 m",
+          "output": "86.8 \u00b0C",
+          "predict_isa_antoine": "87.07 \u00b0C",
+          "predict_baseline": "87.62 \u00b0C",
+          "metadata_source": "engineeringtoolbox",
+          "metadata_altitude_m": 3886,
+          "metadata_observed_bp_c": 86.8
+        },
+        {
+          "input": "Altitude: 3962 m",
+          "output": "86.6 \u00b0C",
+          "predict_isa_antoine": "86.81 \u00b0C",
+          "predict_baseline": "87.39 \u00b0C",
+          "metadata_source": "engineeringtoolbox",
+          "metadata_altitude_m": 3962,
+          "metadata_observed_bp_c": 86.6
+        },
+        {
+          "input": "Altitude: 4037 m",
+          "output": "86.4 \u00b0C",
+          "predict_isa_antoine": "86.56 \u00b0C",
+          "predict_baseline": "87.16 \u00b0C",
+          "metadata_source": "engineeringtoolbox",
+          "metadata_altitude_m": 4037,
+          "metadata_observed_bp_c": 86.4
+        },
+        {
+          "input": "Altitude: 4115 m",
+          "output": "86.1 \u00b0C",
+          "predict_isa_antoine": "86.30 \u00b0C",
+          "predict_baseline": "86.92 \u00b0C",
+          "metadata_source": "engineeringtoolbox",
+          "metadata_altitude_m": 4115,
+          "metadata_observed_bp_c": 86.1
+        },
+        {
+          "input": "Altitude: 4191 m",
+          "output": "85.9 \u00b0C",
+          "predict_isa_antoine": "86.04 \u00b0C",
+          "predict_baseline": "86.69 \u00b0C",
+          "metadata_source": "engineeringtoolbox",
+          "metadata_altitude_m": 4191,
+          "metadata_observed_bp_c": 85.9
+        },
+        {
+          "input": "Altitude: 4267 m",
+          "output": "85.6 \u00b0C",
+          "predict_isa_antoine": "85.79 \u00b0C",
+          "predict_baseline": "86.46 \u00b0C",
+          "metadata_source": "engineeringtoolbox",
+          "metadata_altitude_m": 4267,
+          "metadata_observed_bp_c": 85.6
+        },
+        {
+          "input": "Altitude: 4343 m",
+          "output": "85.4 \u00b0C",
+          "predict_isa_antoine": "85.53 \u00b0C",
+          "predict_baseline": "86.23 \u00b0C",
+          "metadata_source": "engineeringtoolbox",
+          "metadata_altitude_m": 4343,
+          "metadata_observed_bp_c": 85.4
+        },
+        {
+          "input": "Altitude: 4420 m",
+          "output": "85.1 \u00b0C",
+          "predict_isa_antoine": "85.28 \u00b0C",
+          "predict_baseline": "85.99 \u00b0C",
+          "metadata_source": "engineeringtoolbox",
+          "metadata_altitude_m": 4420,
+          "metadata_observed_bp_c": 85.1
+        },
+        {
+          "input": "Altitude: 4496 m",
+          "output": "84.9 \u00b0C",
+          "predict_isa_antoine": "85.02 \u00b0C",
+          "predict_baseline": "85.76 \u00b0C",
+          "metadata_source": "engineeringtoolbox",
+          "metadata_altitude_m": 4496,
+          "metadata_observed_bp_c": 84.9
+        },
+        {
+          "input": "Altitude: 4572 m",
+          "output": "84.7 \u00b0C",
+          "predict_isa_antoine": "84.77 \u00b0C",
+          "predict_baseline": "85.53 \u00b0C",
+          "metadata_source": "engineeringtoolbox",
+          "metadata_altitude_m": 4572,
+          "metadata_observed_bp_c": 84.7
+        },
+        {
+          "input": "Altitude: 4648 m",
+          "output": "84.4 \u00b0C",
+          "predict_isa_antoine": "84.51 \u00b0C",
+          "predict_baseline": "85.30 \u00b0C",
+          "metadata_source": "engineeringtoolbox",
+          "metadata_altitude_m": 4648,
+          "metadata_observed_bp_c": 84.4
+        },
+        {
+          "input": "Altitude: 4724 m",
+          "output": "84.2 \u00b0C",
+          "predict_isa_antoine": "84.26 \u00b0C",
+          "predict_baseline": "85.07 \u00b0C",
+          "metadata_source": "engineeringtoolbox",
+          "metadata_altitude_m": 4724,
+          "metadata_observed_bp_c": 84.2
+        },
+        {
+          "input": "Altitude: 4801 m",
+          "output": "83.9 \u00b0C",
+          "predict_isa_antoine": "84.00 \u00b0C",
+          "predict_baseline": "84.84 \u00b0C",
+          "metadata_source": "engineeringtoolbox",
+          "metadata_altitude_m": 4801,
+          "metadata_observed_bp_c": 83.9
+        },
+        {
+          "input": "Altitude: 4877 m",
+          "output": "83.7 \u00b0C",
+          "predict_isa_antoine": "83.74 \u00b0C",
+          "predict_baseline": "84.61 \u00b0C",
+          "metadata_source": "engineeringtoolbox",
+          "metadata_altitude_m": 4877,
+          "metadata_observed_bp_c": 83.7
+        },
+        {
+          "input": "Altitude: 4953 m",
+          "output": "83.5 \u00b0C",
+          "predict_isa_antoine": "83.49 \u00b0C",
+          "predict_baseline": "84.38 \u00b0C",
+          "metadata_source": "engineeringtoolbox",
+          "metadata_altitude_m": 4953,
+          "metadata_observed_bp_c": 83.5
+        },
+        {
+          "input": "Altitude: 5029 m",
+          "output": "83.2 \u00b0C",
+          "predict_isa_antoine": "83.23 \u00b0C",
+          "predict_baseline": "84.15 \u00b0C",
+          "metadata_source": "engineeringtoolbox",
+          "metadata_altitude_m": 5029,
+          "metadata_observed_bp_c": 83.2
+        },
+        {
+          "input": "Altitude: 5105 m",
+          "output": "83.0 \u00b0C",
+          "predict_isa_antoine": "82.97 \u00b0C",
+          "predict_baseline": "83.93 \u00b0C",
+          "metadata_source": "engineeringtoolbox",
+          "metadata_altitude_m": 5105,
+          "metadata_observed_bp_c": 83.0
+        },
+        {
+          "input": "Altitude: 5182 m",
+          "output": "82.7 \u00b0C",
+          "predict_isa_antoine": "82.71 \u00b0C",
+          "predict_baseline": "83.70 \u00b0C",
+          "metadata_source": "engineeringtoolbox",
+          "metadata_altitude_m": 5182,
+          "metadata_observed_bp_c": 82.7
+        },
+        {
+          "input": "Altitude: 5258 m",
+          "output": "82.5 \u00b0C",
+          "predict_isa_antoine": "82.46 \u00b0C",
+          "predict_baseline": "83.47 \u00b0C",
+          "metadata_source": "engineeringtoolbox",
+          "metadata_altitude_m": 5258,
+          "metadata_observed_bp_c": 82.5
+        },
+        {
+          "input": "Altitude: 5334 m",
+          "output": "82.3 \u00b0C",
+          "predict_isa_antoine": "82.20 \u00b0C",
+          "predict_baseline": "83.24 \u00b0C",
+          "metadata_source": "engineeringtoolbox",
+          "metadata_altitude_m": 5334,
+          "metadata_observed_bp_c": 82.3
+        },
+        {
+          "input": "Altitude: 5410 m",
+          "output": "82.0 \u00b0C",
+          "predict_isa_antoine": "81.95 \u00b0C",
+          "predict_baseline": "83.01 \u00b0C",
+          "metadata_source": "engineeringtoolbox",
+          "metadata_altitude_m": 5410,
+          "metadata_observed_bp_c": 82.0
+        },
+        {
+          "input": "Altitude: 5486 m",
+          "output": "81.8 \u00b0C",
+          "predict_isa_antoine": "81.69 \u00b0C",
+          "predict_baseline": "82.79 \u00b0C",
+          "metadata_source": "engineeringtoolbox",
+          "metadata_altitude_m": 5486,
+          "metadata_observed_bp_c": 81.8
+        },
+        {
+          "input": "Altitude: 5563 m",
+          "output": "81.6 \u00b0C",
+          "predict_isa_antoine": "81.43 \u00b0C",
+          "predict_baseline": "82.56 \u00b0C",
+          "metadata_source": "engineeringtoolbox",
+          "metadata_altitude_m": 5563,
+          "metadata_observed_bp_c": 81.6
+        },
+        {
+          "input": "Altitude: 5639 m",
+          "output": "81.3 \u00b0C",
+          "predict_isa_antoine": "81.17 \u00b0C",
+          "predict_baseline": "82.33 \u00b0C",
+          "metadata_source": "engineeringtoolbox",
+          "metadata_altitude_m": 5639,
+          "metadata_observed_bp_c": 81.3
+        },
+        {
+          "input": "Altitude: 5715 m",
+          "output": "81.1 \u00b0C",
+          "predict_isa_antoine": "80.92 \u00b0C",
+          "predict_baseline": "82.11 \u00b0C",
+          "metadata_source": "engineeringtoolbox",
+          "metadata_altitude_m": 5715,
+          "metadata_observed_bp_c": 81.1
+        },
+        {
+          "input": "Altitude: 5791 m",
+          "output": "80.9 \u00b0C",
+          "predict_isa_antoine": "80.66 \u00b0C",
+          "predict_baseline": "81.88 \u00b0C",
+          "metadata_source": "engineeringtoolbox",
+          "metadata_altitude_m": 5791,
+          "metadata_observed_bp_c": 80.9
+        },
+        {
+          "input": "Altitude: 5867 m",
+          "output": "80.6 \u00b0C",
+          "predict_isa_antoine": "80.40 \u00b0C",
+          "predict_baseline": "81.66 \u00b0C",
+          "metadata_source": "engineeringtoolbox",
+          "metadata_altitude_m": 5867,
+          "metadata_observed_bp_c": 80.6
+        },
+        {
+          "input": "Altitude: 5944 m",
+          "output": "80.4 \u00b0C",
+          "predict_isa_antoine": "80.14 \u00b0C",
+          "predict_baseline": "81.43 \u00b0C",
+          "metadata_source": "engineeringtoolbox",
+          "metadata_altitude_m": 5944,
+          "metadata_observed_bp_c": 80.4
+        },
+        {
+          "input": "Altitude: 6020 m",
+          "output": "80.2 \u00b0C",
+          "predict_isa_antoine": "79.89 \u00b0C",
+          "predict_baseline": "81.21 \u00b0C",
+          "metadata_source": "engineeringtoolbox",
+          "metadata_altitude_m": 6020,
+          "metadata_observed_bp_c": 80.2
+        },
+        {
+          "input": "Altitude: 6096 m",
+          "output": "79.9 \u00b0C",
+          "predict_isa_antoine": "79.63 \u00b0C",
+          "predict_baseline": "80.98 \u00b0C",
+          "metadata_source": "engineeringtoolbox",
+          "metadata_altitude_m": 6096,
+          "metadata_observed_bp_c": 79.9
+        },
+        {
+          "input": "Altitude: 6172 m",
+          "output": "79.7 \u00b0C",
+          "predict_isa_antoine": "79.37 \u00b0C",
+          "predict_baseline": "80.76 \u00b0C",
+          "metadata_source": "engineeringtoolbox",
+          "metadata_altitude_m": 6172,
+          "metadata_observed_bp_c": 79.7
+        },
+        {
+          "input": "Altitude: 6248 m",
+          "output": "79.5 \u00b0C",
+          "predict_isa_antoine": "79.12 \u00b0C",
+          "predict_baseline": "80.54 \u00b0C",
+          "metadata_source": "engineeringtoolbox",
+          "metadata_altitude_m": 6248,
+          "metadata_observed_bp_c": 79.5
+        },
+        {
+          "input": "Altitude: 6325 m",
+          "output": "79.3 \u00b0C",
+          "predict_isa_antoine": "78.86 \u00b0C",
+          "predict_baseline": "80.31 \u00b0C",
+          "metadata_source": "engineeringtoolbox",
+          "metadata_altitude_m": 6325,
+          "metadata_observed_bp_c": 79.3
+        },
+        {
+          "input": "Altitude: 6401 m",
+          "output": "79.0 \u00b0C",
+          "predict_isa_antoine": "78.60 \u00b0C",
+          "predict_baseline": "80.09 \u00b0C",
+          "metadata_source": "engineeringtoolbox",
+          "metadata_altitude_m": 6401,
+          "metadata_observed_bp_c": 79.0
+        },
+        {
+          "input": "Altitude: 6477 m",
+          "output": "78.8 \u00b0C",
+          "predict_isa_antoine": "78.34 \u00b0C",
+          "predict_baseline": "79.87 \u00b0C",
+          "metadata_source": "engineeringtoolbox",
+          "metadata_altitude_m": 6477,
+          "metadata_observed_bp_c": 78.8
+        },
+        {
+          "input": "Altitude: 6553 m",
+          "output": "78.6 \u00b0C",
+          "predict_isa_antoine": "78.08 \u00b0C",
+          "predict_baseline": "79.65 \u00b0C",
+          "metadata_source": "engineeringtoolbox",
+          "metadata_altitude_m": 6553,
+          "metadata_observed_bp_c": 78.6
+        },
+        {
+          "input": "Altitude: 6629 m",
+          "output": "78.3 \u00b0C",
+          "predict_isa_antoine": "77.83 \u00b0C",
+          "predict_baseline": "79.42 \u00b0C",
+          "metadata_source": "engineeringtoolbox",
+          "metadata_altitude_m": 6629,
+          "metadata_observed_bp_c": 78.3
+        },
+        {
+          "input": "Altitude: 6706 m",
+          "output": "78.1 \u00b0C",
+          "predict_isa_antoine": "77.57 \u00b0C",
+          "predict_baseline": "79.20 \u00b0C",
+          "metadata_source": "engineeringtoolbox",
+          "metadata_altitude_m": 6706,
+          "metadata_observed_bp_c": 78.1
+        },
+        {
+          "input": "Altitude: 6782 m",
+          "output": "77.9 \u00b0C",
+          "predict_isa_antoine": "77.31 \u00b0C",
+          "predict_baseline": "78.98 \u00b0C",
+          "metadata_source": "engineeringtoolbox",
+          "metadata_altitude_m": 6782,
+          "metadata_observed_bp_c": 77.9
+        },
+        {
+          "input": "Altitude: 6858 m",
+          "output": "77.7 \u00b0C",
+          "predict_isa_antoine": "77.05 \u00b0C",
+          "predict_baseline": "78.76 \u00b0C",
+          "metadata_source": "engineeringtoolbox",
+          "metadata_altitude_m": 6858,
+          "metadata_observed_bp_c": 77.7
+        },
+        {
+          "input": "Altitude: 6934 m",
+          "output": "77.4 \u00b0C",
+          "predict_isa_antoine": "76.79 \u00b0C",
+          "predict_baseline": "78.54 \u00b0C",
+          "metadata_source": "engineeringtoolbox",
+          "metadata_altitude_m": 6934,
+          "metadata_observed_bp_c": 77.4
+        },
+        {
+          "input": "Altitude: 7010 m",
+          "output": "77.2 \u00b0C",
+          "predict_isa_antoine": "76.53 \u00b0C",
+          "predict_baseline": "78.32 \u00b0C",
+          "metadata_source": "engineeringtoolbox",
+          "metadata_altitude_m": 7010,
+          "metadata_observed_bp_c": 77.2
+        },
+        {
+          "input": "Altitude: 7087 m",
+          "output": "77.0 \u00b0C",
+          "predict_isa_antoine": "76.27 \u00b0C",
+          "predict_baseline": "78.10 \u00b0C",
+          "metadata_source": "engineeringtoolbox",
+          "metadata_altitude_m": 7087,
+          "metadata_observed_bp_c": 77.0
+        },
+        {
+          "input": "Altitude: 7163 m",
+          "output": "76.8 \u00b0C",
+          "predict_isa_antoine": "76.01 \u00b0C",
+          "predict_baseline": "77.88 \u00b0C",
+          "metadata_source": "engineeringtoolbox",
+          "metadata_altitude_m": 7163,
+          "metadata_observed_bp_c": 76.8
+        },
+        {
+          "input": "Altitude: 7239 m",
+          "output": "76.5 \u00b0C",
+          "predict_isa_antoine": "75.76 \u00b0C",
+          "predict_baseline": "77.66 \u00b0C",
+          "metadata_source": "engineeringtoolbox",
+          "metadata_altitude_m": 7239,
+          "metadata_observed_bp_c": 76.5
+        },
+        {
+          "input": "Altitude: 7315 m",
+          "output": "76.3 \u00b0C",
+          "predict_isa_antoine": "75.50 \u00b0C",
+          "predict_baseline": "77.44 \u00b0C",
+          "metadata_source": "engineeringtoolbox",
+          "metadata_altitude_m": 7315,
+          "metadata_observed_bp_c": 76.3
+        },
+        {
+          "input": "Altitude: 7391 m",
+          "output": "76.1 \u00b0C",
+          "predict_isa_antoine": "75.24 \u00b0C",
+          "predict_baseline": "77.22 \u00b0C",
+          "metadata_source": "engineeringtoolbox",
+          "metadata_altitude_m": 7391,
+          "metadata_observed_bp_c": 76.1
+        },
+        {
+          "input": "Altitude: 7468 m",
+          "output": "75.9 \u00b0C",
+          "predict_isa_antoine": "74.98 \u00b0C",
+          "predict_baseline": "77.00 \u00b0C",
+          "metadata_source": "engineeringtoolbox",
+          "metadata_altitude_m": 7468,
+          "metadata_observed_bp_c": 75.9
+        },
+        {
+          "input": "Altitude: 7544 m",
+          "output": "75.6 \u00b0C",
+          "predict_isa_antoine": "74.72 \u00b0C",
+          "predict_baseline": "76.78 \u00b0C",
+          "metadata_source": "engineeringtoolbox",
+          "metadata_altitude_m": 7544,
+          "metadata_observed_bp_c": 75.6
+        },
+        {
+          "input": "Altitude: 7620 m",
+          "output": "75.4 \u00b0C",
+          "predict_isa_antoine": "74.46 \u00b0C",
+          "predict_baseline": "76.56 \u00b0C",
+          "metadata_source": "engineeringtoolbox",
+          "metadata_altitude_m": 7620,
+          "metadata_observed_bp_c": 75.4
+        },
+        {
+          "input": "Altitude: 7696 m",
+          "output": "75.2 \u00b0C",
+          "predict_isa_antoine": "74.20 \u00b0C",
+          "predict_baseline": "76.35 \u00b0C",
+          "metadata_source": "engineeringtoolbox",
+          "metadata_altitude_m": 7696,
+          "metadata_observed_bp_c": 75.2
+        },
+        {
+          "input": "Altitude: 7772 m",
+          "output": "75.0 \u00b0C",
+          "predict_isa_antoine": "73.94 \u00b0C",
+          "predict_baseline": "76.13 \u00b0C",
+          "metadata_source": "engineeringtoolbox",
+          "metadata_altitude_m": 7772,
+          "metadata_observed_bp_c": 75.0
+        },
+        {
+          "input": "Altitude: 7849 m",
+          "output": "74.8 \u00b0C",
+          "predict_isa_antoine": "73.68 \u00b0C",
+          "predict_baseline": "75.91 \u00b0C",
+          "metadata_source": "engineeringtoolbox",
+          "metadata_altitude_m": 7849,
+          "metadata_observed_bp_c": 74.8
+        },
+        {
+          "input": "Altitude: 7925 m",
+          "output": "74.5 \u00b0C",
+          "predict_isa_antoine": "73.42 \u00b0C",
+          "predict_baseline": "75.70 \u00b0C",
+          "metadata_source": "engineeringtoolbox",
+          "metadata_altitude_m": 7925,
+          "metadata_observed_bp_c": 74.5
+        },
+        {
+          "input": "Altitude: 8001 m",
+          "output": "74.3 \u00b0C",
+          "predict_isa_antoine": "73.16 \u00b0C",
+          "predict_baseline": "75.48 \u00b0C",
+          "metadata_source": "engineeringtoolbox",
+          "metadata_altitude_m": 8001,
+          "metadata_observed_bp_c": 74.3
+        },
+        {
+          "input": "Altitude: 8077 m",
+          "output": "74.1 \u00b0C",
+          "predict_isa_antoine": "72.90 \u00b0C",
+          "predict_baseline": "75.26 \u00b0C",
+          "metadata_source": "engineeringtoolbox",
+          "metadata_altitude_m": 8077,
+          "metadata_observed_bp_c": 74.1
+        },
+        {
+          "input": "Altitude: 8153 m",
+          "output": "73.9 \u00b0C",
+          "predict_isa_antoine": "72.64 \u00b0C",
+          "predict_baseline": "75.05 \u00b0C",
+          "metadata_source": "engineeringtoolbox",
+          "metadata_altitude_m": 8153,
+          "metadata_observed_bp_c": 73.9
+        },
+        {
+          "input": "Altitude: 8230 m",
+          "output": "73.7 \u00b0C",
+          "predict_isa_antoine": "72.38 \u00b0C",
+          "predict_baseline": "74.83 \u00b0C",
+          "metadata_source": "engineeringtoolbox",
+          "metadata_altitude_m": 8230,
+          "metadata_observed_bp_c": 73.7
+        },
+        {
+          "input": "Altitude: 8306 m",
+          "output": "73.5 \u00b0C",
+          "predict_isa_antoine": "72.12 \u00b0C",
+          "predict_baseline": "74.62 \u00b0C",
+          "metadata_source": "engineeringtoolbox",
+          "metadata_altitude_m": 8306,
+          "metadata_observed_bp_c": 73.5
+        },
+        {
+          "input": "Altitude: 8382 m",
+          "output": "73.2 \u00b0C",
+          "predict_isa_antoine": "71.86 \u00b0C",
+          "predict_baseline": "74.40 \u00b0C",
+          "metadata_source": "engineeringtoolbox",
+          "metadata_altitude_m": 8382,
+          "metadata_observed_bp_c": 73.2
+        },
+        {
+          "input": "Altitude: 8458 m",
+          "output": "73.0 \u00b0C",
+          "predict_isa_antoine": "71.60 \u00b0C",
+          "predict_baseline": "74.19 \u00b0C",
+          "metadata_source": "engineeringtoolbox",
+          "metadata_altitude_m": 8458,
+          "metadata_observed_bp_c": 73.0
+        },
+        {
+          "input": "Altitude: 8534 m",
+          "output": "72.8 \u00b0C",
+          "predict_isa_antoine": "71.34 \u00b0C",
+          "predict_baseline": "73.97 \u00b0C",
+          "metadata_source": "engineeringtoolbox",
+          "metadata_altitude_m": 8534,
+          "metadata_observed_bp_c": 72.8
+        },
+        {
+          "input": "Altitude: 8611 m",
+          "output": "72.6 \u00b0C",
+          "predict_isa_antoine": "71.08 \u00b0C",
+          "predict_baseline": "73.76 \u00b0C",
+          "metadata_source": "engineeringtoolbox",
+          "metadata_altitude_m": 8611,
+          "metadata_observed_bp_c": 72.6
+        },
+        {
+          "input": "Altitude: 8687 m",
+          "output": "72.4 \u00b0C",
+          "predict_isa_antoine": "70.82 \u00b0C",
+          "predict_baseline": "73.54 \u00b0C",
+          "metadata_source": "engineeringtoolbox",
+          "metadata_altitude_m": 8687,
+          "metadata_observed_bp_c": 72.4
+        },
+        {
+          "input": "Altitude: 8763 m",
+          "output": "72.2 \u00b0C",
+          "predict_isa_antoine": "70.56 \u00b0C",
+          "predict_baseline": "73.33 \u00b0C",
+          "metadata_source": "engineeringtoolbox",
+          "metadata_altitude_m": 8763,
+          "metadata_observed_bp_c": 72.2
+        },
+        {
+          "input": "Altitude: 8839 m",
+          "output": "72.0 \u00b0C",
+          "predict_isa_antoine": "70.30 \u00b0C",
+          "predict_baseline": "73.12 \u00b0C",
+          "metadata_source": "engineeringtoolbox",
+          "metadata_altitude_m": 8839,
+          "metadata_observed_bp_c": 72.0
+        },
+        {
+          "input": "Altitude: 8916 m",
+          "output": "71.7 \u00b0C",
+          "predict_isa_antoine": "70.03 \u00b0C",
+          "predict_baseline": "72.90 \u00b0C",
+          "metadata_source": "engineeringtoolbox",
+          "metadata_altitude_m": 8916,
+          "metadata_observed_bp_c": 71.7
+        },
+        {
+          "input": "Altitude: 8992 m",
+          "output": "71.5 \u00b0C",
+          "predict_isa_antoine": "69.77 \u00b0C",
+          "predict_baseline": "72.69 \u00b0C",
+          "metadata_source": "engineeringtoolbox",
+          "metadata_altitude_m": 8992,
+          "metadata_observed_bp_c": 71.5
+        },
+        {
+          "input": "Altitude: 9068 m",
+          "output": "71.3 \u00b0C",
+          "predict_isa_antoine": "69.51 \u00b0C",
+          "predict_baseline": "72.48 \u00b0C",
+          "metadata_source": "engineeringtoolbox",
+          "metadata_altitude_m": 9068,
+          "metadata_observed_bp_c": 71.3
+        },
+        {
+          "input": "Altitude: 9144 m",
+          "output": "71.1 \u00b0C",
+          "predict_isa_antoine": "69.25 \u00b0C",
+          "predict_baseline": "72.27 \u00b0C",
+          "metadata_source": "engineeringtoolbox",
+          "metadata_altitude_m": 9144,
+          "metadata_observed_bp_c": 71.1
+        }
+      ]
+    },
+    {
+      "dataset": "boiling_point_deleze",
+      "examples": [
+        {
+          "input": "Altitude: -500 m",
+          "output": "101.7 \u00b0C",
+          "predict_isa_antoine": "101.65 \u00b0C",
+          "predict_baseline": "101.66 \u00b0C",
+          "metadata_source": "deleze",
+          "metadata_altitude_m": -500,
+          "metadata_observed_bp_c": 101.7
+        },
+        {
+          "input": "Altitude: -500 m",
+          "output": "101.3 \u00b0C",
+          "predict_isa_antoine": "101.65 \u00b0C",
+          "predict_baseline": "101.66 \u00b0C",
+          "metadata_source": "deleze",
+          "metadata_altitude_m": -500,
+          "metadata_observed_bp_c": 101.3
+        },
+        {
+          "input": "Altitude: -500 m",
+          "output": "101.0 \u00b0C",
+          "predict_isa_antoine": "101.65 \u00b0C",
+          "predict_baseline": "101.66 \u00b0C",
+          "metadata_source": "deleze",
+          "metadata_altitude_m": -500,
+          "metadata_observed_bp_c": 101.0
+        },
+        {
+          "input": "Altitude: -500 m",
+          "output": "100.7 \u00b0C",
+          "predict_isa_antoine": "101.65 \u00b0C",
+          "predict_baseline": "101.66 \u00b0C",
+          "metadata_source": "deleze",
+          "metadata_altitude_m": -500,
+          "metadata_observed_bp_c": 100.7
+        },
+        {
+          "input": "Altitude: -500 m",
+          "output": "100.3 \u00b0C",
+          "predict_isa_antoine": "101.65 \u00b0C",
+          "predict_baseline": "101.66 \u00b0C",
+          "metadata_source": "deleze",
+          "metadata_altitude_m": -500,
+          "metadata_observed_bp_c": 100.3
+        },
+        {
+          "input": "Altitude: 0 m",
+          "output": "100.0 \u00b0C",
+          "predict_isa_antoine": "100.00 \u00b0C",
+          "predict_baseline": "100.00 \u00b0C",
+          "metadata_source": "deleze",
+          "metadata_altitude_m": 0,
+          "metadata_observed_bp_c": 100.0
+        },
+        {
+          "input": "Altitude: 0 m",
+          "output": "99.7 \u00b0C",
+          "predict_isa_antoine": "100.00 \u00b0C",
+          "predict_baseline": "100.00 \u00b0C",
+          "metadata_source": "deleze",
+          "metadata_altitude_m": 0,
+          "metadata_observed_bp_c": 99.7
+        },
+        {
+          "input": "Altitude: 0 m",
+          "output": "99.3 \u00b0C",
+          "predict_isa_antoine": "100.00 \u00b0C",
+          "predict_baseline": "100.00 \u00b0C",
+          "metadata_source": "deleze",
+          "metadata_altitude_m": 0,
+          "metadata_observed_bp_c": 99.3
+        },
+        {
+          "input": "Altitude: 0 m",
+          "output": "99.0 \u00b0C",
+          "predict_isa_antoine": "100.00 \u00b0C",
+          "predict_baseline": "100.00 \u00b0C",
+          "metadata_source": "deleze",
+          "metadata_altitude_m": 0,
+          "metadata_observed_bp_c": 99.0
+        },
+        {
+          "input": "Altitude: 0 m",
+          "output": "98.7 \u00b0C",
+          "predict_isa_antoine": "100.00 \u00b0C",
+          "predict_baseline": "100.00 \u00b0C",
+          "metadata_source": "deleze",
+          "metadata_altitude_m": 0,
+          "metadata_observed_bp_c": 98.7
+        },
+        {
+          "input": "Altitude: 500 m",
+          "output": "98.3 \u00b0C",
+          "predict_isa_antoine": "98.34 \u00b0C",
+          "predict_baseline": "98.35 \u00b0C",
+          "metadata_source": "deleze",
+          "metadata_altitude_m": 500,
+          "metadata_observed_bp_c": 98.3
+        },
+        {
+          "input": "Altitude: 500 m",
+          "output": "98.0 \u00b0C",
+          "predict_isa_antoine": "98.34 \u00b0C",
+          "predict_baseline": "98.35 \u00b0C",
+          "metadata_source": "deleze",
+          "metadata_altitude_m": 500,
+          "metadata_observed_bp_c": 98.0
+        },
+        {
+          "input": "Altitude: 500 m",
+          "output": "97.7 \u00b0C",
+          "predict_isa_antoine": "98.34 \u00b0C",
+          "predict_baseline": "98.35 \u00b0C",
+          "metadata_source": "deleze",
+          "metadata_altitude_m": 500,
+          "metadata_observed_bp_c": 97.7
+        },
+        {
+          "input": "Altitude: 500 m",
+          "output": "97.3 \u00b0C",
+          "predict_isa_antoine": "98.34 \u00b0C",
+          "predict_baseline": "98.35 \u00b0C",
+          "metadata_source": "deleze",
+          "metadata_altitude_m": 500,
+          "metadata_observed_bp_c": 97.3
+        },
+        {
+          "input": "Altitude: 500 m",
+          "output": "97.0 \u00b0C",
+          "predict_isa_antoine": "98.34 \u00b0C",
+          "predict_baseline": "98.35 \u00b0C",
+          "metadata_source": "deleze",
+          "metadata_altitude_m": 500,
+          "metadata_observed_bp_c": 97.0
+        },
+        {
+          "input": "Altitude: 1000 m",
+          "output": "96.7 \u00b0C",
+          "predict_isa_antoine": "96.68 \u00b0C",
+          "predict_baseline": "96.72 \u00b0C",
+          "metadata_source": "deleze",
+          "metadata_altitude_m": 1000,
+          "metadata_observed_bp_c": 96.7
+        },
+        {
+          "input": "Altitude: 1000 m",
+          "output": "96.3 \u00b0C",
+          "predict_isa_antoine": "96.68 \u00b0C",
+          "predict_baseline": "96.72 \u00b0C",
+          "metadata_source": "deleze",
+          "metadata_altitude_m": 1000,
+          "metadata_observed_bp_c": 96.3
+        },
+        {
+          "input": "Altitude: 1000 m",
+          "output": "96.0 \u00b0C",
+          "predict_isa_antoine": "96.68 \u00b0C",
+          "predict_baseline": "96.72 \u00b0C",
+          "metadata_source": "deleze",
+          "metadata_altitude_m": 1000,
+          "metadata_observed_bp_c": 96.0
+        },
+        {
+          "input": "Altitude: 1000 m",
+          "output": "95.7 \u00b0C",
+          "predict_isa_antoine": "96.68 \u00b0C",
+          "predict_baseline": "96.72 \u00b0C",
+          "metadata_source": "deleze",
+          "metadata_altitude_m": 1000,
+          "metadata_observed_bp_c": 95.7
+        },
+        {
+          "input": "Altitude: 1000 m",
+          "output": "95.3 \u00b0C",
+          "predict_isa_antoine": "96.68 \u00b0C",
+          "predict_baseline": "96.72 \u00b0C",
+          "metadata_source": "deleze",
+          "metadata_altitude_m": 1000,
+          "metadata_observed_bp_c": 95.3
+        },
+        {
+          "input": "Altitude: 1500 m",
+          "output": "95.0 \u00b0C",
+          "predict_isa_antoine": "95.02 \u00b0C",
+          "predict_baseline": "95.11 \u00b0C",
+          "metadata_source": "deleze",
+          "metadata_altitude_m": 1500,
+          "metadata_observed_bp_c": 95.0
+        },
+        {
+          "input": "Altitude: 1500 m",
+          "output": "94.7 \u00b0C",
+          "predict_isa_antoine": "95.02 \u00b0C",
+          "predict_baseline": "95.11 \u00b0C",
+          "metadata_source": "deleze",
+          "metadata_altitude_m": 1500,
+          "metadata_observed_bp_c": 94.7
+        },
+        {
+          "input": "Altitude: 1500 m",
+          "output": "94.3 \u00b0C",
+          "predict_isa_antoine": "95.02 \u00b0C",
+          "predict_baseline": "95.11 \u00b0C",
+          "metadata_source": "deleze",
+          "metadata_altitude_m": 1500,
+          "metadata_observed_bp_c": 94.3
+        },
+        {
+          "input": "Altitude: 1500 m",
+          "output": "94.0 \u00b0C",
+          "predict_isa_antoine": "95.02 \u00b0C",
+          "predict_baseline": "95.11 \u00b0C",
+          "metadata_source": "deleze",
+          "metadata_altitude_m": 1500,
+          "metadata_observed_bp_c": 94.0
+        },
+        {
+          "input": "Altitude: 1500 m",
+          "output": "93.7 \u00b0C",
+          "predict_isa_antoine": "95.02 \u00b0C",
+          "predict_baseline": "95.11 \u00b0C",
+          "metadata_source": "deleze",
+          "metadata_altitude_m": 1500,
+          "metadata_observed_bp_c": 93.7
+        },
+        {
+          "input": "Altitude: 2000 m",
+          "output": "93.3 \u00b0C",
+          "predict_isa_antoine": "93.36 \u00b0C",
+          "predict_baseline": "93.51 \u00b0C",
+          "metadata_source": "deleze",
+          "metadata_altitude_m": 2000,
+          "metadata_observed_bp_c": 93.3
+        },
+        {
+          "input": "Altitude: 2000 m",
+          "output": "93.0 \u00b0C",
+          "predict_isa_antoine": "93.36 \u00b0C",
+          "predict_baseline": "93.51 \u00b0C",
+          "metadata_source": "deleze",
+          "metadata_altitude_m": 2000,
+          "metadata_observed_bp_c": 93.0
+        },
+        {
+          "input": "Altitude: 2000 m",
+          "output": "92.7 \u00b0C",
+          "predict_isa_antoine": "93.36 \u00b0C",
+          "predict_baseline": "93.51 \u00b0C",
+          "metadata_source": "deleze",
+          "metadata_altitude_m": 2000,
+          "metadata_observed_bp_c": 92.7
+        },
+        {
+          "input": "Altitude: 2000 m",
+          "output": "92.3 \u00b0C",
+          "predict_isa_antoine": "93.36 \u00b0C",
+          "predict_baseline": "93.51 \u00b0C",
+          "metadata_source": "deleze",
+          "metadata_altitude_m": 2000,
+          "metadata_observed_bp_c": 92.3
+        },
+        {
+          "input": "Altitude: 2000 m",
+          "output": "92.0 \u00b0C",
+          "predict_isa_antoine": "93.36 \u00b0C",
+          "predict_baseline": "93.51 \u00b0C",
+          "metadata_source": "deleze",
+          "metadata_altitude_m": 2000,
+          "metadata_observed_bp_c": 92.0
+        },
+        {
+          "input": "Altitude: 2500 m",
+          "output": "91.7 \u00b0C",
+          "predict_isa_antoine": "91.70 \u00b0C",
+          "predict_baseline": "91.93 \u00b0C",
+          "metadata_source": "deleze",
+          "metadata_altitude_m": 2500,
+          "metadata_observed_bp_c": 91.7
+        },
+        {
+          "input": "Altitude: 2500 m",
+          "output": "91.3 \u00b0C",
+          "predict_isa_antoine": "91.70 \u00b0C",
+          "predict_baseline": "91.93 \u00b0C",
+          "metadata_source": "deleze",
+          "metadata_altitude_m": 2500,
+          "metadata_observed_bp_c": 91.3
+        },
+        {
+          "input": "Altitude: 2500 m",
+          "output": "91.0 \u00b0C",
+          "predict_isa_antoine": "91.70 \u00b0C",
+          "predict_baseline": "91.93 \u00b0C",
+          "metadata_source": "deleze",
+          "metadata_altitude_m": 2500,
+          "metadata_observed_bp_c": 91.0
+        },
+        {
+          "input": "Altitude: 2500 m",
+          "output": "90.7 \u00b0C",
+          "predict_isa_antoine": "91.70 \u00b0C",
+          "predict_baseline": "91.93 \u00b0C",
+          "metadata_source": "deleze",
+          "metadata_altitude_m": 2500,
+          "metadata_observed_bp_c": 90.7
+        },
+        {
+          "input": "Altitude: 2500 m",
+          "output": "90.3 \u00b0C",
+          "predict_isa_antoine": "91.70 \u00b0C",
+          "predict_baseline": "91.93 \u00b0C",
+          "metadata_source": "deleze",
+          "metadata_altitude_m": 2500,
+          "metadata_observed_bp_c": 90.3
+        },
+        {
+          "input": "Altitude: 3000 m",
+          "output": "90.0 \u00b0C",
+          "predict_isa_antoine": "90.03 \u00b0C",
+          "predict_baseline": "90.36 \u00b0C",
+          "metadata_source": "deleze",
+          "metadata_altitude_m": 3000,
+          "metadata_observed_bp_c": 90.0
+        },
+        {
+          "input": "Altitude: 3000 m",
+          "output": "89.7 \u00b0C",
+          "predict_isa_antoine": "90.03 \u00b0C",
+          "predict_baseline": "90.36 \u00b0C",
+          "metadata_source": "deleze",
+          "metadata_altitude_m": 3000,
+          "metadata_observed_bp_c": 89.7
+        },
+        {
+          "input": "Altitude: 3000 m",
+          "output": "89.3 \u00b0C",
+          "predict_isa_antoine": "90.03 \u00b0C",
+          "predict_baseline": "90.36 \u00b0C",
+          "metadata_source": "deleze",
+          "metadata_altitude_m": 3000,
+          "metadata_observed_bp_c": 89.3
+        },
+        {
+          "input": "Altitude: 3000 m",
+          "output": "89.0 \u00b0C",
+          "predict_isa_antoine": "90.03 \u00b0C",
+          "predict_baseline": "90.36 \u00b0C",
+          "metadata_source": "deleze",
+          "metadata_altitude_m": 3000,
+          "metadata_observed_bp_c": 89.0
+        },
+        {
+          "input": "Altitude: 3000 m",
+          "output": "88.6 \u00b0C",
+          "predict_isa_antoine": "90.03 \u00b0C",
+          "predict_baseline": "90.36 \u00b0C",
+          "metadata_source": "deleze",
+          "metadata_altitude_m": 3000,
+          "metadata_observed_bp_c": 88.6
+        },
+        {
+          "input": "Altitude: 3500 m",
+          "output": "88.3 \u00b0C",
+          "predict_isa_antoine": "88.36 \u00b0C",
+          "predict_baseline": "88.81 \u00b0C",
+          "metadata_source": "deleze",
+          "metadata_altitude_m": 3500,
+          "metadata_observed_bp_c": 88.3
+        },
+        {
+          "input": "Altitude: 3500 m",
+          "output": "88.0 \u00b0C",
+          "predict_isa_antoine": "88.36 \u00b0C",
+          "predict_baseline": "88.81 \u00b0C",
+          "metadata_source": "deleze",
+          "metadata_altitude_m": 3500,
+          "metadata_observed_bp_c": 88.0
+        },
+        {
+          "input": "Altitude: 3500 m",
+          "output": "87.6 \u00b0C",
+          "predict_isa_antoine": "88.36 \u00b0C",
+          "predict_baseline": "88.81 \u00b0C",
+          "metadata_source": "deleze",
+          "metadata_altitude_m": 3500,
+          "metadata_observed_bp_c": 87.6
+        },
+        {
+          "input": "Altitude: 3500 m",
+          "output": "87.3 \u00b0C",
+          "predict_isa_antoine": "88.36 \u00b0C",
+          "predict_baseline": "88.81 \u00b0C",
+          "metadata_source": "deleze",
+          "metadata_altitude_m": 3500,
+          "metadata_observed_bp_c": 87.3
+        },
+        {
+          "input": "Altitude: 3500 m",
+          "output": "87.0 \u00b0C",
+          "predict_isa_antoine": "88.36 \u00b0C",
+          "predict_baseline": "88.81 \u00b0C",
+          "metadata_source": "deleze",
+          "metadata_altitude_m": 3500,
+          "metadata_observed_bp_c": 87.0
+        },
+        {
+          "input": "Altitude: 4000 m",
+          "output": "86.6 \u00b0C",
+          "predict_isa_antoine": "86.68 \u00b0C",
+          "predict_baseline": "87.27 \u00b0C",
+          "metadata_source": "deleze",
+          "metadata_altitude_m": 4000,
+          "metadata_observed_bp_c": 86.6
+        },
+        {
+          "input": "Altitude: 4000 m",
+          "output": "86.3 \u00b0C",
+          "predict_isa_antoine": "86.68 \u00b0C",
+          "predict_baseline": "87.27 \u00b0C",
+          "metadata_source": "deleze",
+          "metadata_altitude_m": 4000,
+          "metadata_observed_bp_c": 86.3
+        },
+        {
+          "input": "Altitude: 4000 m",
+          "output": "85.9 \u00b0C",
+          "predict_isa_antoine": "86.68 \u00b0C",
+          "predict_baseline": "87.27 \u00b0C",
+          "metadata_source": "deleze",
+          "metadata_altitude_m": 4000,
+          "metadata_observed_bp_c": 85.9
+        },
+        {
+          "input": "Altitude: 4000 m",
+          "output": "85.6 \u00b0C",
+          "predict_isa_antoine": "86.68 \u00b0C",
+          "predict_baseline": "87.27 \u00b0C",
+          "metadata_source": "deleze",
+          "metadata_altitude_m": 4000,
+          "metadata_observed_bp_c": 85.6
+        },
+        {
+          "input": "Altitude: 4000 m",
+          "output": "85.3 \u00b0C",
+          "predict_isa_antoine": "86.68 \u00b0C",
+          "predict_baseline": "87.27 \u00b0C",
+          "metadata_source": "deleze",
+          "metadata_altitude_m": 4000,
+          "metadata_observed_bp_c": 85.3
+        },
+        {
+          "input": "Altitude: 4500 m",
+          "output": "84.9 \u00b0C",
+          "predict_isa_antoine": "85.01 \u00b0C",
+          "predict_baseline": "85.75 \u00b0C",
+          "metadata_source": "deleze",
+          "metadata_altitude_m": 4500,
+          "metadata_observed_bp_c": 84.9
+        },
+        {
+          "input": "Altitude: 4500 m",
+          "output": "84.6 \u00b0C",
+          "predict_isa_antoine": "85.01 \u00b0C",
+          "predict_baseline": "85.75 \u00b0C",
+          "metadata_source": "deleze",
+          "metadata_altitude_m": 4500,
+          "metadata_observed_bp_c": 84.6
+        },
+        {
+          "input": "Altitude: 4500 m",
+          "output": "84.3 \u00b0C",
+          "predict_isa_antoine": "85.01 \u00b0C",
+          "predict_baseline": "85.75 \u00b0C",
+          "metadata_source": "deleze",
+          "metadata_altitude_m": 4500,
+          "metadata_observed_bp_c": 84.3
+        },
+        {
+          "input": "Altitude: 4500 m",
+          "output": "83.9 \u00b0C",
+          "predict_isa_antoine": "85.01 \u00b0C",
+          "predict_baseline": "85.75 \u00b0C",
+          "metadata_source": "deleze",
+          "metadata_altitude_m": 4500,
+          "metadata_observed_bp_c": 83.9
+        },
+        {
+          "input": "Altitude: 4500 m",
+          "output": "83.6 \u00b0C",
+          "predict_isa_antoine": "85.01 \u00b0C",
+          "predict_baseline": "85.75 \u00b0C",
+          "metadata_source": "deleze",
+          "metadata_altitude_m": 4500,
+          "metadata_observed_bp_c": 83.6
+        },
+        {
+          "input": "Altitude: 5000 m",
+          "output": "83.3 \u00b0C",
+          "predict_isa_antoine": "83.33 \u00b0C",
+          "predict_baseline": "84.24 \u00b0C",
+          "metadata_source": "deleze",
+          "metadata_altitude_m": 5000,
+          "metadata_observed_bp_c": 83.3
+        },
+        {
+          "input": "Altitude: 5000 m",
+          "output": "82.9 \u00b0C",
+          "predict_isa_antoine": "83.33 \u00b0C",
+          "predict_baseline": "84.24 \u00b0C",
+          "metadata_source": "deleze",
+          "metadata_altitude_m": 5000,
+          "metadata_observed_bp_c": 82.9
+        },
+        {
+          "input": "Altitude: 5000 m",
+          "output": "82.6 \u00b0C",
+          "predict_isa_antoine": "83.33 \u00b0C",
+          "predict_baseline": "84.24 \u00b0C",
+          "metadata_source": "deleze",
+          "metadata_altitude_m": 5000,
+          "metadata_observed_bp_c": 82.6
+        },
+        {
+          "input": "Altitude: 5000 m",
+          "output": "82.2 \u00b0C",
+          "predict_isa_antoine": "83.33 \u00b0C",
+          "predict_baseline": "84.24 \u00b0C",
+          "metadata_source": "deleze",
+          "metadata_altitude_m": 5000,
+          "metadata_observed_bp_c": 82.2
+        },
+        {
+          "input": "Altitude: 5000 m",
+          "output": "81.9 \u00b0C",
+          "predict_isa_antoine": "83.33 \u00b0C",
+          "predict_baseline": "84.24 \u00b0C",
+          "metadata_source": "deleze",
+          "metadata_altitude_m": 5000,
+          "metadata_observed_bp_c": 81.9
+        },
+        {
+          "input": "Altitude: 5500 m",
+          "output": "81.6 \u00b0C",
+          "predict_isa_antoine": "81.64 \u00b0C",
+          "predict_baseline": "82.75 \u00b0C",
+          "metadata_source": "deleze",
+          "metadata_altitude_m": 5500,
+          "metadata_observed_bp_c": 81.6
+        },
+        {
+          "input": "Altitude: 5500 m",
+          "output": "81.2 \u00b0C",
+          "predict_isa_antoine": "81.64 \u00b0C",
+          "predict_baseline": "82.75 \u00b0C",
+          "metadata_source": "deleze",
+          "metadata_altitude_m": 5500,
+          "metadata_observed_bp_c": 81.2
+        },
+        {
+          "input": "Altitude: 5500 m",
+          "output": "80.9 \u00b0C",
+          "predict_isa_antoine": "81.64 \u00b0C",
+          "predict_baseline": "82.75 \u00b0C",
+          "metadata_source": "deleze",
+          "metadata_altitude_m": 5500,
+          "metadata_observed_bp_c": 80.9
+        },
+        {
+          "input": "Altitude: 5500 m",
+          "output": "80.6 \u00b0C",
+          "predict_isa_antoine": "81.64 \u00b0C",
+          "predict_baseline": "82.75 \u00b0C",
+          "metadata_source": "deleze",
+          "metadata_altitude_m": 5500,
+          "metadata_observed_bp_c": 80.6
+        },
+        {
+          "input": "Altitude: 5500 m",
+          "output": "80.2 \u00b0C",
+          "predict_isa_antoine": "81.64 \u00b0C",
+          "predict_baseline": "82.75 \u00b0C",
+          "metadata_source": "deleze",
+          "metadata_altitude_m": 5500,
+          "metadata_observed_bp_c": 80.2
+        },
+        {
+          "input": "Altitude: 6000 m",
+          "output": "79.9 \u00b0C",
+          "predict_isa_antoine": "79.96 \u00b0C",
+          "predict_baseline": "81.27 \u00b0C",
+          "metadata_source": "deleze",
+          "metadata_altitude_m": 6000,
+          "metadata_observed_bp_c": 79.9
+        },
+        {
+          "input": "Altitude: 6000 m",
+          "output": "79.5 \u00b0C",
+          "predict_isa_antoine": "79.96 \u00b0C",
+          "predict_baseline": "81.27 \u00b0C",
+          "metadata_source": "deleze",
+          "metadata_altitude_m": 6000,
+          "metadata_observed_bp_c": 79.5
+        },
+        {
+          "input": "Altitude: 6000 m",
+          "output": "79.2 \u00b0C",
+          "predict_isa_antoine": "79.96 \u00b0C",
+          "predict_baseline": "81.27 \u00b0C",
+          "metadata_source": "deleze",
+          "metadata_altitude_m": 6000,
+          "metadata_observed_bp_c": 79.2
+        },
+        {
+          "input": "Altitude: 6000 m",
+          "output": "78.9 \u00b0C",
+          "predict_isa_antoine": "79.96 \u00b0C",
+          "predict_baseline": "81.27 \u00b0C",
+          "metadata_source": "deleze",
+          "metadata_altitude_m": 6000,
+          "metadata_observed_bp_c": 78.9
+        },
+        {
+          "input": "Altitude: 6000 m",
+          "output": "78.5 \u00b0C",
+          "predict_isa_antoine": "79.96 \u00b0C",
+          "predict_baseline": "81.27 \u00b0C",
+          "metadata_source": "deleze",
+          "metadata_altitude_m": 6000,
+          "metadata_observed_bp_c": 78.5
+        },
+        {
+          "input": "Altitude: 6500 m",
+          "output": "78.2 \u00b0C",
+          "predict_isa_antoine": "78.26 \u00b0C",
+          "predict_baseline": "79.80 \u00b0C",
+          "metadata_source": "deleze",
+          "metadata_altitude_m": 6500,
+          "metadata_observed_bp_c": 78.2
+        },
+        {
+          "input": "Altitude: 6500 m",
+          "output": "77.8 \u00b0C",
+          "predict_isa_antoine": "78.26 \u00b0C",
+          "predict_baseline": "79.80 \u00b0C",
+          "metadata_source": "deleze",
+          "metadata_altitude_m": 6500,
+          "metadata_observed_bp_c": 77.8
+        },
+        {
+          "input": "Altitude: 6500 m",
+          "output": "77.5 \u00b0C",
+          "predict_isa_antoine": "78.26 \u00b0C",
+          "predict_baseline": "79.80 \u00b0C",
+          "metadata_source": "deleze",
+          "metadata_altitude_m": 6500,
+          "metadata_observed_bp_c": 77.5
+        },
+        {
+          "input": "Altitude: 6500 m",
+          "output": "77.2 \u00b0C",
+          "predict_isa_antoine": "78.26 \u00b0C",
+          "predict_baseline": "79.80 \u00b0C",
+          "metadata_source": "deleze",
+          "metadata_altitude_m": 6500,
+          "metadata_observed_bp_c": 77.2
+        },
+        {
+          "input": "Altitude: 6500 m",
+          "output": "76.8 \u00b0C",
+          "predict_isa_antoine": "78.26 \u00b0C",
+          "predict_baseline": "79.80 \u00b0C",
+          "metadata_source": "deleze",
+          "metadata_altitude_m": 6500,
+          "metadata_observed_bp_c": 76.8
+        },
+        {
+          "input": "Altitude: 7000 m",
+          "output": "76.5 \u00b0C",
+          "predict_isa_antoine": "76.57 \u00b0C",
+          "predict_baseline": "78.35 \u00b0C",
+          "metadata_source": "deleze",
+          "metadata_altitude_m": 7000,
+          "metadata_observed_bp_c": 76.5
+        },
+        {
+          "input": "Altitude: 7000 m",
+          "output": "76.1 \u00b0C",
+          "predict_isa_antoine": "76.57 \u00b0C",
+          "predict_baseline": "78.35 \u00b0C",
+          "metadata_source": "deleze",
+          "metadata_altitude_m": 7000,
+          "metadata_observed_bp_c": 76.1
+        },
+        {
+          "input": "Altitude: 7000 m",
+          "output": "75.8 \u00b0C",
+          "predict_isa_antoine": "76.57 \u00b0C",
+          "predict_baseline": "78.35 \u00b0C",
+          "metadata_source": "deleze",
+          "metadata_altitude_m": 7000,
+          "metadata_observed_bp_c": 75.8
+        },
+        {
+          "input": "Altitude: 7000 m",
+          "output": "75.5 \u00b0C",
+          "predict_isa_antoine": "76.57 \u00b0C",
+          "predict_baseline": "78.35 \u00b0C",
+          "metadata_source": "deleze",
+          "metadata_altitude_m": 7000,
+          "metadata_observed_bp_c": 75.5
+        },
+        {
+          "input": "Altitude: 7000 m",
+          "output": "75.1 \u00b0C",
+          "predict_isa_antoine": "76.57 \u00b0C",
+          "predict_baseline": "78.35 \u00b0C",
+          "metadata_source": "deleze",
+          "metadata_altitude_m": 7000,
+          "metadata_observed_bp_c": 75.1
+        },
+        {
+          "input": "Altitude: 7500 m",
+          "output": "74.8 \u00b0C",
+          "predict_isa_antoine": "74.87 \u00b0C",
+          "predict_baseline": "76.91 \u00b0C",
+          "metadata_source": "deleze",
+          "metadata_altitude_m": 7500,
+          "metadata_observed_bp_c": 74.8
+        },
+        {
+          "input": "Altitude: 7500 m",
+          "output": "74.4 \u00b0C",
+          "predict_isa_antoine": "74.87 \u00b0C",
+          "predict_baseline": "76.91 \u00b0C",
+          "metadata_source": "deleze",
+          "metadata_altitude_m": 7500,
+          "metadata_observed_bp_c": 74.4
+        },
+        {
+          "input": "Altitude: 7500 m",
+          "output": "74.1 \u00b0C",
+          "predict_isa_antoine": "74.87 \u00b0C",
+          "predict_baseline": "76.91 \u00b0C",
+          "metadata_source": "deleze",
+          "metadata_altitude_m": 7500,
+          "metadata_observed_bp_c": 74.1
+        },
+        {
+          "input": "Altitude: 7500 m",
+          "output": "73.8 \u00b0C",
+          "predict_isa_antoine": "74.87 \u00b0C",
+          "predict_baseline": "76.91 \u00b0C",
+          "metadata_source": "deleze",
+          "metadata_altitude_m": 7500,
+          "metadata_observed_bp_c": 73.8
+        },
+        {
+          "input": "Altitude: 7500 m",
+          "output": "73.4 \u00b0C",
+          "predict_isa_antoine": "74.87 \u00b0C",
+          "predict_baseline": "76.91 \u00b0C",
+          "metadata_source": "deleze",
+          "metadata_altitude_m": 7500,
+          "metadata_observed_bp_c": 73.4
+        },
+        {
+          "input": "Altitude: 8000 m",
+          "output": "73.1 \u00b0C",
+          "predict_isa_antoine": "73.16 \u00b0C",
+          "predict_baseline": "75.48 \u00b0C",
+          "metadata_source": "deleze",
+          "metadata_altitude_m": 8000,
+          "metadata_observed_bp_c": 73.1
+        },
+        {
+          "input": "Altitude: 8000 m",
+          "output": "72.7 \u00b0C",
+          "predict_isa_antoine": "73.16 \u00b0C",
+          "predict_baseline": "75.48 \u00b0C",
+          "metadata_source": "deleze",
+          "metadata_altitude_m": 8000,
+          "metadata_observed_bp_c": 72.7
+        },
+        {
+          "input": "Altitude: 8000 m",
+          "output": "72.4 \u00b0C",
+          "predict_isa_antoine": "73.16 \u00b0C",
+          "predict_baseline": "75.48 \u00b0C",
+          "metadata_source": "deleze",
+          "metadata_altitude_m": 8000,
+          "metadata_observed_bp_c": 72.4
+        },
+        {
+          "input": "Altitude: 8000 m",
+          "output": "72.0 \u00b0C",
+          "predict_isa_antoine": "73.16 \u00b0C",
+          "predict_baseline": "75.48 \u00b0C",
+          "metadata_source": "deleze",
+          "metadata_altitude_m": 8000,
+          "metadata_observed_bp_c": 72.0
+        },
+        {
+          "input": "Altitude: 8000 m",
+          "output": "71.7 \u00b0C",
+          "predict_isa_antoine": "73.16 \u00b0C",
+          "predict_baseline": "75.48 \u00b0C",
+          "metadata_source": "deleze",
+          "metadata_altitude_m": 8000,
+          "metadata_observed_bp_c": 71.7
+        },
+        {
+          "input": "Altitude: 8500 m",
+          "output": "71.4 \u00b0C",
+          "predict_isa_antoine": "71.46 \u00b0C",
+          "predict_baseline": "74.07 \u00b0C",
+          "metadata_source": "deleze",
+          "metadata_altitude_m": 8500,
+          "metadata_observed_bp_c": 71.4
+        },
+        {
+          "input": "Altitude: 8500 m",
+          "output": "71.0 \u00b0C",
+          "predict_isa_antoine": "71.46 \u00b0C",
+          "predict_baseline": "74.07 \u00b0C",
+          "metadata_source": "deleze",
+          "metadata_altitude_m": 8500,
+          "metadata_observed_bp_c": 71.0
+        },
+        {
+          "input": "Altitude: 8500 m",
+          "output": "70.7 \u00b0C",
+          "predict_isa_antoine": "71.46 \u00b0C",
+          "predict_baseline": "74.07 \u00b0C",
+          "metadata_source": "deleze",
+          "metadata_altitude_m": 8500,
+          "metadata_observed_bp_c": 70.7
+        },
+        {
+          "input": "Altitude: 8500 m",
+          "output": "70.3 \u00b0C",
+          "predict_isa_antoine": "71.46 \u00b0C",
+          "predict_baseline": "74.07 \u00b0C",
+          "metadata_source": "deleze",
+          "metadata_altitude_m": 8500,
+          "metadata_observed_bp_c": 70.3
+        },
+        {
+          "input": "Altitude: 8500 m",
+          "output": "70.0 \u00b0C",
+          "predict_isa_antoine": "71.46 \u00b0C",
+          "predict_baseline": "74.07 \u00b0C",
+          "metadata_source": "deleze",
+          "metadata_altitude_m": 8500,
+          "metadata_observed_bp_c": 70.0
+        },
+        {
+          "input": "Altitude: 9000 m",
+          "output": "69.6 \u00b0C",
+          "predict_isa_antoine": "69.74 \u00b0C",
+          "predict_baseline": "72.67 \u00b0C",
+          "metadata_source": "deleze",
+          "metadata_altitude_m": 9000,
+          "metadata_observed_bp_c": 69.6
+        },
+        {
+          "input": "Altitude: 9000 m",
+          "output": "69.3 \u00b0C",
+          "predict_isa_antoine": "69.74 \u00b0C",
+          "predict_baseline": "72.67 \u00b0C",
+          "metadata_source": "deleze",
+          "metadata_altitude_m": 9000,
+          "metadata_observed_bp_c": 69.3
+        },
+        {
+          "input": "Altitude: 9000 m",
+          "output": "69.0 \u00b0C",
+          "predict_isa_antoine": "69.74 \u00b0C",
+          "predict_baseline": "72.67 \u00b0C",
+          "metadata_source": "deleze",
+          "metadata_altitude_m": 9000,
+          "metadata_observed_bp_c": 69.0
+        },
+        {
+          "input": "Altitude: 9000 m",
+          "output": "68.6 \u00b0C",
+          "predict_isa_antoine": "69.74 \u00b0C",
+          "predict_baseline": "72.67 \u00b0C",
+          "metadata_source": "deleze",
+          "metadata_altitude_m": 9000,
+          "metadata_observed_bp_c": 68.6
+        },
+        {
+          "input": "Altitude: 9000 m",
+          "output": "68.3 \u00b0C",
+          "predict_isa_antoine": "69.74 \u00b0C",
+          "predict_baseline": "72.67 \u00b0C",
+          "metadata_source": "deleze",
+          "metadata_altitude_m": 9000,
+          "metadata_observed_bp_c": 68.3
+        },
+        {
+          "input": "Altitude: 9500 m",
+          "output": "67.9 \u00b0C",
+          "predict_isa_antoine": "68.03 \u00b0C",
+          "predict_baseline": "71.28 \u00b0C",
+          "metadata_source": "deleze",
+          "metadata_altitude_m": 9500,
+          "metadata_observed_bp_c": 67.9
+        },
+        {
+          "input": "Altitude: 9500 m",
+          "output": "67.6 \u00b0C",
+          "predict_isa_antoine": "68.03 \u00b0C",
+          "predict_baseline": "71.28 \u00b0C",
+          "metadata_source": "deleze",
+          "metadata_altitude_m": 9500,
+          "metadata_observed_bp_c": 67.6
+        },
+        {
+          "input": "Altitude: 9500 m",
+          "output": "67.2 \u00b0C",
+          "predict_isa_antoine": "68.03 \u00b0C",
+          "predict_baseline": "71.28 \u00b0C",
+          "metadata_source": "deleze",
+          "metadata_altitude_m": 9500,
+          "metadata_observed_bp_c": 67.2
+        },
+        {
+          "input": "Altitude: 9500 m",
+          "output": "66.9 \u00b0C",
+          "predict_isa_antoine": "68.03 \u00b0C",
+          "predict_baseline": "71.28 \u00b0C",
+          "metadata_source": "deleze",
+          "metadata_altitude_m": 9500,
+          "metadata_observed_bp_c": 66.9
+        },
+        {
+          "input": "Altitude: 9500 m",
+          "output": "66.5 \u00b0C",
+          "predict_isa_antoine": "68.03 \u00b0C",
+          "predict_baseline": "71.28 \u00b0C",
+          "metadata_source": "deleze",
+          "metadata_altitude_m": 9500,
+          "metadata_observed_bp_c": 66.5
+        },
+        {
+          "input": "Altitude: 10000 m",
+          "output": "66.2 \u00b0C",
+          "predict_isa_antoine": "66.30 \u00b0C",
+          "predict_baseline": "69.91 \u00b0C",
+          "metadata_source": "deleze",
+          "metadata_altitude_m": 10000,
+          "metadata_observed_bp_c": 66.2
+        },
+        {
+          "input": "Altitude: 10000 m",
+          "output": "65.8 \u00b0C",
+          "predict_isa_antoine": "66.30 \u00b0C",
+          "predict_baseline": "69.91 \u00b0C",
+          "metadata_source": "deleze",
+          "metadata_altitude_m": 10000,
+          "metadata_observed_bp_c": 65.8
+        },
+        {
+          "input": "Altitude: 10000 m",
+          "output": "65.5 \u00b0C",
+          "predict_isa_antoine": "66.30 \u00b0C",
+          "predict_baseline": "69.91 \u00b0C",
+          "metadata_source": "deleze",
+          "metadata_altitude_m": 10000,
+          "metadata_observed_bp_c": 65.5
+        },
+        {
+          "input": "Altitude: 10000 m",
+          "output": "65.2 \u00b0C",
+          "predict_isa_antoine": "66.30 \u00b0C",
+          "predict_baseline": "69.91 \u00b0C",
+          "metadata_source": "deleze",
+          "metadata_altitude_m": 10000,
+          "metadata_observed_bp_c": 65.2
+        },
+        {
+          "input": "Altitude: 10000 m",
+          "output": "64.8 \u00b0C",
+          "predict_isa_antoine": "66.30 \u00b0C",
+          "predict_baseline": "69.91 \u00b0C",
+          "metadata_source": "deleze",
+          "metadata_altitude_m": 10000,
+          "metadata_observed_bp_c": 64.8
+        },
+        {
+          "input": "Altitude: 10500 m",
+          "output": "64.5 \u00b0C",
+          "predict_isa_antoine": "64.57 \u00b0C",
+          "predict_baseline": "68.54 \u00b0C",
+          "metadata_source": "deleze",
+          "metadata_altitude_m": 10500,
+          "metadata_observed_bp_c": 64.5
+        },
+        {
+          "input": "Altitude: 10500 m",
+          "output": "64.1 \u00b0C",
+          "predict_isa_antoine": "64.57 \u00b0C",
+          "predict_baseline": "68.54 \u00b0C",
+          "metadata_source": "deleze",
+          "metadata_altitude_m": 10500,
+          "metadata_observed_bp_c": 64.1
+        },
+        {
+          "input": "Altitude: 10500 m",
+          "output": "63.8 \u00b0C",
+          "predict_isa_antoine": "64.57 \u00b0C",
+          "predict_baseline": "68.54 \u00b0C",
+          "metadata_source": "deleze",
+          "metadata_altitude_m": 10500,
+          "metadata_observed_bp_c": 63.8
+        },
+        {
+          "input": "Altitude: 10500 m",
+          "output": "63.4 \u00b0C",
+          "predict_isa_antoine": "64.57 \u00b0C",
+          "predict_baseline": "68.54 \u00b0C",
+          "metadata_source": "deleze",
+          "metadata_altitude_m": 10500,
+          "metadata_observed_bp_c": 63.4
+        },
+        {
+          "input": "Altitude: 10500 m",
+          "output": "63.1 \u00b0C",
+          "predict_isa_antoine": "64.57 \u00b0C",
+          "predict_baseline": "68.54 \u00b0C",
+          "metadata_source": "deleze",
+          "metadata_altitude_m": 10500,
+          "metadata_observed_bp_c": 63.1
+        },
+        {
+          "input": "Altitude: 11000 m",
+          "output": "62.7 \u00b0C",
+          "predict_isa_antoine": "62.84 \u00b0C",
+          "predict_baseline": "67.19 \u00b0C",
+          "metadata_source": "deleze",
+          "metadata_altitude_m": 11000,
+          "metadata_observed_bp_c": 62.7
+        },
+        {
+          "input": "Altitude: 11000 m",
+          "output": "62.4 \u00b0C",
+          "predict_isa_antoine": "62.84 \u00b0C",
+          "predict_baseline": "67.19 \u00b0C",
+          "metadata_source": "deleze",
+          "metadata_altitude_m": 11000,
+          "metadata_observed_bp_c": 62.4
+        },
+        {
+          "input": "Altitude: 11000 m",
+          "output": "62.0 \u00b0C",
+          "predict_isa_antoine": "62.84 \u00b0C",
+          "predict_baseline": "67.19 \u00b0C",
+          "metadata_source": "deleze",
+          "metadata_altitude_m": 11000,
+          "metadata_observed_bp_c": 62.0
+        },
+        {
+          "input": "Altitude: 11000 m",
+          "output": "61.7 \u00b0C",
+          "predict_isa_antoine": "62.84 \u00b0C",
+          "predict_baseline": "67.19 \u00b0C",
+          "metadata_source": "deleze",
+          "metadata_altitude_m": 11000,
+          "metadata_observed_bp_c": 61.7
+        },
+        {
+          "input": "Altitude: 11000 m",
+          "output": "61.3 \u00b0C",
+          "predict_isa_antoine": "62.84 \u00b0C",
+          "predict_baseline": "67.19 \u00b0C",
+          "metadata_source": "deleze",
+          "metadata_altitude_m": 11000,
+          "metadata_observed_bp_c": 61.3
+        },
+        {
+          "input": "Altitude: 11500 m",
+          "output": "61.0 \u00b0C",
+          "predict_isa_antoine": "61.10 \u00b0C",
+          "predict_baseline": "65.86 \u00b0C",
+          "metadata_source": "deleze",
+          "metadata_altitude_m": 11500,
+          "metadata_observed_bp_c": 61.0
+        },
+        {
+          "input": "Altitude: 11500 m",
+          "output": "60.6 \u00b0C",
+          "predict_isa_antoine": "61.10 \u00b0C",
+          "predict_baseline": "65.86 \u00b0C",
+          "metadata_source": "deleze",
+          "metadata_altitude_m": 11500,
+          "metadata_observed_bp_c": 60.6
+        },
+        {
+          "input": "Altitude: 11500 m",
+          "output": "60.3 \u00b0C",
+          "predict_isa_antoine": "61.10 \u00b0C",
+          "predict_baseline": "65.86 \u00b0C",
+          "metadata_source": "deleze",
+          "metadata_altitude_m": 11500,
+          "metadata_observed_bp_c": 60.3
+        },
+        {
+          "input": "Altitude: 11500 m",
+          "output": "59.9 \u00b0C",
+          "predict_isa_antoine": "61.10 \u00b0C",
+          "predict_baseline": "65.86 \u00b0C",
+          "metadata_source": "deleze",
+          "metadata_altitude_m": 11500,
+          "metadata_observed_bp_c": 59.9
+        },
+        {
+          "input": "Altitude: 11500 m",
+          "output": "59.6 \u00b0C",
+          "predict_isa_antoine": "61.10 \u00b0C",
+          "predict_baseline": "65.86 \u00b0C",
+          "metadata_source": "deleze",
+          "metadata_altitude_m": 11500,
+          "metadata_observed_bp_c": 59.6
+        },
+        {
+          "input": "Altitude: 12000 m",
+          "output": "59.2 \u00b0C",
+          "predict_isa_antoine": "59.35 \u00b0C",
+          "predict_baseline": "64.53 \u00b0C",
+          "metadata_source": "deleze",
+          "metadata_altitude_m": 12000,
+          "metadata_observed_bp_c": 59.2
+        },
+        {
+          "input": "Altitude: 12000 m",
+          "output": "58.9 \u00b0C",
+          "predict_isa_antoine": "59.35 \u00b0C",
+          "predict_baseline": "64.53 \u00b0C",
+          "metadata_source": "deleze",
+          "metadata_altitude_m": 12000,
+          "metadata_observed_bp_c": 58.9
+        },
+        {
+          "input": "Altitude: 12000 m",
+          "output": "58.5 \u00b0C",
+          "predict_isa_antoine": "59.35 \u00b0C",
+          "predict_baseline": "64.53 \u00b0C",
+          "metadata_source": "deleze",
+          "metadata_altitude_m": 12000,
+          "metadata_observed_bp_c": 58.5
+        },
+        {
+          "input": "Altitude: 12000 m",
+          "output": "58.2 \u00b0C",
+          "predict_isa_antoine": "59.35 \u00b0C",
+          "predict_baseline": "64.53 \u00b0C",
+          "metadata_source": "deleze",
+          "metadata_altitude_m": 12000,
+          "metadata_observed_bp_c": 58.2
+        },
+        {
+          "input": "Altitude: 12000 m",
+          "output": "57.8 \u00b0C",
+          "predict_isa_antoine": "59.35 \u00b0C",
+          "predict_baseline": "64.53 \u00b0C",
+          "metadata_source": "deleze",
+          "metadata_altitude_m": 12000,
+          "metadata_observed_bp_c": 57.8
+        }
+      ]
+    }
+  ]
+}

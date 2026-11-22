@@ -1,0 +1,143 @@
+{
+  "metadata": {
+    "method_name": "ISA+Antoine",
+    "description": "Empirical validation of ISA barometric formula + Antoine equation for boiling point prediction",
+    "constants": {
+      "P0_hPa": 1013.25,
+      "T0_K": 288.15,
+      "g_m_s2": 9.80665,
+      "M_kg_per_mol": 0.0289644,
+      "R_J_per_mol_K": 8.31447,
+      "L_K_per_m": 0.0065,
+      "ISA_exponent": 5.255781292873008,
+      "Antoine_A": 8.07131,
+      "Antoine_B": 1730.63,
+      "Antoine_C": 233.426
+    },
+    "reference_point_tests": [
+      {
+        "altitude_m": 0,
+        "expected_bp_c": 100.0,
+        "calculated_bp_c": 100.0,
+        "error_c": 0.0
+      },
+      {
+        "altitude_m": 1000,
+        "expected_bp_c": 96.7,
+        "calculated_bp_c": 96.68,
+        "error_c": 0.02
+      },
+      {
+        "altitude_m": 2000,
+        "expected_bp_c": 93.5,
+        "calculated_bp_c": 93.36,
+        "error_c": 0.14
+      },
+      {
+        "altitude_m": 3000,
+        "expected_bp_c": 90.4,
+        "calculated_bp_c": 90.03,
+        "error_c": 0.37
+      },
+      {
+        "altitude_m": 5000,
+        "expected_bp_c": 84.4,
+        "calculated_bp_c": 83.33,
+        "error_c": 1.07
+      }
+    ],
+    "monotonic_decrease_verified": true,
+    "baseline_comparison": {
+      "engineeringtoolbox": {
+        "ISA_Antoine_rmse": 0.6571754003763156,
+        "ISA_Antoine_bias": 0.23485118553040035,
+        "Baseline_rmse": 0.839985768798841,
+        "Baseline_bias": -0.7496586967218387
+      },
+      "deleze": {
+        "ISA_Antoine_rmse": 0.8913571800099692,
+        "ISA_Antoine_bias": -0.7479157267425036,
+        "Baseline_rmse": 3.000368449209908,
+        "Baseline_bias": -2.450988388429001
+      }
+    },
+    "sensitivity_analysis": {
+      "optimal_engineeringtoolbox": {
+        "optimal_lapse_rate": 0.005,
+        "min_rmse": 0.397328795181884,
+        "bias_at_optimal": -0.011572078583883582
+      },
+      "optimal_deleze": {
+        "optimal_lapse_rate": 0.0078,
+        "min_rmse": 0.6901207284750983,
+        "bias_at_optimal": -0.34038069593164777
+      }
+    }
+  },
+  "datasets": [
+    {
+      "dataset": "boiling_point_engineeringtoolbox",
+      "examples": [
+        {
+          "input": "Altitude: -305 m",
+          "output": "101.1 \u00b0C",
+          "predict_isa_antoine": "101.01 \u00b0C",
+          "predict_baseline": "101.01 \u00b0C",
+          "metadata_source": "engineeringtoolbox",
+          "metadata_altitude_m": -305,
+          "metadata_observed_bp_c": 101.1
+        },
+        {
+          "input": "Altitude: -229 m",
+          "output": "100.8 \u00b0C",
+          "predict_isa_antoine": "100.75 \u00b0C",
+          "predict_baseline": "100.76 \u00b0C",
+          "metadata_source": "engineeringtoolbox",
+          "metadata_altitude_m": -229,
+          "metadata_observed_bp_c": 100.8
+        },
+        {
+          "input": "Altitude: -152 m",
+          "output": "100.5 \u00b0C",
+          "predict_isa_antoine": "100.50 \u00b0C",
+          "predict_baseline": "100.50 \u00b0C",
+          "metadata_source": "engineeringtoolbox",
+          "metadata_altitude_m": -152,
+          "metadata_observed_bp_c": 100.5
+        }
+      ]
+    },
+    {
+      "dataset": "boiling_point_deleze",
+      "examples": [
+        {
+          "input": "Altitude: -500 m",
+          "output": "101.7 \u00b0C",
+          "predict_isa_antoine": "101.65 \u00b0C",
+          "predict_baseline": "101.66 \u00b0C",
+          "metadata_source": "deleze",
+          "metadata_altitude_m": -500,
+          "metadata_observed_bp_c": 101.7
+        },
+        {
+          "input": "Altitude: -500 m",
+          "output": "101.3 \u00b0C",
+          "predict_isa_antoine": "101.65 \u00b0C",
+          "predict_baseline": "101.66 \u00b0C",
+          "metadata_source": "deleze",
+          "metadata_altitude_m": -500,
+          "metadata_observed_bp_c": 101.3
+        },
+        {
+          "input": "Altitude: -500 m",
+          "output": "101.0 \u00b0C",
+          "predict_isa_antoine": "101.65 \u00b0C",
+          "predict_baseline": "101.66 \u00b0C",
+          "metadata_source": "deleze",
+          "metadata_altitude_m": -500,
+          "metadata_observed_bp_c": 101.0
+        }
+      ]
+    }
+  ]
+}
