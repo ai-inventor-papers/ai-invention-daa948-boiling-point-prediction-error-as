@@ -1,0 +1,153 @@
+{
+  "metadata": {
+    "description": "Empirical and theoretical water boiling point vs altitude data for ISA/Antoine validation",
+    "total_examples": 129,
+    "num_datasets": 5,
+    "task": "Predict boiling point of water given altitude and ambient pressure",
+    "domain": "Atmospheric thermodynamics",
+    "evaluation_metric": "RMSE (\u00b0C) between predicted and measured boiling point"
+  },
+  "datasets": [
+    {
+      "dataset": "Forbes_1857_Alps",
+      "examples": [
+        {
+          "input": "{\"altitude_m\": 2966.2, \"pressure_hpa\": 704.1}",
+          "output": "{\"boiling_point_c\": 90.3}",
+          "metadata_fold": 0,
+          "metadata_task_type": "regression",
+          "metadata_feature_names": [
+            "altitude_m",
+            "pressure_hpa"
+          ],
+          "metadata_target_name": "boiling_point_c",
+          "metadata_source_detail": "Transactions of the Royal Society of Edinburgh, 21, 235-243",
+          "metadata_row_index": "bp_0000",
+          "metadata_is_empirical": true
+        },
+        {
+          "input": "{\"altitude_m\": 2966.2, \"pressure_hpa\": 704.1}",
+          "output": "{\"boiling_point_c\": 90.2}",
+          "metadata_fold": 0,
+          "metadata_task_type": "regression",
+          "metadata_feature_names": [
+            "altitude_m",
+            "pressure_hpa"
+          ],
+          "metadata_target_name": "boiling_point_c",
+          "metadata_source_detail": "Transactions of the Royal Society of Edinburgh, 21, 235-243",
+          "metadata_row_index": "bp_0001",
+          "metadata_is_empirical": true
+        },
+        {
+          "input": "{\"altitude_m\": 2376.7, \"pressure_hpa\": 758.5}",
+          "output": "{\"boiling_point_c\": 92.2}",
+          "metadata_fold": 0,
+          "metadata_task_type": "regression",
+          "metadata_feature_names": [
+            "altitude_m",
+            "pressure_hpa"
+          ],
+          "metadata_target_name": "boiling_point_c",
+          "metadata_source_detail": "Transactions of the Royal Society of Edinburgh, 21, 235-243",
+          "metadata_row_index": "bp_0002",
+          "metadata_is_empirical": true
+        }
+      ]
+    },
+    {
+      "dataset": "LawSupply_Engineering",
+      "examples": [
+        {
+          "input": "{\"altitude_m\": -304.8, \"pressure_hpa\": 1049.8}",
+          "output": "{\"boiling_point_c\": 101.0}",
+          "metadata_fold": 0,
+          "metadata_task_type": "regression",
+          "metadata_feature_names": [
+            "altitude_m",
+            "pressure_hpa"
+          ],
+          "metadata_target_name": "boiling_point_c",
+          "metadata_source_detail": "Web page last updated 05/19/2003, www.lawsupply.net/tech_data/water_boiling_point.htm",
+          "metadata_row_index": "bp_0017",
+          "metadata_is_empirical": true
+        },
+        {
+          "input": "{\"altitude_m\": -152.4, \"pressure_hpa\": 1032.8}",
+          "output": "{\"boiling_point_c\": 100.5}",
+          "metadata_fold": 0,
+          "metadata_task_type": "regression",
+          "metadata_feature_names": [
+            "altitude_m",
+            "pressure_hpa"
+          ],
+          "metadata_target_name": "boiling_point_c",
+          "metadata_source_detail": "Web page last updated 05/19/2003, www.lawsupply.net/tech_data/water_boiling_point.htm",
+          "metadata_row_index": "bp_0018",
+          "metadata_is_empirical": true
+        },
+        {
+          "input": "{\"altitude_m\": 0.0, \"pressure_hpa\": 1012.5}",
+          "output": "{\"boiling_point_c\": 100.0}",
+          "metadata_fold": 0,
+          "metadata_task_type": "regression",
+          "metadata_feature_names": [
+            "altitude_m",
+            "pressure_hpa"
+          ],
+          "metadata_target_name": "boiling_point_c",
+          "metadata_source_detail": "Web page last updated 05/19/2003, www.lawsupply.net/tech_data/water_boiling_point.htm",
+          "metadata_row_index": "bp_0019",
+          "metadata_is_empirical": true
+        }
+      ]
+    },
+    {
+      "dataset": "UCDavis_Snyder_2016",
+      "examples": [
+        {
+          "input": "{\"altitude_m\": -152.4, \"pressure_hpa\": 1031.7}",
+          "output": "{\"boiling_point_c\": 100.5}",
+          "metadata_fold": 0,
+          "metadata_task_type": "regression",
+          "metadata_feature_names": [
+            "altitude_m",
+            "pressure_hpa"
+          ],
+          "metadata_target_name": "boiling_point_c",
+          "metadata_source_detail": "O. Peter Snyder Jr., Ph.D., Hospitality Institute of Technology and Management; References: ASHRAE Handbook 1997, Perry's Chemical Engineers' Handbook 1984",
+          "metadata_row_index": "bp_0171",
+          "metadata_is_empirical": true
+        },
+        {
+          "input": "{\"altitude_m\": 0.0, \"pressure_hpa\": 1013.2}",
+          "output": "{\"boiling_point_c\": 100.0}",
+          "metadata_fold": 0,
+          "metadata_task_type": "regression",
+          "metadata_feature_names": [
+            "altitude_m",
+            "pressure_hpa"
+          ],
+          "metadata_target_name": "boiling_point_c",
+          "metadata_source_detail": "O. Peter Snyder Jr., Ph.D., Hospitality Institute of Technology and Management; References: ASHRAE Handbook 1997, Perry's Chemical Engineers' Handbook 1984",
+          "metadata_row_index": "bp_0172",
+          "metadata_is_empirical": true
+        },
+        {
+          "input": "{\"altitude_m\": 152.4, \"pressure_hpa\": 995.1}",
+          "output": "{\"boiling_point_c\": 99.5}",
+          "metadata_fold": 0,
+          "metadata_task_type": "regression",
+          "metadata_feature_names": [
+            "altitude_m",
+            "pressure_hpa"
+          ],
+          "metadata_target_name": "boiling_point_c",
+          "metadata_source_detail": "O. Peter Snyder Jr., Ph.D., Hospitality Institute of Technology and Management; References: ASHRAE Handbook 1997, Perry's Chemical Engineers' Handbook 1984",
+          "metadata_row_index": "bp_0173",
+          "metadata_is_empirical": true
+        }
+      ]
+    }
+  ]
+}

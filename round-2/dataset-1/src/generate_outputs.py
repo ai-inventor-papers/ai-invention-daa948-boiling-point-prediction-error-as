@@ -1,0 +1,62 @@
+#!/usr/bin/env python3
+"""
+Generate mini and preview versions with correct naming:
+- full_data_out.json (already exists)
+- mini_data_out.json
+- preview_data_out.json
+"""
+
+import json
+from pathlib import Path
+
+# Load full data
+with open("full_data_out.json", 'r') as f:
+    data = json.load(f)
+
+# Create mini: first 3 datasets, each with first 3 examples
+mini_data = {
+    "metadata": data["metadata"],
+    "datasets": []
+}
+for ds in data["datasets"][:3]:
+    mini_ds = {
+        "dataset": ds["dataset"],
+        "examples": ds["examples"][:3]
+    }
+    mini_data["datasets"].append(mini_ds)
+
+# Create preview: mini with strings truncated to 200 chars
+def truncate_strings(obj, max_len=200):
+    if isinstance(obj, str):
+        if len(obj) > max_len:
+            return obj[:max_len] + "..."
+        return obj
+    elif isinstance(obj, dict):
+        return {k: truncate_strings(v, max_len) for k, v in obj.items()}
+    elif isinstance(obj, list):
+        return [truncate_strings(v, max_len) for v in obj]
+    return obj
+
+preview_data = truncate_strings(mini_data)
+
+# Save with correct names
+with open("mini_data_out.json", 'w') as f:
+    json.dump(mini_data, f, indent=2)
+
+with open("preview_data_out.json", 'w') as f:
+    json.dump(preview_data, f, indent=2)
+
+print("Created:")
+print("  full_data_out.json (already existed)")
+print("  mini_data_out.json")
+print("  preview_data_out.json")
+
+print(f"\nMini: {len(mini_data['datasets'])} datasets")
+for ds in mini_data['datasets']:
+    print(f"  {ds['dataset']}: {len(ds['examples'])} examples")
+
+# Verify sizes
+import os
+for fname in ["full_data_out.json", "mini_data_out.json", "preview_data_out.json"]:
+    size = os.path.getsize(fname)
+    print(f"  {fname}: {size} bytes ({size/1024:.1f} KB)")
