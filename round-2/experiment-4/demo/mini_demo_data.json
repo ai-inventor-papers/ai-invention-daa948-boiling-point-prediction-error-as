@@ -1,0 +1,7 @@
+[
+  {"altitude": -500, "boiling_point": 101.7},
+  {"altitude": 0, "boiling_point": 100.0},
+  {"altitude": 500, "boiling_point": 98.3},
+  {"altitude": 1000, "boiling_point": 96.7},
+  {"altitude": 1500, "boiling_point": 95.0}
+]
